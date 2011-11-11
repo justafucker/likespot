@@ -6,21 +6,7 @@
         <h3>Products</h3>
 
         #{list items:products, as:'product'}
-            <div class="product">
-                <h4 class="product-title">
-                    <a href="#">${product.title}</a>
-                </h4>
-                <div class="product-metadata">
-                    <p class="product-description">
-                        ${product.description}
-                    </p>
-                    <span class="product-date">
-                        #{if product.date}
-                            ${product.date.format('dd MMM yy')}
-                        #{/if}
-                    </span>
-                </div>
-            </div>
+            #{display product:product /}
         #{/list}
     </div>
 

@@ -1,2 +1,9 @@
-tmp/*
-db/*
+bin/
+data/
+db/
+dist/
+logs/
+test-result/
+lib/
+tmp/
+modules/
