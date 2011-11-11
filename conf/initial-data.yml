@@ -1,0 +1,16 @@
+Category(literature):
+    title: Литература
+
+Category(modernProse):
+    title: Современная проза
+    parent: literature
+
+Product(pelevin):
+    title: Пелевин В.А.
+    description: Современный писатель
+    categories: modernProse
+
+Product(empireV):
+    title: Empire V
+    description: Повесть о настоящем сверхчеловеке
+    parent: pelevin
