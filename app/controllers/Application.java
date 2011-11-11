@@ -10,8 +10,8 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-        System.out.println("Yop");
-        render();
+        List<Product> products = Product.findAll();
+        render(products);
     }
 
 }

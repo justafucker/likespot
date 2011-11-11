@@ -4,6 +4,7 @@ import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -13,6 +14,9 @@ public class Product extends Model {
 
     @Required
     private String description;
+
+    @Required
+    private Date date;
 
     @ManyToOne
     private Product parent;
@@ -34,6 +38,14 @@ public class Product extends Model {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Product getParent() {

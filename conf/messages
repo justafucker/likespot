@@ -4,3 +4,6 @@
 
 title = Title
 parent = Parent
+categories = Categories
+date = Date
+description = Description
