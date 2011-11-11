@@ -73,7 +73,7 @@
       <file leaf-file-name="dependencies.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conf/dependencies.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="10" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0563204">
+            <state line="3" column="18" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0563204">
               <folding />
             </state>
           </provider>
@@ -577,7 +577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/dependencies.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="10" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0563204">
+        <state line="3" column="18" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0563204">
           <folding />
         </state>
       </provider>
