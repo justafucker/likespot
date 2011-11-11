@@ -1,1 +1,4 @@
 # Application dependencies
+
+require:
+    - play
