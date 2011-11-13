@@ -1,6 +1,7 @@
 package models;
 
 import play.data.validation.Required;
+import play.db.jpa.Blob;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
@@ -17,6 +18,8 @@ public class Product extends Model {
 
     @Required
     private Date date;
+
+    private Blob photo;
 
     @ManyToOne
     private Product parent;
