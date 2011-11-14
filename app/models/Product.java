@@ -51,6 +51,14 @@ public class Product extends Model {
         this.date = date;
     }
 
+    public Blob getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Blob photo) {
+        this.photo = photo;
+    }
+
     public Product getParent() {
         return parent;
     }
