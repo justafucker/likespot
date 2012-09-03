@@ -1,0 +1,14 @@
+<div class="timeline">
+    <h4 class="product-title">
+        <a href="#">${_product.title}</a>
+    </h4>
+    <img src="@{productPhoto(_product.id)}">
+    <div class="product-metadata">
+        <p class="product-description">
+            ${_product.description.nl2br()}
+        </p>
+        <span class="product-date">
+            ${_product.date?.format('dd MMM yy')}
+        </span>
+    </div>
+</div>

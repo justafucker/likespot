@@ -1,13 +1,9 @@
 package controllers;
 
-import play.*;
-import play.data.validation.Min;
-import play.data.validation.Required;
-import play.mvc.*;
+import models.Product;
+import play.mvc.Controller;
 
-import java.util.*;
-
-import models.*;
+import java.util.List;
 
 public class Application extends Controller {
 
