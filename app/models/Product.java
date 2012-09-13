@@ -3,6 +3,7 @@ package models;
 import play.data.validation.Required;
 import play.db.jpa.Blob;
 import play.db.jpa.Model;
+import play.modules.s3blobs.S3Blob;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,7 +20,7 @@ public class Product extends Model {
     @Required
     private Date date;
 
-    private Blob photo;
+    private S3Blob photo;
 
     @ManyToOne
     private Product parent;
@@ -51,11 +52,11 @@ public class Product extends Model {
         this.date = date;
     }
 
-    public Blob getPhoto() {
+    public S3Blob getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Blob photo) {
+    public void setPhoto(S3Blob photo) {
         this.photo = photo;
     }
 
