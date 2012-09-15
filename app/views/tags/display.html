@@ -1,14 +1,17 @@
-<div class="product">
-    <h4 class="product-title">
-        <a href="#">${_product.title}</a>
-    </h4>
-    <img src="@{productPhoto(_product.id)}">
-    <div class="product-metadata">
-        <p class="product-description">
-            ${_product.description.nl2br()}
+<tr>
+    <td style="padding: 10px; border-bottom:1px solid rgb(232, 232, 232); width: 80px;">
+        <img src="@{productPhoto(_product.id)}" class="img-rounded" width="80px">
+    </td>
+    <td style="border-bottom:1px solid rgb(232, 232, 232); width: 10px;">
+        &nbsp;
+    </td>
+    <td valign="top" style="padding: 10px 10px 10px 0; border-bottom:1px solid rgb(232, 232, 232);">
+        <strong>${_product.title}</strong>
+        <small href="#" class="muted">${_product?.category}</small>
+        <small href="#" class="muted">${_product?.parent}</small>
+        <p>
+        ${_product.description.nl2br()}
         </p>
-        <span class="product-date">
-            ${_product.date?.format('dd MMM yy')}
-        </span>
-    </div>
-</div>
+        <small class="muted">${_product.date?.format('dd, MMMM yyyy')}</small>
+    </td>
+</tr>

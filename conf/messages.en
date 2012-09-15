@@ -4,10 +4,10 @@
 
 title = Title
 parent = Parent
-categories = Categories
+category = Category
 date = Date
 description = Description
 photo = Photo
 
 empty = There is currently nothing to read here.
-products = Products
+timeline = Timeline

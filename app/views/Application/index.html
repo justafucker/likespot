@@ -1,15 +1,16 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Likespot' /}
 
 #{if !products.isEmpty()}
-    <div class="products">
-        <h3>&{'products'}</h3>
-
+    <h3>&{'timeline'}</h3>
+    <table style="border-top:1px solid rgb(232, 232, 232);
+            width: 600px;
+            border-right:1px solid rgb(232, 232, 232);
+            border-left:1px solid rgb(232, 232, 232);">
         #{list items:products, as:'product'}
             #{display product:product /}
         #{/list}
-    </div>
-
+    </table>
 #{/if}
 
 #{else}

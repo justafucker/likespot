@@ -20,13 +20,15 @@ public class Product extends Model {
     @Required
     private Date date;
 
-    private S3Blob photo;
+    public S3Blob photo;
+
+    private String url;
 
     @ManyToOne
     private Product parent;
 
-    @ManyToMany
-    private List<Category> categories;
+    @ManyToOne
+    private Category category;
 
     public String getTitle() {
         return title;
@@ -60,6 +62,14 @@ public class Product extends Model {
         this.photo = photo;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public Product getParent() {
         return parent;
     }
@@ -68,12 +78,12 @@ public class Product extends Model {
         this.parent = parent;
     }
 
-    public List<Category> getCategories() {
-        return categories;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
