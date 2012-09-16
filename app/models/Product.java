@@ -1,5 +1,6 @@
 package models;
 
+import play.data.validation.MaxSize;
 import play.data.validation.Required;
 import play.db.jpa.Blob;
 import play.db.jpa.Model;
@@ -14,7 +15,9 @@ public class Product extends Model {
     @Required
     private String title;
 
+    @Lob
     @Required
+    @MaxSize(10000)
     private String description;
 
     @Required
