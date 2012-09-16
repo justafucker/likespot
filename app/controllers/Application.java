@@ -8,7 +8,7 @@ import java.util.List;
 public class Application extends Controller {
 
     public static void index() {
-        List<Product> products = Product.findAll();
+        List<Product> products = Product.find("order by date desc").fetch();
         render(products);
     }
 
