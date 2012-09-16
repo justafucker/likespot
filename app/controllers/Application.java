@@ -28,13 +28,6 @@ public class Application extends Controller {
 //        }
 //        render(products);
         List<Product> products = Product.find("order by date desc").fetch();
-        // Bugfix
-        for (Product product : products) {
-            if (product.getTitle().equals("Русский репортёр")) {
-                product.setPhoto(products.get(0).getPhoto());
-                product.save();
-            }
-        }
         render(products);
     }
 
