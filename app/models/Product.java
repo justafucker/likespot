@@ -25,6 +25,7 @@ public class Product extends Model {
     @Required
     private Date date;
 
+    @Required
     public S3Blob photo;
 
     private String url;
