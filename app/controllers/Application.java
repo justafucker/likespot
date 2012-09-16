@@ -1,11 +1,20 @@
 package controllers;
 
 import models.Product;
+import models.User;
+import play.mvc.Before;
 import play.mvc.Controller;
 
 import java.util.List;
 
 public class Application extends Controller {
+    @Before
+    static void setConnectedUser() {
+        if(Security.isConnected()) {
+            User user = User.find("byEmail", Security.connected()).first();
+            renderArgs.put("user", user.fullname);
+        }
+    }
 
     public static void index() {
         List<Product> products = Product.find("order by date desc").fetch();
