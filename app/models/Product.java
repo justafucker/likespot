@@ -1,5 +1,6 @@
 package models;
 
+import org.hibernate.annotations.Type;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
 import play.db.jpa.Blob;
@@ -18,6 +19,7 @@ public class Product extends Model {
     @Lob
     @Required
     @MaxSize(10000)
+    @Type(type = "org.hibernate.type.TextType")
     private String description;
 
     @Required
