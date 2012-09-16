@@ -35,7 +35,7 @@ public class Application extends Controller {
             for (Product product : user.products) {
                 parents.add(product.getId());
             }
-            products = Product.find("category.id in " + inlineList(categories) + inlineList(parents) +
+            products = Product.find(inlineList("category.id in ", categories) + inlineList(" and parent is null or parent.id in ", parents) +
                     " order by date desc").fetch();
         } else {
             products = Product.find("order by date desc").fetch();
@@ -43,9 +43,8 @@ public class Application extends Controller {
         render(products);
     }
 
-    private static String inlineList(List<Long> parents) {
-        return (!parents.isEmpty() ?
-        " and parent is null or parent.id in " + SqlQuery.inlineParam(parents) : "");
+    private static String inlineList(String prefix, List<Long> parents) {
+        return (!parents.isEmpty() ? prefix + SqlQuery.inlineParam(parents) : "");
     }
 
     public static void productPhoto(long id) {
