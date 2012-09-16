@@ -31,7 +31,8 @@ public class Application extends Controller {
         // Bugfix
         for (Product product : products) {
             if (product.getTitle().equals("Русский репортёр")) {
-                product.delete();
+                product.setPhoto(products.get(0).getPhoto());
+                product.save();
             }
         }
         render(products);
