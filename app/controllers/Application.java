@@ -30,7 +30,7 @@ public class Application extends Controller {
         List<Product> products = Product.find("order by date desc").fetch();
         // Bugfix
         for (Product product : products) {
-            if (product.getTitle().equals("Русский репортер")) {
+            if (product.getTitle().equals("Русский репортёр")) {
                 product.delete();
             }
         }
