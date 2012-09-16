@@ -35,12 +35,17 @@ public class Application extends Controller {
             for (Product product : user.products) {
                 parents.add(product.getId());
             }
-            products = Product.find("category.id in " + SqlQuery.inlineParam(categories) +
-                    " and parent is null or parent.id in " + SqlQuery.inlineParam(parents) + " order by date desc").fetch();
+            products = Product.find("category.id in " + inlineList(categories) + inlineList(parents) +
+                    " order by date desc").fetch();
         } else {
             products = Product.find("order by date desc").fetch();
         }
         render(products);
+    }
+
+    private static String inlineList(List<Long> parents) {
+        return (!parents.isEmpty() ?
+        " and parent is null or parent.id in " + SqlQuery.inlineParam(parents) : "");
     }
 
     public static void productPhoto(long id) {
