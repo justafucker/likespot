@@ -38,9 +38,9 @@
                         *{<form class="navbar-search pull-right">
                             <input type="text" class="search-query" placeholder="Search">
                         </form>}*
-                        *{<ul class="nav pull-right">}*
+                        <ul class="nav pull-right">
                         #{if session.username }
-                            <ul class="nav pull-right">
+
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         ${user}
@@ -53,7 +53,6 @@
                                     </ul>
                                     <script></script>
                                 </li>
-                            </ul>
                         #{/if}
                         #{else}
                             <li><a href="@{Secure.login()}">&{'signIn'}</a></li>
