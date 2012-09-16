@@ -12,7 +12,9 @@ public class Application extends Controller {
     static void setConnectedUser() {
         if(Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
-            renderArgs.put("user", user.fullname);
+            if (user != null) {
+                renderArgs.put("user", user.fullname);
+            }
         }
     }
 
