@@ -1,11 +1,16 @@
 package controllers;
 
+import models.Category;
 import models.Product;
 import models.User;
+import play.db.helper.SqlQuery;
 import play.mvc.Before;
 import play.mvc.Controller;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Application extends Controller {
     @Before
@@ -19,15 +24,22 @@ public class Application extends Controller {
     }
 
     public static void index() {
-//        User user = User.find("byEmail", Security.connected()).first();
-//        List<Product> products;
-//        if (user != null) {
-//            products = Product.find("where order by date desc").fetch();
-//        } else {
-//            products = Product.find("order by date desc").fetch();
-//        }
-//        render(products);
-        List<Product> products = Product.find("order by date desc").fetch();
+        User user = User.find("byEmail", Security.connected()).first();
+        List<Product> products;
+        if (user != null) {
+            List<Long> categories = new ArrayList<Long>(user.categories.size());
+            for (Category category : user.categories) {
+                categories.add(category.getId());
+            }
+            List<Long> parents = new ArrayList<Long>(user.products.size());
+            for (Product product : user.products) {
+                parents.add(product.getId());
+            }
+            products = Product.find("category.id in " + SqlQuery.inlineParam(categories) +
+                    " and parent is null or parent.id in " + SqlQuery.inlineParam(parents) + " order by date desc").fetch();
+        } else {
+            products = Product.find("order by date desc").fetch();
+        }
         render(products);
     }
 
