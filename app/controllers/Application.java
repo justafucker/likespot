@@ -24,9 +24,9 @@ public class Application extends Controller {
     }
 
     public static void index() {
-        User user = User.find("byEmail", Security.connected()).first();
+//        User user = User.find("byEmail", Security.connected()).first();
         List<Product> products;
-        if (user != null) {
+        /*if (user != null) {
             List<Long> categories = new ArrayList<Long>(user.categories.size());
             for (Category category : user.categories) {
                 categories.add(category.getId());
@@ -37,9 +37,9 @@ public class Application extends Controller {
             }
             products = Product.find(inlineList("category.id in ", categories) + inlineList(" and parent is null or parent.id in ", parents) +
                     " order by date desc").fetch();
-        } else {
+        } else {*/
             products = Product.find("order by date desc").fetch();
-        }
+//        }
         render(products);
     }
 

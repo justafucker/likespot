@@ -15,10 +15,10 @@ public class User extends Model {
     public String fullname;
     public boolean isAdmin;
 
-    @OneToMany
-    public List<Category> categories;
-    @OneToMany
-    public List<Product> products;
+//    @OneToMany
+//    public List<Category> categories;
+//    @OneToMany
+//    public List<Product> products;
 
     public User(String email, String password, String fullname) {
         this.email = email;
