@@ -3,6 +3,7 @@ package models;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
@@ -15,10 +16,10 @@ public class User extends Model {
     public String fullname;
     public boolean isAdmin;
 
-//    @OneToMany
-//    public List<Category> categories;
-//    @OneToMany
-//    public List<Product> products;
+    @ManyToMany
+    public List<Category> categories;
+    @ManyToMany
+    public List<Product> products;
 
     public User(String email, String password, String fullname) {
         this.email = email;
