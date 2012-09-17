@@ -20,41 +20,65 @@ public class Application extends Controller {
         }
     }*/
 
-    public static void index(Long category, Long product) {
+    public static void index(Long c, Long p) {
         List<Product> products;
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
             if (user != null) {
-                if (category == null && product == null) {
+                if (c == null && p == null) {
                     List<Long> categories = new ArrayList<Long>(user.categories.size());
-                    for (Category c : user.categories) {
-                        categories.add(c.getId());
+                    for (Category category : user.categories) {
+                        categories.add(category.getId());
                     }
                     List<Long> parents = new ArrayList<Long>(user.products.size());
-                    for (Product p : user.products) {
-                        parents.add(p.getId());
+                    for (Product product : user.products) {
+                        parents.add(product.getId());
                     }
                     String categoryCriteria = safeInlineParams("category.id in ", categories);
                     String parentCriteria = safeInlineParams("parent.id in ", parents);
                     String query = categoryCriteria + " or " + parentCriteria + " order by date desc";
                     products = Product.find(query).fetch();
-                } else if (category  != null && product == null) {
-                    String categoryCriteria = "category.id = " + category;
+                } else if (c != null && p == null) {
+                    String categoryCriteria = "category.id = " + c;
                     String query = categoryCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 } else {
-                    String categoryCriteria = "parent.id = " + product;
+                    String categoryCriteria = "parent.id = " + p;
                     String query = categoryCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 }
                 render(products, user);
             } else {
-                products = Product.find("order by date desc").fetch();
-                render(products);
+                if (c == null && p == null) {
+                    products = Product.find("order by date desc").fetch();
+                    List<Category> categories = Category.all().fetch();
+                    render(products, categories);
+                } else if (c != null && p == null) {
+                    String categoryCriteria = "category.id = " + c;
+                    String query = categoryCriteria + " order by date desc";
+                    products = Product.find(query).fetch();
+                } else {
+                    String categoryCriteria = "parent.id = " + p;
+                    String query = categoryCriteria + " order by date desc";
+                    products = Product.find(query).fetch();
+                }
             }
         } else {
-            products = Product.find("order by date desc").fetch();
-            render(products);
+            List<Category> categories = Category.all().fetch();
+            if (c == null && p == null) {
+                products = Product.find("order by date desc").fetch();
+                render(products, categories);
+            } else if (c != null && p == null) {
+                String categoryCriteria = "category.id = " + c;
+                String query = categoryCriteria + " order by date desc";
+                products = Product.find(query).fetch();
+            } else {
+                String categoryCriteria = "parent.id = " + p;
+                String query = categoryCriteria + " order by date desc";
+                products = Product.find(query).fetch();
+
+            }
+            render(products, categories);
         }
     }
 

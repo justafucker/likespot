@@ -21,27 +21,40 @@
     #{/else}
     </div>
     <div class="span6">
-        <span>&{'categories'}</span> ·
-        <small><a href="@{Users.show(user.id)}" class="small">&{'edit'}</a></small>
-        <p>
-        #{if !user.categories.isEmpty()}
+        <span>&{'categories'}</span>
+        #{if user != null}
+            · <small><a href="@{Users.show(user.id)}" class="small">&{'edit'}</a></small>
+            <p>
+            #{if !user.categories.isEmpty()}
+                <ul class="unstyled">
+                    <li><a href="@{Application.index()}">
+                        <small><strong>&{'all'}</strong></small>
+                    </a></li>
+                    #{list items:user.categories, as:'category'}
+                    <li><a href="@{Application.index(category.id)}">
+                            <small>${category}</small>
+                        </a></li>
+                    #{/list}
+                </ul>
+            #{/if}
+            #{else}
+                <div class="muted">
+                    <small>&{'notSelected'}</small>
+                </div>
+            #{/else}
+        #{/if}
+        #{else}
             <ul class="unstyled">
                 <li><a href="@{Application.index()}">
                     <small><strong>&{'all'}</strong></small>
                 </a></li>
-                #{list items:user.categories, as:'category'}
+                #{list items:categories, as:'category'}
                     <li><a href="@{Application.index(category.id)}">
                         <small>${category}</small>
                     </a></li>
                 #{/list}
             </ul>
-        #{/if}
-        #{else}
-            <div class="muted">
-                <small>&{'notSelected'}</small>
-            </div>
         #{/else}
-
         </p>
     </div>
 </div>
