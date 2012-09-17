@@ -20,50 +20,33 @@ public class Application extends Controller {
         }
     }*/
 
-    public static void index() {
+    public static void index(Long category, Long product) {
         List<Product> products;
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
             if (user != null) {
-                List<Long> categories = new ArrayList<Long>(user.categories.size());
-                for (Category category : user.categories) {
-                    categories.add(category.getId());
+                if (category == null && product == null) {
+                    List<Long> categories = new ArrayList<Long>(user.categories.size());
+                    for (Category c : user.categories) {
+                        categories.add(c.getId());
+                    }
+                    List<Long> parents = new ArrayList<Long>(user.products.size());
+                    for (Product p : user.products) {
+                        parents.add(p.getId());
+                    }
+                    String categoryCriteria = safeInlineParams("category.id in ", categories);
+                    String parentCriteria = safeInlineParams("parent.id in ", parents);
+                    String query = categoryCriteria + " or " + parentCriteria + " order by date desc";
+                    products = Product.find(query).fetch();
+                } else if (category  != null && product == null) {
+                    String categoryCriteria = "category.id = " + category;
+                    String query = categoryCriteria + " order by date desc";
+                    products = Product.find(query).fetch();
+                } else {
+                    String categoryCriteria = "parent.id = " + product;
+                    String query = categoryCriteria + " order by date desc";
+                    products = Product.find(query).fetch();
                 }
-                List<Long> parents = new ArrayList<Long>(user.products.size());
-                for (Product product : user.products) {
-                    parents.add(product.getId());
-                }
-                String categoryCriteria = safeInlineParams("category.id in ", categories);
-                String parentCriteria = safeInlineParams("parent is null or parent.id in ", parents);
-                String query = categoryCriteria + " or " + parentCriteria + " order by date desc";
-                products = Product.find(query).fetch();
-                render(products, user);
-            } else {
-                products = Product.find("order by date desc").fetch();
-                render(products);
-            }
-        } else {
-            products = Product.find("order by date desc").fetch();
-            render(products);
-        }
-    }
-
-    public static void category(Long id) {
-        List<Product> products;
-        if (Security.isConnected()) {
-            User user = User.find("byEmail", Security.connected()).first();
-            if (user != null) {
-                List<Long> categories = new ArrayList<Long>(user.categories.size());
-                for (Category category : user.categories) {
-                    categories.add(category.getId());
-                }
-                List<Long> parents = new ArrayList<Long>(user.products.size());
-                for (Product product : user.products) {
-                    parents.add(product.getId());
-                }
-                String categoryCriteria = "category.id = " + id;
-                String query = categoryCriteria + " order by date desc";
-                products = Product.find(query).fetch();
                 render(products, user);
             } else {
                 products = Product.find("order by date desc").fetch();

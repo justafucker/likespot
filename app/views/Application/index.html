@@ -30,7 +30,7 @@
                     <small><strong>&{'all'}</strong></small>
                 </a></li>
                 #{list items:user.categories, as:'category'}
-                    <li><a href="@{Application.category(category.id)}">
+                    <li><a href="@{Application.index(category.id)}">
                         <small>${category}</small>
                     </a></li>
                 #{/list}
