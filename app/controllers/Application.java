@@ -49,10 +49,9 @@ public class Application extends Controller {
                 }
                 render(products, user);
             } else {
+                List<Category> categories = Category.all().fetch();
                 if (c == null && p == null) {
                     products = Product.find("order by date desc").fetch();
-                    List<Category> categories = Category.all().fetch();
-                    render(products, categories);
                 } else if (c != null && p == null) {
                     String categoryCriteria = "category.id = " + c;
                     String query = categoryCriteria + " order by date desc";
@@ -62,12 +61,12 @@ public class Application extends Controller {
                     String query = categoryCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 }
+                render(products, categories);
             }
         } else {
             List<Category> categories = Category.all().fetch();
             if (c == null && p == null) {
                 products = Product.find("order by date desc").fetch();
-                render(products, categories);
             } else if (c != null && p == null) {
                 String categoryCriteria = "category.id = " + c;
                 String query = categoryCriteria + " order by date desc";
