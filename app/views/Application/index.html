@@ -28,11 +28,19 @@
             #{if !user.categories.isEmpty()}
                 <ul class="unstyled">
                     <li><a href="@{Application.index()}">
-                        <small><strong>&{'all'}</strong></small>
+                        <small>
+                            #{if c == -1 }<strong>#{/if}
+                                &{'all'}
+                            #{if c == -1 }</strong>#{/if}
+                        </small>
                     </a></li>
                     #{list items:user.categories, as:'category'}
                     <li><a href="@{Application.index(category.id)}">
-                            <small>${category}</small>
+                            <small>
+                                #{if c > 0 && c == category.id }<strong>#{/if}
+                                    ${category}
+                                #{if c > 0 && c == category.id }</strong>#{/if}
+                            </small>
                         </a></li>
                     #{/list}
                 </ul>
@@ -44,16 +52,24 @@
             #{/else}
         #{/if}
         #{else}
-            <ul class="unstyled">
-                <li><a href="@{Application.index()}">
-                    <small><strong>&{'all'}</strong></small>
-                </a></li>
-                #{list items:categories, as:'category'}
-                    <li><a href="@{Application.index(category.id)}">
-                        <small>${category}</small>
+            <p>
+                <ul class="unstyled">
+                    <li><a href="@{Application.index()}">
+                        <small>
+                            #{if c == -1 }<strong>#{/if}
+                               &{'all'}
+                            #{if c == -1 }</strong>#{/if}
+                        </small>
                     </a></li>
-                #{/list}
-            </ul>
+                    #{list items:categories, as:'category'}
+                        <li><a href="@{Application.index(category.id)}">
+                            #{if c > 0 && c == category.id }<strong>#{/if}
+                                <small>${category}</small>
+                            #{if c > 0 && c == category.id }</strong>#{/if}
+                        </a></li>
+                    #{/list}
+                </ul>
+            </p>
         #{/else}
         </p>
     </div>

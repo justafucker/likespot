@@ -21,6 +21,7 @@ public class Application extends Controller {
     }*/
 
     public static void index(Long c, Long p) {
+        renderArgs.put("c", c != null ? c : -1); // Override c
         List<Product> products;
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
