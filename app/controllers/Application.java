@@ -37,15 +37,15 @@ public class Application extends Controller {
                     }
                     String categoryCriteria = safeInlineParams("category.id in ", categories);
                     String parentCriteria = safeInlineParams("parent.id in ", parents);
-                    String query = categoryCriteria + " or " + parentCriteria + " order by date desc";
+                    String query = "(draft is null or draft is false) and " + categoryCriteria + " or " + parentCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 } else if (c != null && p == null) {
                     String categoryCriteria = "category.id = " + c;
-                    String query = categoryCriteria + " order by date desc";
+                    String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 } else {
                     String categoryCriteria = "parent.id = " + p;
-                    String query = categoryCriteria + " order by date desc";
+                    String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 }
                 render(products, user);
@@ -55,11 +55,11 @@ public class Application extends Controller {
                     products = Product.find("order by date desc").fetch();
                 } else if (c != null && p == null) {
                     String categoryCriteria = "category.id = " + c;
-                    String query = categoryCriteria + " order by date desc";
+                    String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 } else {
                     String categoryCriteria = "parent.id = " + p;
-                    String query = categoryCriteria + " order by date desc";
+                    String query = "(draft is null or draft is false and) " + categoryCriteria + " order by date desc";
                     products = Product.find(query).fetch();
                 }
                 render(products, categories);
@@ -70,11 +70,11 @@ public class Application extends Controller {
                 products = Product.find("order by date desc").fetch();
             } else if (c != null && p == null) {
                 String categoryCriteria = "category.id = " + c;
-                String query = categoryCriteria + " order by date desc";
+                String query = "hidden is null or hidden is false " + categoryCriteria + " order by date desc";
                 products = Product.find(query).fetch();
             } else {
                 String categoryCriteria = "parent.id = " + p;
-                String query = categoryCriteria + " order by date desc";
+                String query = "hidden is null or hidden is false " + categoryCriteria + " order by date desc";
                 products = Product.find(query).fetch();
 
             }

@@ -3,13 +3,11 @@ package models;
 import org.hibernate.annotations.Type;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
-import play.db.jpa.Blob;
 import play.db.jpa.Model;
 import play.modules.s3blobs.S3Blob;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class Product extends Model {
@@ -35,6 +33,8 @@ public class Product extends Model {
 
     @ManyToOne
     private Category category;
+
+    private Boolean draft;
 
     public String getTitle() {
         return title;
@@ -90,6 +90,14 @@ public class Product extends Model {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Boolean getDraft() {
+        return draft;
+    }
+
+    public void setDraft(Boolean draft) {
+        this.draft = draft;
     }
 
     @Override

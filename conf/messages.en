@@ -9,6 +9,7 @@ date = Date
 description = Description
 photo = Photo
 url = URL
+draft = Do not Publish
 
 email = Email
 password = Password
