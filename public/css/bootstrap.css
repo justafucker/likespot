@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
 /*!
  * Bootstrap v2.1.1
  *
@@ -4192,11 +4194,12 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar .brand {
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
   display: block;
   float: left;
   padding: 10px 20px 10px;
   margin-left: -20px;
-  font-size: 20px;
   font-weight: 200;
   color: #777777;
   text-shadow: 0 1px 0 #ffffff;
@@ -4560,7 +4563,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse {
-  color: #999999;
+  color: #eeeeee;
 }
 
 .navbar-inverse .navbar-inner {
@@ -4577,7 +4580,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
-  color: #999999;
+  color: #eeeeee;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
