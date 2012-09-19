@@ -1,18 +1,23 @@
 #{extends 'main.html' /}
 #{set title:'Likespot' /}
 
-<h3 xmlns="http://www.w3.org/1999/html">&{'timeline'}</h3>
-<div class="row">
-    <div class="span6">
+<div class="row" xmlns="http://www.w3.org/1999/html">
+    <div class="span8">
     #{if !products.isEmpty()}
-        <table style="border-top:1px solid rgb(232, 232, 232);
-                width: 100%;
-                border-right:1px solid rgb(232, 232, 232);
-                border-left:1px solid rgb(232, 232, 232);">
+        <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px; background-color: white;">
+            <table style="width: 100%; cursor: pointer;">
+            <tr>
+                <td colspan="2" style="padding-left: 15px;">
+                    <h4 xmlns="http://www.w3.org/1999/html">&{'timeline'}</h4>
+                </td>
+            </tr>
             #{list items:products, as:'product'}
-                    #{display product:product /}
-                #{/list}
-        </table>
+                #{display product:product /}
+            #{/list}
+        </table></div>
     #{/if}
     #{else}
         <div class="empty">
@@ -20,57 +25,62 @@
         </div>
     #{/else}
     </div>
-    <div class="span6">
-        <span>&{'categories'}</span>
-        #{if user != null}
-            · <small><a href="@{Users.show(user.id)}" class="small">&{'edit'}</a></small>
-            <p>
-            #{if !user.categories.isEmpty()}
-                <ul class="unstyled">
-                    <li><a href="@{Application.index()}">
-                        <small>
-                            #{if c == -1 }<strong>#{/if}
-                                &{'all'}
-                            #{if c == -1 }</strong>#{/if}
-                        </small>
-                    </a></li>
-                    #{list items:user.categories, as:'category'}
-                    <li><a href="@{Application.index(category.id)}">
+    <div class="span4">
+        <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px; padding: 10px 15px;">
+            <span>&{'categories'}</span>
+            #{if user != null}
+                · <small><a href="@{Users.show(user.id)}" class="small">&{'edit'}</a></small>
+                <p>
+                #{if !user.categories.isEmpty()}
+                    <ul class="unstyled">
+                        <li><a href="@{Application.index()}">
                             <small>
-                                #{if c > 0 && c == category.id }<strong>#{/if}
-                                    ${category}
-                                #{if c > 0 && c == category.id }</strong>#{/if}
+                                #{if c == -1 }<strong>#{/if}
+                                    &{'all'}
+                                #{if c == -1 }</strong>#{/if}
                             </small>
                         </a></li>
-                    #{/list}
-                </ul>
+                        #{list items:user.categories, as:'category'}
+                        <li><a href="@{Application.index(category.id)}">
+                                <small>
+                                    #{if c > 0 && c == category.id }<strong>#{/if}
+                                        ${category}
+                                    #{if c > 0 && c == category.id }</strong>#{/if}
+                                </small>
+                            </a></li>
+                        #{/list}
+                    </ul>
+                #{/if}
+                #{else}
+                    <div class="muted">
+                        <small>&{'notSelected'}</small>
+                    </div>
+                #{/else}
+                </p>
             #{/if}
             #{else}
-                <div class="muted">
-                    <small>&{'notSelected'}</small>
-                </div>
-            #{/else}
-        #{/if}
-        #{else}
-            <p>
-                <ul class="unstyled">
-                    <li><a href="@{Application.index()}">
-                        <small>
-                            #{if c == -1 }<strong>#{/if}
-                               &{'all'}
-                            #{if c == -1 }</strong>#{/if}
-                        </small>
-                    </a></li>
-                    #{list items:categories, as:'category'}
-                        <li><a href="@{Application.index(category.id)}">
-                            #{if c > 0 && c == category.id }<strong>#{/if}
-                                <small>${category}</small>
-                            #{if c > 0 && c == category.id }</strong>#{/if}
+                <p>
+                    <ul class="unstyled">
+                        <li><a href="@{Application.index()}">
+                            <small>
+                                #{if c == -1 }<strong>#{/if}
+                                   &{'all'}
+                                #{if c == -1 }</strong>#{/if}
+                            </small>
                         </a></li>
-                    #{/list}
-                </ul>
-            </p>
-        #{/else}
-        </p>
+                        #{list items:categories, as:'category'}
+                            <li><a href="@{Application.index(category.id)}">
+                                #{if c > 0 && c == category.id }<strong>#{/if}
+                                    <small>${category}</small>
+                                #{if c > 0 && c == category.id }</strong>#{/if}
+                            </a></li>
+                        #{/list}
+                    </ul>
+                </p>
+            #{/else}
+        </div>
     </div>
 </div>

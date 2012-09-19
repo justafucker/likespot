@@ -1,11 +1,11 @@
-<tr>
-    <td style="padding: 10px; border-bottom:1px solid rgb(232, 232, 232); width: 80px;">
-        <img src="@{productPhoto(_product.id)}" class="img-rounded" width="80px">
+<tr class="hovered-item">
+    <td style="padding: 14px; border-top:1px solid rgb(232, 232, 232); width: 65px; vertical-align: top;">
+        <img src="@{productPhoto(_product.id)}" class="img-rounded" style="width:65px">
     </td>
-    <td style="border-bottom:1px solid rgb(232, 232, 232); width: 10px;">
+    *{<td style="border-bottom:1px solid rgb(232, 232, 232); width: 10px;">
         &nbsp;
-    </td>
-    <td valign="top" style="padding: 10px 10px 10px 0; border-bottom:1px solid rgb(232, 232, 232);">
+    </td>}*
+    <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);">
         <strong>${_product.title}</strong>
         <small href="#" class="muted">${_product?.category}</small>
         <small href="#" class="muted">${_product?.parent}</small>
