@@ -76,11 +76,11 @@ public class Application extends Controller {
                 products = Product.find("order by date desc").fetch();
             } else if (c != null && p == null) {
                 String categoryCriteria = "category.id = " + c;
-                String query = "draft is null or draft is false and " + categoryCriteria + " order by date desc";
+                String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
                 products = Product.find(query).fetch();
             } else {
                 String categoryCriteria = "parent.id = " + p;
-                String query = "draft is null or draft is false and " + categoryCriteria + " order by date desc";
+                String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
                 products = Product.find(query).fetch();
 
             }
