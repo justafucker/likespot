@@ -101,8 +101,6 @@ public class Application extends Controller {
                 contentType = product.getPhoto().type();
                 Cache.set("product_photo_type" + id, contentType);
             }
-        } else {
-            Logger.info("Received S3Blob type from cache for Product ID: %s", id);
         }
         if (contentType != null) {
             response.setContentTypeIfNotSet(contentType);
@@ -118,8 +116,6 @@ public class Application extends Controller {
                 buffer.flush();
                 bytes =  buffer.toByteArray();
                 Cache.set("product_photo_bytes_" + id, bytes);
-            } else {
-                Logger.info("Received S3Blob bytes from cache for Product ID: %s", id);
             }
             renderBinary(new ByteArrayInputStream(bytes));
         }
