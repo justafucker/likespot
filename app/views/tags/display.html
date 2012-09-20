@@ -8,17 +8,14 @@
     <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);">
         <strong>${_product.title}</strong>
 
-        <a href="@{index(_product.category.id)}" class="muted"><small>${_product.category}</small></a>
+        #{if _product.category}
+            <a href="@{index(_product.category.id)}" class="muted"><small>${_product.category}</small></a>
+        #{/if}
 
         <small href="#" class="muted">${_product?.parent}</small>
         <p>
         ${_product.description.nl2br()}
         </p>
-        #{if _product.id == 2}
-            <p>
-                <a href="${_product.url}">Сайт</a>
-            </p>
-        #{/if}
         <small class="muted">${_product.date?.format('dd, MMMM yyyy')}</small>
     </td>
 </tr>
