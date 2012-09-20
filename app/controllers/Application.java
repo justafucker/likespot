@@ -3,9 +3,14 @@ package controllers;
 import models.Category;
 import models.Product;
 import models.User;
+import play.Logger;
+import play.cache.Cache;
+import play.cache.CacheFor;
 import play.db.helper.SqlQuery;
 import play.mvc.Controller;
+import sun.security.krb5.internal.ccache.CCacheInputStream;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,12 +92,36 @@ public class Application extends Controller {
         return !params.isEmpty() ? prefix + SqlQuery.inlineParam(params) : "1 <> 1";
     }
 
-    public static void productPhoto(long id) {
+    public static void productPhoto(long id) throws IOException {
         final Product product = Product.findById(id);
         notFoundIfNull(product);
-        if (product.getPhoto().exists()) {
-            response.setContentTypeIfNotSet(product.getPhoto().type());
-            renderBinary(product.getPhoto().get());
+        String contentType = Cache.get("product_photo_type" + id, String.class);
+        if (contentType == null) {
+            if (product.getPhoto().exists()) {
+                contentType = product.getPhoto().type();
+                Cache.set("product_photo_type" + id, contentType);
+            }
+        } else {
+            Logger.info("Received S3Blob type from cache for Product ID: %s", id);
+        }
+        if (contentType != null) {
+            response.setContentTypeIfNotSet(contentType);
+            byte[] bytes = (byte[]) Cache.get("product_photo_bytes_" + id);
+            if (bytes == null)  {
+                ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+                InputStream is = product.getPhoto().get();
+                int nRead;
+                byte[] data = new byte[16384];
+                while ((nRead = is.read(data, 0, data.length)) != -1) {
+                    buffer.write(data, 0, nRead);
+                }
+                buffer.flush();
+                bytes =  buffer.toByteArray();
+                Cache.set("product_photo_bytes_" + id, bytes);
+            } else {
+                Logger.info("Received S3Blob bytes from cache for Product ID: %s", id);
+            }
+            renderBinary(new ByteArrayInputStream(bytes));
         }
     }
 
