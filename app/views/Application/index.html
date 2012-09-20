@@ -11,7 +11,14 @@
             <table style="width: 100%; cursor: pointer;">
             <tr>
                 <td colspan="2" style="padding-left: 15px;">
-                    <h4 xmlns="http://www.w3.org/1999/html">&{'timeline'}</h4>
+                    <h4 xmlns="http://www.w3.org/1999/html">
+                        #{if selectedCategory}
+                            ${selectedCategory.title}
+                        #{/if}
+                        #{else}
+                            &{'timeline'}
+                        #{/else}
+                    </h4>
                 </td>
             </tr>
             #{list items:products, as:'product'}
