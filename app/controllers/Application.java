@@ -45,7 +45,7 @@ public class Application extends Controller {
                     }
                     String categoryCriteria = safeInlineParams("category.id in ", categories);
                     String parentCriteria = safeInlineParams("parent.id in ", parents);
-                    String query = "(draft is null or draft is false) and " + categoryCriteria + " or " + parentCriteria + " order by date desc";
+                    String query = "(draft is null or draft is false) and (" + categoryCriteria + " or " + parentCriteria + ") order by date desc";
                     products = Product.find(query).fetch();
                 } else if (c != null && p == null) {
                     String categoryCriteria = "category.id = " + c;
@@ -60,7 +60,7 @@ public class Application extends Controller {
             } else {
                 List<Category> categories = Category.all().fetch();
                 if (c == null && p == null) {
-                    products = Product.find("order by date desc").fetch();
+                    products = Product.find("draft is null or draft is false order by date desc").fetch();
                 } else if (c != null && p == null) {
                     String categoryCriteria = "category.id = " + c;
                     String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
@@ -75,7 +75,7 @@ public class Application extends Controller {
         } else {
             List<Category> categories = Category.all().fetch();
             if (c == null && p == null) {
-                products = Product.find("order by date desc").fetch();
+                products = Product.find("draft is null or draft is false order by date desc").fetch();
             } else if (c != null && p == null) {
                 String categoryCriteria = "category.id = " + c;
                 String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
@@ -84,7 +84,6 @@ public class Application extends Controller {
                 String categoryCriteria = "parent.id = " + p;
                 String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
                 products = Product.find(query).fetch();
-
             }
             render(products, categories);
         }
