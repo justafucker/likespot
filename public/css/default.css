@@ -1,3 +1,59 @@
 .hovered-item:hover {
     background-color: #fcfdfd;
 }
+
+.ico-button {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-top;
+    line-height: 14px;
+    display: inline-block;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+    padding: 5px;
+    background-position: 5px;
+    background-repeat: no-repeat;
+}
+
+.ico-home {
+    background-image: url(/public/images/home-gray.ico);
+}
+
+.ico-home:hover {
+    background-image: url(/public/images/home-default.ico);
+}
+
+.ico-facebook {
+    background-image: url(/public/images/facebook-gray.ico);
+}
+
+.ico-facebook:hover {
+    background-image: url(/public/images/facebook-default.ico);
+}
+
+.ico-youtube {
+    background-image: url(/public/images/youtube-gray.ico);
+}
+
+.ico-youtube:hover {
+    background-image: url(/public/images/youtube-default.ico);
+}
+
+.ico-myspace {
+    background-image: url(/public/images/myspace-gray.ico);
+}
+
+.ico-myspace:hover {
+    background-image: url(/public/images/myspace-default.ico);
+}
+
+.ico-afisha {
+    background-image: url(/public/images/afisha-gray.ico);
+}
+
+.ico-afisha:hover {
+    background-image: url(/public/images/afisha-default.ico);
+}

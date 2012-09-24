@@ -8,8 +8,8 @@ category = Category
 date = Date
 description = Description
 photo = Photo
-url = URL
-draft = Do not Publish
+url = Official Website
+draft = Is Draft
 
 email = Email
 password = Password

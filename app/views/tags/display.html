@@ -5,7 +5,7 @@
     *{<td style="border-bottom:1px solid rgb(232, 232, 232); width: 10px;">
         &nbsp;
     </td>}*
-    <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);">
+    <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);" onclick="$('#product_buttons_${_product.id}').animate({opacity: 'toggle', height: 'toggle'}, 500, function() {}); ">
         <strong>${_product.title}</strong>
 
         #{if _product.category}
@@ -18,6 +18,17 @@
         <p>
         ${_product.description.nl2br()}
         </p>
+        #{if _product.url}
+        <div id="product_buttons_${_product.id}" style=" display: none;">
+            <p>
+                <a href="${_product.url}" target="_blank" class="ico-button ico-home" title="&{'url'}"></a>
+                *{<i class="ico-button ico-facebook" title="Facebook"></i>}*
+                *{<i class="ico-button ico-youtube" title="YouTube"></i>}*
+                *{<i class="ico-button ico-afisha" title="Афиша"></i>}*
+                *{<i class="ico-button ico-myspace" title="MySpace"></i>}*
+            </p>
+        </div>
+        #{/if}
         <small class="muted">${_product.date?.format('dd, MMMM yyyy')}</small>
     </td>
 </tr>
