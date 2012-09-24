@@ -19,41 +19,41 @@
 }
 
 .ico-home {
-    background-image: url(/public/images/home-gray.ico);
-}
-
-.ico-home:hover {
     background-image: url(/public/images/home-default.ico);
 }
 
-.ico-facebook {
-    background-image: url(/public/images/facebook-gray.ico);
+.ico-home:hover {
+    background-image: url(/public/images/home.ico);
 }
 
-.ico-facebook:hover {
+.ico-facebook {
     background-image: url(/public/images/facebook-default.ico);
 }
 
-.ico-youtube {
-    background-image: url(/public/images/youtube-gray.ico);
+.ico-facebook:hover {
+    background-image: url(/public/images/facebook.ico);
 }
 
-.ico-youtube:hover {
+.ico-youtube {
     background-image: url(/public/images/youtube-default.ico);
 }
 
-.ico-myspace {
-    background-image: url(/public/images/myspace-gray.ico);
+.ico-youtube:hover {
+    background-image: url(/public/images/youtube.ico);
 }
 
-.ico-myspace:hover {
+.ico-myspace {
     background-image: url(/public/images/myspace-default.ico);
 }
 
+.ico-myspace:hover {
+    background-image: url(/public/images/myspace.ico);
+}
+
 .ico-afisha {
-    background-image: url(/public/images/afisha-gray.ico);
+    background-image: url(/public/images/afisha-default.ico);
 }
 
 .ico-afisha:hover {
-    background-image: url(/public/images/afisha-default.ico);
+    background-image: url(/public/images/afisha.ico);
 }

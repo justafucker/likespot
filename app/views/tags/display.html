@@ -5,7 +5,8 @@
     *{<td style="border-bottom:1px solid rgb(232, 232, 232); width: 10px;">
         &nbsp;
     </td>}*
-    <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);" onclick="$('#product_buttons_${_product.id}').animate({opacity: 'toggle', height: 'toggle'}, 500, function() {}); ">
+    <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);"
+        onclick="$('#product_buttons_${_product.id}').animate({opacity: 'toggle', height: 'toggle'}, 500, function() {}); ">
         <strong>${_product.title}</strong>
 
         #{if _product.category}
@@ -18,14 +19,14 @@
         <p>
         ${_product.description.nl2br()}
         </p>
-        #{if _product.url}
+        #{if _product.url || _product.facebook || _product.youTube || _product.afisha}
         <div id="product_buttons_${_product.id}" style=" display: none;">
             <p>
-                <a href="${_product.url}" target="_blank" class="ico-button ico-home" title="&{'url'}"></a>
-                *{<i class="ico-button ico-facebook" title="Facebook"></i>}*
-                *{<i class="ico-button ico-youtube" title="YouTube"></i>}*
-                *{<i class="ico-button ico-afisha" title="Афиша"></i>}*
-                *{<i class="ico-button ico-myspace" title="MySpace"></i>}*
+                #{if _product.url} <a href="${_product.url}" target="_blank" class="ico-button ico-home" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
+                #{if _product.facebook} <a href="${_product.facebook}" target="_blank" class="ico-button ico-facebook" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
+                *{#{if _product.myspace} <a href="${_product.myspace}" target="_blank" class="ico-button ico-myspace" title="&{'myspace'}" onclick="event.stopPropagation();"></a> #{/if}}*
+                #{if _product.youTube} <a href="${_product.youTube}" target="_blank" class="ico-button ico-youtube" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
+                #{if _product.afisha} <a href="${_product.afisha}" target="_blank" class="ico-button ico-afisha" title="&{'afisha'}" onclick="event.stopPropagation();"></a> #{/if}
             </p>
         </div>
         #{/if}

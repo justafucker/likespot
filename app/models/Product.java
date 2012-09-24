@@ -26,13 +26,19 @@ public class Product extends Model {
     @Required
     public S3Blob photo;
 
-    private String url;
-
     @ManyToOne
     private Product parent;
 
     @ManyToOne
     private Category category;
+
+    private String url;
+
+    private String youTube;
+
+    private String facebook;
+
+    private String afisha;
 
     private Boolean draft;
 
@@ -74,6 +80,30 @@ public class Product extends Model {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getYouTube() {
+        return youTube;
+    }
+
+    public void setYouTube(String youTube) {
+        this.youTube = youTube;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getAfisha() {
+        return afisha;
+    }
+
+    public void setAfisha(String afisha) {
+        this.afisha = afisha;
     }
 
     public Product getParent() {
