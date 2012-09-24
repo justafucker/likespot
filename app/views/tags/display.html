@@ -12,7 +12,9 @@
             <a href="@{index(_product.category.id)}" class="muted"><small>${_product.category}</small></a>
         #{/if}
 
-        <small href="#" class="muted">${_product?.parent}</small>
+        #{if _product.parent}
+            <a href="@{index(null, _product.parent.id)}" class="muted"><small>${_product.parent}</small></a>
+        #{/if}
         <p>
         ${_product.description.nl2br()}
         </p>

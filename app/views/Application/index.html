@@ -15,6 +15,9 @@
                         #{if selectedCategory}
                             ${selectedCategory.title}
                         #{/if}
+                        #{elseif selectedProduct}
+                            ${selectedProduct.title}
+                        #{/elseif}
                         #{else}
                             &{'timeline'}
                         #{/else}
