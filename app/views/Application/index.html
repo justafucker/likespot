@@ -90,9 +90,9 @@
                     <ul class="unstyled">
                         <li><a href="@{Application.index()}">
                             <small>
-                                #{if c == -1 }<strong>#{/if}
+                                #{if c == -1 && p == -1 }<strong>#{/if}
                                     &{'all'}
-                                #{if c == -1 }</strong>#{/if}
+                                #{if c == -1 && p == -1 }</strong>#{/if}
                             </small>
                         </a></li>
                         #{list items:user.categories, as:'category'}
@@ -118,9 +118,9 @@
                     <ul class="unstyled">
                         <li><a href="@{Application.index()}">
                             <small>
-                                #{if c == -1 }<strong>#{/if}
+                                #{if c == -1 && p == -1 }<strong>#{/if}
                                    &{'all'}
-                                #{if c == -1 }</strong>#{/if}
+                                #{if c == -1 && p == -1 }</strong>#{/if}
                             </small>
                         </a></li>
                         #{list items:categories, as:'category'}
@@ -149,7 +149,9 @@
                     #{list items:user.products, as:'product'}
                         <li><a href="@{Application.index(null, product.id)}">
                             <small>
-                                ${product}
+                                #{if p > 0 && p == product.id }<strong>#{/if}
+                            ${product}
+                                #{if p > 0 && p == product.id }</strong>#{/if}
                             </small>
                         </a></li>
                     #{/list}

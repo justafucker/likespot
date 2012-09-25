@@ -7,7 +7,8 @@
     </td>}*
     <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);"
         onclick="if (window['previous_product_buttons'] != '#product_buttons_${_product.id}') { if (window['previous_product_buttons']) { $(window['previous_product_buttons']).animate({opacity: 'hide', height: 'hide'}, 500, function() {}); }  $('#product_buttons_${_product.id}').animate({opacity: 'show', height: 'show'}, 500, function() {}); window['previous_product_buttons'] = '#product_buttons_${_product.id}' } else { $('#product_buttons_${_product.id}').animate({opacity: 'hide', height: 'hide'}, 500, function() {}); window['previous_product_buttons'] = null }">
-        <strong>${_product.title}</strong>
+
+        <a href="@{index(null, _product.id)}" style="color: black;"><strong>${_product.title}</strong></a>
 
         #{if _product.category}
             <a href="@{index(_product.category.id)}" class="muted" onclick="event.stopPropagation();"><small>${_product.category}</small></a>
