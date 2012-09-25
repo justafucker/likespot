@@ -63,12 +63,12 @@ span[toggled_button~=true] .product_text_buttons {
     background-image: url(/public/images/youtube.ico);
 }
 
-.ico-myspace {
-    background-image: url(/public/images/myspace-default.ico);
+.ico-lastfm {
+    background-image: url(/public/images/lastfm-default.ico);
 }
 
-.ico-myspace:hover {
-    background-image: url(/public/images/myspace.ico);
+.ico-lastfm:hover {
+    background-image: url(/public/images/lastfm.ico);
 }
 
 .ico-afisha {

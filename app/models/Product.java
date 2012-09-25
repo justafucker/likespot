@@ -40,6 +40,8 @@ public class Product extends Model {
 
     private String afisha;
 
+    private String lastFM;
+
     private Boolean draft;
 
     public String getTitle() {
@@ -104,6 +106,14 @@ public class Product extends Model {
 
     public void setAfisha(String afisha) {
         this.afisha = afisha;
+    }
+
+    public String getLastFM() {
+        return lastFM;
+    }
+
+    public void setLastFM(String lastFM) {
+        this.lastFM = lastFM;
     }
 
     public Product getParent() {
