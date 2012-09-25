@@ -2,6 +2,22 @@
     background-color: #fcfefe;
 }
 
+span[toggled_button~=true] .product_text_buttons {
+    opacity: 1;
+}
+
+.hovered-item .product_text_buttons {
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease-out;
+    -moz-transition: opacity 300ms ease-out;
+    -o-transition: opacity 300ms ease-out;
+    transition: opacity 300ms ease-out;
+}
+
+.hovered-item:hover .product_text_buttons {
+    opacity: 1;
+}
+
 .ico-button {
     width: 16px;
     height: 16px;

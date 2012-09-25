@@ -6,7 +6,7 @@
         &nbsp;
     </td>}*
     <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);"
-        onclick="if (window['previous_product_buttons'] != '#product_buttons_${_product.id}') { if (window['previous_product_buttons']) { $(window['previous_product_buttons']).animate({opacity: 'hide', height: 'hide'}, 500, function() {}); }  $('#product_buttons_${_product.id}').animate({opacity: 'show', height: 'show'}, 500, function() {}); window['previous_product_buttons'] = '#product_buttons_${_product.id}' } else { $('#product_buttons_${_product.id}').animate({opacity: 'hide', height: 'hide'}, 500, function() {}); window['previous_product_buttons'] = null }">
+        onclick="toggleProduct(${_product.id})">
 
         <a href="@{index(null, _product.id)}" style="color: black;"><strong>${_product.title}</strong></a>
 
@@ -32,5 +32,18 @@
         </div>
         #{/if}
         <small class="muted">${_product.date?.format('dd, MMMM yyyy')}</small>
+        #{if _user != null}
+            &nbsp;
+            <span id="product_text_buttons_${_product.id}">
+                <small>
+                    <a id="like_button_${_product.id}" href="#" class="product_text_buttons" onclick="
+                            toggleLike(${_product.id});
+                            event.stopPropagation();"
+                       like="#{if _user.products.contains(_product)}true#{/if}#{else}false#{/else}">
+                    #{if _user.products.contains(_product)}&{'dislike'}#{/if}#{else}&{'like'}#{/else}
+                </a>
+                </small>
+            </span>
+        #{/if}
     </td>
 </tr>

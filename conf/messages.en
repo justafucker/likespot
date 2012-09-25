@@ -19,7 +19,11 @@ password = Password
 fullname = Full Name
 isAdmin = Is Admin
 categories = Categories
-products = Products
+products = Prodâucts
+
+like = Like
+dislike = You like it
+
 
 empty = There is currently no any events.
 timeline = Timeline

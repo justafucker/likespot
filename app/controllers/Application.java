@@ -93,6 +93,19 @@ public class Application extends Controller {
         return !params.isEmpty() ? prefix + SqlQuery.inlineParam(params) : "1 <> 1";
     }
 
+    public static void toggleLike(long id) {
+        if (Security.isConnected()) {
+            User user = User.find("byEmail", Security.connected()).first();
+            Product product = Product.findById(id);
+            if (!user.products.contains(product)) {
+                user.products.add(product);
+            } else {
+                user.products.remove(product);
+            }
+            user.save();
+        }
+    }
+
     public static void productPhoto(long id) throws IOException {
         final Product product = Product.findById(id);
         notFoundIfNull(product);
