@@ -55,6 +55,14 @@ span[toggled_button~=true] .product_text_buttons {
     background-image: url(/public/images/facebook.ico);
 }
 
+.ico-vk {
+    background-image: url(/public/images/vk-default.ico);
+}
+
+.ico-vk:hover {
+    background-image: url(/public/images/vk.ico);
+}
+
 .ico-twitter {
     background-image: url(/public/images/twitter-default.ico);
 }

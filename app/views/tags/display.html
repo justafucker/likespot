@@ -20,12 +20,13 @@
         <p>
         ${_product.description.nl2br()}
         </p>
-        #{if _product.url || _product.facebook || _product.youTube || _product.afisha || _product.lastFM}
+        #{if _product.url || _product.twitter || _product.facebook || _product.vk || _product.youTube || _product.afisha || _product.lastFM}
         <div id="product_buttons_${_product.id}" style=" display: none;">
             <p>
                 #{if _product.url} <a href="${_product.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.twitter} <a href="${_product.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.facebook} <a href="${_product.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
+                #{if _product.vk} <a href="${_product.vk}" target="_blank" class="ico-button ico-vk title_hint" title="&{'vk'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.youTube} <a href="${_product.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.lastFM} <a href="${_product.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.afisha} <a href="${_product.afisha}" target="_blank" class="ico-button ico-afisha title_hint" title="&{'afisha'}" onclick="event.stopPropagation();"></a> #{/if}

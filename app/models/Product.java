@@ -38,6 +38,8 @@ public class Product extends Model {
 
     private String facebook;
 
+    private String vk;
+
     private String youTube;
 
     private String afisha;
@@ -108,6 +110,14 @@ public class Product extends Model {
 
     public void setFacebook(String facebook) {
         this.facebook = facebook;
+    }
+
+    public String getVk() {
+        return vk;
+    }
+
+    public void setVk(String vk) {
+        this.vk = vk;
     }
 
     public String getAfisha() {
