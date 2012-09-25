@@ -67,6 +67,19 @@
                             </div>
                         #{/if}
                         <small class="muted">${selectedProduct.date?.format('dd, MMMM yyyy')}</small>
+                        #{if user != null}
+                            &nbsp;
+                            <span>
+                                <small>
+                                    <a id="like_button_${selectedProduct.id}" href="#" class="product_text_buttons" onclick="
+                                            toggleLike(${selectedProduct.id});
+                                            event.stopPropagation();"
+                                       like="#{if user.products.contains(selectedProduct)}true#{/if}#{else}false#{/else}">
+                                        #{if user.products.contains(selectedProduct)}&{'dislike'}#{/if}#{else}&{'like'}#{/else}
+                                    </a>
+                                </small>
+                            </span>
+                        #{/if}
                     </td>
                 </tr>
             </table>
