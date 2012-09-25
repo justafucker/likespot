@@ -3,37 +3,79 @@
 
 <div class="row" xmlns="http://www.w3.org/1999/html">
     <div class="span8">
-    #{if !products.isEmpty()}
+        #{if selectedProduct}
+            <div style="border:1px solid #efdfcc; -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -khtml-border-radius: 5px;
+                    border-radius: 5px; background-color: #fffffa;">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="padding: 14px; width: 65px; vertical-align: top;">
+                        <img src="@{productPhoto(selectedProduct.id)}" class="img-rounded" style="width:65px">
+                    </td>
+                    <td valign="top" style="padding: 10px 10px 10px 0;">
+                        <strong>${selectedProduct.title}</strong>
+
+                        #{if selectedProduct.category}
+                            <a href="@{index(selectedProduct.category.id)}" class="muted"><small>${selectedProduct.category}</small></a>
+                        #{/if}
+
+                        #{if selectedProduct.parent}
+                            <a href="@{index(null, selectedProduct.parent.id)}" class="muted"><small>${selectedProduct.parent}</small></a>
+                        #{/if}
+                        <p>
+                        ${selectedProduct.description.nl2br()}
+                        </p>
+                        #{if selectedProduct.url || selectedProduct.facebook || selectedProduct.youTube || selectedProduct.afisha}
+                            <div>
+                                <p>
+                                    #{if selectedProduct.url} <a href="${selectedProduct.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
+                                    #{if selectedProduct.facebook} <a href="${selectedProduct.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
+                                *{#{if selectedProduct.myspace} <a href="${selectedProduct.myspace}" target="_blank" class="ico-button ico-myspace title_hint" title="&{'myspace'}" onclick="event.stopPropagation();"></a> #{/if}}*
+                                    #{if selectedProduct.youTube} <a href="${selectedProduct.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
+                                    #{if selectedProduct.afisha} <a href="${selectedProduct.afisha}" target="_blank" class="ico-button ico-afisha title_hint" title="&{'afisha'}" onclick="event.stopPropagation();"></a> #{/if}
+                                </p>
+                            </div>
+                        #{/if}
+                        <small class="muted">${selectedProduct.date?.format('dd, MMMM yyyy')}</small>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <br/>
+        #{/if}
         <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
                 -webkit-border-radius: 5px;
                 -khtml-border-radius: 5px;
                 border-radius: 5px; background-color: white;">
             <table style="width: 100%; cursor: pointer;">
-            <tr>
-                <td colspan="2" style="padding: 0 15px;">
-                    <h4 xmlns="http://www.w3.org/1999/html">
-                        #{if selectedCategory}
-                            ${selectedCategory.title}
-                        #{/if}
-                        #{elseif selectedProduct}
-                            ${selectedProduct.title}
-                        #{/elseif}
-                        #{else}
-                            &{'timeline'}
-                        #{/else}
-                    </h4>
-                </td>
-            </tr>
-            #{list items:products, as:'product'}
-                #{display product:product /}
-            #{/list}
-        </table></div>
-    #{/if}
-    #{else}
-        <div class="empty">
-        &{'empty'}
+                <tr>
+                    <td colspan="2" style="padding: 0 15px;">
+                        <h4>
+                            #{if selectedCategory}
+                                ${selectedCategory.title}
+                            #{/if}
+                            #{elseif selectedProduct}
+                                &{'timeline'}
+                            #{/elseif}
+                            #{else}
+                                &{'timeline'}
+                            #{/else}
+                        </h4>
+                    </td>
+                </tr>
+                #{list items:products, as:'product'}
+                    #{display product:product /}
+                #{/list}
+                #{if products.isEmpty()}
+                    <tr class="hovered-item">
+                        <td colspan="2" style="padding: 14px; border-top:1px solid rgb(232, 232, 232); width: 65px; vertical-align: top;">
+                            &{'empty'}
+                        </td>
+                    </tr>
+                #{/if}
+            </table>
         </div>
-    #{/else}
     </div>
     <div class="span4">
         <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
@@ -92,5 +134,34 @@
                 </p>
             #{/else}
         </div>
+    #{if user != null}
+        <br/>
+        <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px; padding: 10px 15px;">
+            <span>&{'products'}</span>
+            ·
+            <small><a href="@{Users.show(user.id)}" class="small">&{'edit'}</a></small>
+        <p>
+            #{if !user.products.isEmpty()}
+                <ul class="unstyled">
+                    #{list items:user.products, as:'product'}
+                        <li><a href="@{Application.index(null, product.id)}">
+                            <small>
+                                ${product}
+                            </small>
+                        </a></li>
+                    #{/list}
+                </ul>
+            #{/if}
+            #{else}
+                <div class="muted">
+                    <small>&{'notSelected'}</small>
+                </div>
+            #{/else}
+            </p>
+        </div>
+    #{/if}
     </div>
 </div>
