@@ -4150,6 +4150,9 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 20px;
   overflow: visible;
   color: #777777;
+  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+  -moz-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+  box-shadow: 0 2px 3px rgba(0,0,0,.25);
 }
 
 .navbar-inner {
