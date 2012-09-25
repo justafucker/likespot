@@ -17,16 +17,27 @@
         }
     }
 
-    function toggleLike(id) {
+    function toggleLike(id, title, href, selected) {
         var toggleLikeF = #{jsAction @toggleLike(':id') /};
         $.post(toggleLikeF({ id: id}), function(data) {
             if ($('#like_button_' + id).attr('like') == 'true') {
                 $('#like_button_' + id).attr('like', 'false');
                 $('#like_button_' + id).html("&{'like'}");
+                $('#user_product_' + id).remove();
             } else {
                 $('#like_button_' + id).attr('like', 'true');
                 $('#like_button_' + id).html("&{'dislike'}");
+                if (selected) {
+                    $('#user_products').append("<li id='user_product_" + id +"'>" +
+                            "<a href='" + href + "'><small><strong>" + title + "</strong></small></a></li>");
+                } else {
+                    $('#user_products').append("<li id='user_product_" + id +"'>" +
+                            "<a href='" + href + "'><small>" + title + "</small></a></li>");
+                }
             }
+            $('#no_user_products').css({ display :
+                    $(('#user_products')).children().length > 0 ? "none" : "block"
+            });
         });
     }
 </script>
@@ -72,7 +83,8 @@
                             <span>
                                 <small>
                                     <a id="like_button_${selectedProduct.id}" href="#" class="product_text_buttons" onclick="
-                                            toggleLike(${selectedProduct.id});
+                                            toggleLike(${selectedProduct.id}, '${selectedProduct.title}',
+                                                '@{index(null, selectedProduct.id)}', true);
                                             event.stopPropagation();"
                                        like="#{if user.products.contains(selectedProduct)}true#{/if}#{else}false#{/else}">
                                         #{if user.products.contains(selectedProduct)}&{'dislike'}#{/if}#{else}&{'like'}#{/else}
@@ -185,11 +197,10 @@
             <span>&{'products'}</span>
             ·
             <small><a href="@{Users.show(user.id)}" class="small">&{'edit'}</a></small>
-        <p>
-            #{if !user.products.isEmpty()}
-                <ul class="unstyled">
+            <p>
+                <ul id="user_products" class="unstyled">
                     #{list items:user.products, as:'product'}
-                        <li><a href="@{Application.index(null, product.id)}">
+                        <li id="user_product_${product.id}"><a href="@{Application.index(null, product.id)}">
                             <small>
                                 #{if p > 0 && p == product.id }<strong>#{/if}
                             ${product}
@@ -198,12 +209,9 @@
                         </a></li>
                     #{/list}
                 </ul>
-            #{/if}
-            #{else}
-                <div class="muted">
+                <div id="no_user_products" class="muted" style="display:#{if !user.products.isEmpty()}none#{/if}#{else}block#{/else}">
                     <small>&{'notSelected'}</small>
                 </div>
-            #{/else}
             </p>
         </div>
     #{/if}
