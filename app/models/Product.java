@@ -34,9 +34,11 @@ public class Product extends Model {
 
     private String url;
 
-    private String youTube;
+    private String twitter;
 
     private String facebook;
+
+    private String youTube;
 
     private String afisha;
 
@@ -90,6 +92,14 @@ public class Product extends Model {
 
     public void setYouTube(String youTube) {
         this.youTube = youTube;
+    }
+
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
     }
 
     public String getFacebook() {

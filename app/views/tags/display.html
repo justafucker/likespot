@@ -24,6 +24,7 @@
         <div id="product_buttons_${_product.id}" style=" display: none;">
             <p>
                 #{if _product.url} <a href="${_product.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
+                #{if _product.twitter} <a href="${_product.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.facebook} <a href="${_product.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.youTube} <a href="${_product.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.lastFM} <a href="${_product.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}

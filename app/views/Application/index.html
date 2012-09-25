@@ -74,6 +74,7 @@
                             <div>
                                 <p>
                                     #{if selectedProduct.url} <a href="${selectedProduct.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
+                                    #{if selectedProduct.twitter} <a href="${selectedProduct.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.facebook} <a href="${selectedProduct.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.youTube} <a href="${selectedProduct.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.lastFM} <a href="${selectedProduct.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
