@@ -42,9 +42,11 @@ public class Product extends Model {
 
     private String youTube;
 
-    private String afisha;
-
     private String lastFM;
+
+    private String cloudsound;
+
+    private String afisha;
 
     private Boolean draft;
 
@@ -110,6 +112,14 @@ public class Product extends Model {
 
     public void setFacebook(String facebook) {
         this.facebook = facebook;
+    }
+
+    public String getCloudsound() {
+        return cloudsound;
+    }
+
+    public void setCloudsound(String cloudsound) {
+        this.cloudsound = cloudsound;
     }
 
     public String getVk() {
