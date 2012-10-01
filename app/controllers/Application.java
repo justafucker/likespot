@@ -7,6 +7,7 @@ import com.google.gson.JsonSerializer;
 import models.Category;
 import models.Product;
 import models.User;
+import play.Logger;
 import play.cache.Cache;
 import play.db.helper.SqlQuery;
 import play.i18n.Lang;
@@ -45,6 +46,7 @@ public class Application extends Controller {
     }
 
     private static List<Product> getProducts(User user, Long c, Long p, int page) {
+        Logger.info("getProducts( c: " + c + "; p: " + p + "; page: " + page);
         if (user != null && (c == null || c == -1) && (p == null || p == -1)) {
             List<Long> categories = new ArrayList<Long>(user.categories.size());
             for (Category category : user.categories) {
