@@ -67,7 +67,9 @@ public class Application extends Controller {
             String query = IS_NOT_DRAFT_CRITERIA + " and parent.id = " + p + " order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else {
-            return Product.find("draft is null or draft is false order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+            List<Product> products = Product.find("draft is null or draft is false order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+            Logger.info(products.toString());
+            return products;
         }
     }
 
