@@ -56,16 +56,16 @@ public class Application extends Controller {
             }
             String categoryCriteria = safeInlineParams("category.id in ", categories);
             String parentCriteria = safeInlineParams("parent.id in ", parents);
-            String query = IS_NOT_DRAFT_CRITERIA + " and (" + categoryCriteria + " or " + parentCriteria + ") order by date desc";
+            String query = IS_NOT_DRAFT_CRITERIA + " and (" + categoryCriteria + " or " + parentCriteria + ") order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else if (c != null && c != -1) {
-            String query = IS_NOT_DRAFT_CRITERIA + " and category.id = " + c + " order by date desc";
+            String query = IS_NOT_DRAFT_CRITERIA + " and category.id = " + c + " order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else if (p != null && p != -1) {
-            String query = IS_NOT_DRAFT_CRITERIA + " and parent.id = " + p + " order by date desc";
+            String query = IS_NOT_DRAFT_CRITERIA + " and parent.id = " + p + " order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else {
-            return Product.find("draft is null or draft is false order by date desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+            return Product.find("draft is null or draft is false order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         }
     }
 
