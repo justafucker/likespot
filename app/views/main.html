@@ -8,6 +8,7 @@
         <style>
             body {
                 padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+                padding-bottom: 50px;
             }
         </style>
         <link href="@{'/public/css/bootstrap.css'}" rel="stylesheet">
@@ -20,6 +21,83 @@
         <script src="@{'/public/js/jquery-1.8.1.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/js/bootstrap.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
+
+        <script type="text/javascript">
+            function nl2br(str, is_xhtml) {
+                var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+                return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+            }
+            var currentPage = 0;
+            var requestingNextPage = false;
+            var noMoreResults = false;
+            var selectedProductId = #{if selectedProduct}${selectedProduct.id}#{/if}#{else}-1#{/else};
+            var userProducts = ${userProducts};
+            $(function(){
+                $(window).scroll(function(){
+                    if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 50 && !noMoreResults) {
+                        var listAction = #{jsAction @Application.getProducts(null, null, ':page') /};
+                        $.getJSON(
+                            "/application/getproducts?c=-1&p=-1&page=" + (currentPage + 1),
+                            function(data) {
+                                currentPage++;
+                                for (var i = 0; i < data.length; i++) {
+                                    $("#products_table").append(
+                                            "<tr class='hovered-item'>" +
+                                                    "<td style='padding: 14px; border-top:1px solid rgb(232, 232, 232); width: 65px; vertical-align: top;'>" +
+                                                    "<img src='http://localhost:9000/application/productphoto?id=" + data[i].id + "'" +
+                                                    " class='img-rounded' style='width:65px'>" +
+                                                    "</td>" +
+                                                    "<td valign='top' style='padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);'" +
+                                                    " onclick='toggleProduct(" + data[i].id + ")'>" +
+                                                    "<a href='/?p=" + data[i].id + "' style='color: black;' onclick='event.stopPropagation();'><strong>" + data[i].title + "</strong></a>" +
+                                                    (data[i].category ? " <a href='/?c=" + data[i].category.id + "' class='muted' onclick='event.stopPropagation();'><small>" + data[i].category.title + "</small></a>" : "") +
+                                                    (data[i].parent ? " <a href='/?p=" + data[i].parent.id + "' class='muted' onclick='event.stopPropagation();'><small>" + data[i].parent.title + "</small></a>" : "") +
+                                                    "<p>" + nl2br(data[i].description) + "</p>" +
+                                                    ((data[i].url || data[i].twitter || data[i].facebook || data[i].vk || data[i].youTube ||
+                                                            data[i].afisha || data[i].lastFM || data[i].cloudsound) ?
+                                                            "<div id='product_buttons_" + data[i].id + "' style='display: none;'><p> " +
+                                                                    (data[i].url ? "<a href='" + data[i].url + "' target='_blank' class='ico-button ico-home title_hint' title='" +
+                                                                            data[i].url + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].twitter ? "<a href='" + data[i].twitter + "' target='_blank' class='ico-button ico-twitter title_hint' title='" +
+                                                                            data[i].twitter + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].facebook ? "<a href='" + data[i].facebook + "' target='_blank' class='ico-button ico-facebook title_hint' title='" +
+                                                                            data[i].facebook + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].vk ? "<a href='" + data[i].vk + "' target='_blank' class='ico-button ico-vk title_hint' title='" +
+                                                                            data[i].vk + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].youTube ? "<a href='" + data[i].youTube + "' target='_blank' class='ico-button ico-youtube title_hint' title='" +
+                                                                            data[i].youTube + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].afisha ? "<a href='" + data[i].afisha + "' target='_blank' class='ico-button ico-afisha title_hint' title='" +
+                                                                            data[i].afisha + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].lastFM ? "<a href='" + data[i].lastFM + "' target='_blank' class='ico-button ico-lastfm title_hint' title='" +
+                                                                            data[i].lastFM + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].cloudsound ? "<a href='" + data[i].cloudsound + "' target='_blank' class='ico-button ico-cloudsound title_hint' title='" +
+                                                                            data[i].cloudsound + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    "</p></div>" : "") +
+                                                    "<small class='muted'>" + data[i].date + "</small>" +
+                                                    #{if user != null}
+                                                    "&nbsp;&nbsp;" +
+                                                    "<span id='product_text_buttons_" + data[i].id + "'>" +
+                                                    "<small><a id='like_button_" + data[i].id + "' href='#' class='product_text_buttons slow_title_hint'" +
+                                                    " onclick=\"toggleLike(" + data[i].id + ", '" + data[i].title + "', '/?p=" + data[i].id + "'," +
+                                                    " selectedProductId == " + data[i].id + " ? true : false); event.stopPropagation(); return false;\" " +
+                                                    " like=\"" + ($.inArray(data[i].id, userProducts) != -1 ? "true" : "false") + "\" " +
+                                                    " title=\"" + ($.inArray(data[i].id, userProducts) != -1 ? "&{'unsubscribe'}" : "&{'subscribe'}") + "\">" +
+                                                    ($.inArray(data[i].id, userProducts) != -1 ? "&{'dislike'}" : "&{'like'}") +
+                                                    "</a></small></span>" +
+                                                    #{/if}
+                                                    "</td>" +
+                                                    "</tr>");
+                                }
+                                requestingNextPage = false;
+                                noMoreResults = data.length == 0;
+                                $('.title_hint').tooltip({placement: 'bottom'});
+                                $('.slow_title_hint').tooltip({placement: 'bottom', delay: 1000});
+                            }
+                        )
+                    }
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">

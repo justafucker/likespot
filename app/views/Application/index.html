@@ -84,7 +84,7 @@
                                 </p>
                             </div>
                         #{/if}
-                        <small class="muted">${selectedProduct.date?.format('dd, MMMM yyyy')}</small>
+                        <small class="muted">${selectedProduct.date?.format('d, MMMM yyyy')}</small>
                         #{if user != null}
                             &nbsp;
                             <span>
@@ -110,7 +110,7 @@
                 -webkit-border-radius: 5px;
                 -khtml-border-radius: 5px;
                 border-radius: 5px; background-color: white;">
-            <table style="width: 100%; cursor: pointer;">
+            <table id="products_table" style="width: 100%; cursor: pointer;">
                 <tr>
                     <td colspan="2" style="padding: 0 15px;">
                         <h4>

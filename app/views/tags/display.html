@@ -8,7 +8,7 @@
     <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);"
         onclick="toggleProduct(${_product.id})">
 
-        <a href="@{index(null, _product.id)}" style="color: black;"><strong>${_product.title}</strong></a>
+        <a href="@{index(null, _product.id)}" style="color: black;" onclick="event.stopPropagation();"><strong>${_product.title}</strong></a>
 
         #{if _product.category}
             <a href="@{index(_product.category.id)}" class="muted" onclick="event.stopPropagation();"><small>${_product.category}</small></a>
@@ -34,7 +34,7 @@
             </p>
         </div>
         #{/if}
-        <small class="muted">${_product.date?.format('dd, MMMM yyyy')}</small>
+        <small class="muted">${_product.date?.format('d, MMMM yyyy')}</small>
         #{if _user != null}
             &nbsp;
             <span id="product_text_buttons_${_product.id}">

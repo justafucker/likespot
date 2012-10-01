@@ -1,90 +1,91 @@
 package controllers;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 import models.Category;
 import models.Product;
 import models.User;
-import play.Logger;
 import play.cache.Cache;
-import play.cache.CacheFor;
 import play.db.helper.SqlQuery;
+import play.i18n.Lang;
 import play.mvc.Controller;
-import sun.security.krb5.internal.ccache.CCacheInputStream;
 
 import java.io.*;
+import java.lang.reflect.Type;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Application extends Controller {
-    /*@Before
-    static void setConnectedUser() {
-        if(Security.isConnected()) {
-            User user = User.find("byEmail", Security.connected()).first();
-            if (user != null) {
-                renderArgs.put("user", user.fullname);
-            }
+    public static final int PAGE_SIZE = 15;
+    private static final String IS_NOT_DRAFT_CRITERIA = "(draft is null or draft is false)";
+
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("d, MMMM yyyy", new Locale(Lang.get()));
+    private static final JsonSerializer<Timestamp> JSON_TIMESTAMP_SERIALIZER = new JsonSerializer<Timestamp>() {
+        public JsonElement serialize(Timestamp date, Type type, JsonSerializationContext jsonSerializationContext) {
+            String dateFormatAsString = DATE_FORMAT.format(date);
+            return new JsonPrimitive(dateFormatAsString);
         }
-    }*/
+    };
+
+    public static void getProducts(Long c, Long p, int page) {
+        if (Security.isConnected()) {
+            User user = User.find("byEmail", Security.connected()).first();
+            List<Product> products = getProducts(user, c, p, page);
+            renderJSON(products, JSON_TIMESTAMP_SERIALIZER);
+        } else {
+            List<Product> products = getProducts(null, c, p, page);
+            System.out.println(products);
+            renderJSON(products, JSON_TIMESTAMP_SERIALIZER);
+        }
+    }
+
+    private static List<Product> getProducts(User user, Long c, Long p, int page) {
+        if (user != null && (c == null || c == -1) && (p == null || p == -1)) {
+            List<Long> categories = new ArrayList<Long>(user.categories.size());
+            for (Category category : user.categories) {
+                categories.add(category.getId());
+            }
+            List<Long> parents = new ArrayList<Long>(user.products.size());
+            for (Product product : user.products) {
+                parents.add(product.getId());
+            }
+            String categoryCriteria = safeInlineParams("category.id in ", categories);
+            String parentCriteria = safeInlineParams("parent.id in ", parents);
+            String query = IS_NOT_DRAFT_CRITERIA + " and (" + categoryCriteria + " or " + parentCriteria + ") order by date desc";
+            return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+        } else if (c != null && c != -1) {
+            String query = IS_NOT_DRAFT_CRITERIA + " and category.id = " + c + " order by date desc";
+            return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+        } else if (p != null && p != -1) {
+            String query = IS_NOT_DRAFT_CRITERIA + " and parent.id = " + p + " order by date desc";
+            return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+        } else {
+            return Product.find("draft is null or draft is false order by date desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+        }
+    }
 
     public static void index(Long c, Long p) {
         renderArgs.put("c", c != null ? c : -1); // Override c
-        renderArgs.put("p", p != null ? p : -1); // Override c
+        renderArgs.put("p", p != null ? p : -1); // Override p
         renderArgs.put("selectedCategory", c != null ? Category.findById(c) : null);
         renderArgs.put("selectedProduct", p != null ? Product.findById(p) : null);
-        List<Product> products;
-        if (Security.isConnected()) {
-            User user = User.find("byEmail", Security.connected()).first();
-            if (user != null) {
-                if (c == null && p == null) {
-                    List<Long> categories = new ArrayList<Long>(user.categories.size());
-                    for (Category category : user.categories) {
-                        categories.add(category.getId());
-                    }
-                    List<Long> parents = new ArrayList<Long>(user.products.size());
-                    for (Product product : user.products) {
-                        parents.add(product.getId());
-                    }
-                    String categoryCriteria = safeInlineParams("category.id in ", categories);
-                    String parentCriteria = safeInlineParams("parent.id in ", parents);
-                    String query = "(draft is null or draft is false) and (" + categoryCriteria + " or " + parentCriteria + ") order by date desc";
-                    products = Product.find(query).fetch();
-                } else if (c != null && p == null) {
-                    String categoryCriteria = "category.id = " + c;
-                    String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
-                    products = Product.find(query).fetch();
-                } else {
-                    String categoryCriteria = "parent.id = " + p;
-                    String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
-                    products = Product.find(query).fetch();
-                }
-                render(products, user);
-            } else {
-                List<Category> categories = Category.all().fetch();
-                if (c == null && p == null) {
-                    products = Product.find("draft is null or draft is false order by date desc").fetch();
-                } else if (c != null && p == null) {
-                    String categoryCriteria = "category.id = " + c;
-                    String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
-                    products = Product.find(query).fetch();
-                } else {
-                    String categoryCriteria = "parent.id = " + p;
-                    String query = "(draft is null or draft is false and) " + categoryCriteria + " order by date desc";
-                    products = Product.find(query).fetch();
-                }
-                render(products, categories);
+        User user = Security.isConnected() ? (User) User.find("byEmail", Security.connected()).first() : null;
+        if (user != null) {List<Long> pp = new ArrayList<Long>(user.products.size());
+            for (Product product : user.products) {
+                pp.add(product.getId());
             }
+            renderArgs.put("userProducts", SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']'));
+            List<Product> products = getProducts(user, c, p, 0);
+            render(products, user);
         } else {
+            renderArgs.put("userProducts", "[]");
             List<Category> categories = Category.all().fetch();
-            if (c == null && p == null) {
-                products = Product.find("draft is null or draft is false order by date desc").fetch();
-            } else if (c != null && p == null) {
-                String categoryCriteria = "category.id = " + c;
-                String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
-                products = Product.find(query).fetch();
-            } else {
-                String categoryCriteria = "parent.id = " + p;
-                String query = "(draft is null or draft is false) and " + categoryCriteria + " order by date desc";
-                products = Product.find(query).fetch();
-            }
+            List<Product> products = getProducts(user, c, p, 0);
             render(products, categories);
         }
     }
