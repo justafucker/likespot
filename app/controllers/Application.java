@@ -40,7 +40,6 @@ public class Application extends Controller {
             renderJSON(products, JSON_TIMESTAMP_SERIALIZER);
         } else {
             List<Product> products = getProducts(null, c, p, page);
-            System.out.println(products);
             renderJSON(products, JSON_TIMESTAMP_SERIALIZER);
         }
     }
