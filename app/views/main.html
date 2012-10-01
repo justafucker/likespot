@@ -35,8 +35,9 @@
             var userProducts = ${userProducts};
             $(function(){
                 $(window).scroll(function(){
-                    if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 50 && !noMoreResults) {
+                    if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 50 && !noMoreResults && !requestingNextPage) {
                         var listAction = #{jsAction @Application.getProducts(null, null, ':page') /};
+                        requestingNextPage = true;
                         $.getJSON(
                             selectedCategoryId != -1 ?
                                     ("/application/getproducts?c=" + selectedCategoryId + "&p=-1&page=" + (currentPage + 1)) :
@@ -46,6 +47,7 @@
                             function(data) {
                                 currentPage++;
                                 for (var i = 0; i < data.length; i++) {
+                                    console.log(data[i].title);
                                     $("#products_table").append(
                                             "<tr class='hovered-item'>" +
                                                     "<td style='padding: 14px; border-top:1px solid rgb(232, 232, 232); width: 65px; vertical-align: top;'>" +
