@@ -35,7 +35,7 @@
             var userProducts = ${userProducts};
             $(function(){
                 $(window).scroll(function(){
-                    if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 50 && !noMoreResults && !requestingNextPage) {
+                    if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 100 && !noMoreResults && !requestingNextPage) {
                         var listAction = #{jsAction @Application.getProducts(null, null, ':page') /};
                         requestingNextPage = true;
                         $.getJSON(
