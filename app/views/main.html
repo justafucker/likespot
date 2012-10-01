@@ -61,22 +61,14 @@
                                                     ((data[i].url || data[i].twitter || data[i].facebook || data[i].vk || data[i].youTube ||
                                                             data[i].afisha || data[i].lastFM || data[i].cloudsound) ?
                                                             "<div id='product_buttons_" + data[i].id + "' style='display: none;'><p> " +
-                                                                    (data[i].url ? "<a href='" + data[i].url + "' target='_blank' class='ico-button ico-home title_hint' title='" +
-                                                                            data[i].url + "' onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].twitter ? "<a href='" + data[i].twitter + "' target='_blank' class='ico-button ico-twitter title_hint' title='" +
-                                                                            data[i].twitter + "' onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].facebook ? "<a href='" + data[i].facebook + "' target='_blank' class='ico-button ico-facebook title_hint' title='" +
-                                                                            data[i].facebook + "' onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].vk ? "<a href='" + data[i].vk + "' target='_blank' class='ico-button ico-vk title_hint' title='" +
-                                                                            data[i].vk + "' onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].youTube ? "<a href='" + data[i].youTube + "' target='_blank' class='ico-button ico-youtube title_hint' title='" +
-                                                                            data[i].youTube + "' onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].afisha ? "<a href='" + data[i].afisha + "' target='_blank' class='ico-button ico-afisha title_hint' title='" +
-                                                                            data[i].afisha + "' onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].lastFM ? "<a href='" + data[i].lastFM + "' target='_blank' class='ico-button ico-lastfm title_hint' title='" +
-                                                                            data[i].lastFM + "' onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].cloudsound ? "<a href='" + data[i].cloudsound + "' target='_blank' class='ico-button ico-cloudsound title_hint' title='" +
-                                                                            data[i].cloudsound + "' onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].url ? "<a href='" + data[i].url + "' target='_blank' class='ico-button ico-home title_hint' title=\"&{'url'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].twitter ? "<a href='" + data[i].twitter + "' target='_blank' class='ico-button ico-twitter title_hint' title=\"&{'twitter'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].facebook ? "<a href='" + data[i].facebook + "' target='_blank' class='ico-button ico-facebook title_hint' title=\"&{'facebook'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].vk ? "<a href='" + data[i].vk + "' target='_blank' class='ico-button ico-vk title_hint' title=\"&{'vk'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].youTube ? "<a href='" + data[i].youTube + "' target='_blank' class='ico-button ico-youtube title_hint' title=\"&{'youTube'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].afisha ? "<a href='" + data[i].afisha + "' target='_blank' class='ico-button ico-afisha title_hint' title=\"&{'afisha'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].lastFM ? "<a href='" + data[i].lastFM + "' target='_blank' class='ico-button ico-lastfm title_hint' title=\"&{'lastFM'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].cloudsound ? "<a href='" + data[i].cloudsound + "' target='_blank' class='ico-button ico-cloudsound title_hint' title=\"&{'cloudsound'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     "</p></div>" : "") +
                                                     "<small class='muted'>" + data[i].date + "</small>" +
                                                     #{if user != null}
