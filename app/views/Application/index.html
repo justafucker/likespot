@@ -5,7 +5,7 @@
         if (window['previous_product_buttons'] != id) {
             if (window['previous_product_buttons']) {
                 $('#product_buttons_' + window['previous_product_buttons']).animate({opacity:'hide', height:'hide'}, 500);
-                $('#product_text_buttons_' + id).removeAttr("toggled_button");
+                $('#product_text_buttons_' + window['previous_product_buttons']).removeAttr("toggled_button");
             }
             $('#product_buttons_' + id).animate({opacity:'show', height:'show'}, 500);
             $('#product_text_buttons_' + id).attr("toggled_button", true);
