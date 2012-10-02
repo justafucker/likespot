@@ -110,3 +110,11 @@ span[toggled_button~=true] .product_text_buttons {
 .ico-afisha:hover {
     background-image: url(/public/images/afisha.ico);
 }
+
+.ico-foursquare {
+    background-image: url(/public/images/map-default.ico);
+}
+
+.ico-foursquare:hover {
+    background-image: url(/public/images/map.png);
+}

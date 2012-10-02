@@ -14,6 +14,7 @@ facebook = Facebook
 twitter = Twitter
 vk = \u0412\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u0435
 afisha = \u0410\u0444\u0438\u0448\u0430
+foursquare = Foursquare
 review = \u0420\u0435\u0446\u0435\u043D\u0437\u0438\u044F
 lastFM = Last FM
 cloudsound = Cloudsound

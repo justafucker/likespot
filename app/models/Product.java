@@ -50,6 +50,8 @@ public class Product extends Model {
 
     private String review;
 
+    private String foursquare;
+
     private Boolean draft;
 
     public String getTitle() {
@@ -146,6 +148,14 @@ public class Product extends Model {
 
     public void setAfisha(String afisha) {
         this.afisha = afisha;
+    }
+
+    public String getFoursquare() {
+        return foursquare;
+    }
+
+    public void setFoursquare(String foursquare) {
+        this.foursquare = foursquare;
     }
 
     public String getLastFM() {
