@@ -48,6 +48,8 @@ public class Product extends Model {
 
     private String afisha;
 
+    private String review;
+
     private Boolean draft;
 
     public String getTitle() {
@@ -128,6 +130,14 @@ public class Product extends Model {
 
     public void setVk(String vk) {
         this.vk = vk;
+    }
+
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
     }
 
     public String getAfisha() {
