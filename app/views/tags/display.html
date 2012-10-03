@@ -20,7 +20,7 @@
         <p>
         ${_product.description.nl2br()}
         </p>
-        #{if _product.url || _product.twitter || _product.facebook || _product.vk || _product.youTube || _product.afisha || _product.lastFM || _product.cloudsound}
+        #{if _product.url || _product.twitter || _product.facebook || _product.vk || _product.youTube || _product.review || _product.afisha || _product.lastFM || _product.cloudsound || _product.foursquare}
         <div id="product_buttons_${_product.id}" style=" display: none;">
             <p>
                 #{if _product.url} <a href="${_product.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
@@ -30,7 +30,9 @@
                 #{if _product.youTube} <a href="${_product.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.lastFM} <a href="${_product.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.cloudsound} <a href="${_product.cloudsound}" target="_blank" class="ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a> #{/if}
+                #{if _product.review} <a href="${_product.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.afisha} <a href="${_product.afisha}" target="_blank" class="ico-button ico-afisha title_hint" title="&{'afisha'}" onclick="event.stopPropagation();"></a> #{/if}
+                #{if _product.foursquare} <a href="${_product.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
             </p>
         </div>
         #{/if}

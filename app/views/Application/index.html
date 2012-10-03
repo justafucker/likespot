@@ -1,5 +1,13 @@
 #{extends 'main.html' /}
-#{set title:'Likespot' /}
+#{if selectedProduct}
+    #{set title: selectedProduct.title /}
+#{/if}
+#{elseif selectedCategory}
+    #{set title: selectedCategory.title /}
+#{/elseif}
+#{else}
+    #{set title: messages.get("timeline") /}
+#{/else}
 <script type="text/javascript">
     function toggleProduct(id) {
         if (window['previous_product_buttons'] != id) {
@@ -70,7 +78,7 @@
                         <p>
                         ${selectedProduct.description.nl2br()}
                         </p>
-                        #{if selectedProduct.url || selectedProduct.twitter || selectedProduct.facebook || selectedProduct.vk || selectedProduct.youTube || selectedProduct.afisha || selectedProduct.lastFM || selectedProduct.cloudsound}
+                        #{if selectedProduct.url || selectedProduct.twitter || selectedProduct.facebook || selectedProduct.vk || selectedProduct.youTube || selectedProduct.review || selectedProduct.afisha || selectedProduct.lastFM || selectedProduct.cloudsound || selectedProduct.foursquare}
                             <div>
                                 <p>
                                     #{if selectedProduct.url} <a href="${selectedProduct.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
@@ -80,7 +88,9 @@
                                     #{if selectedProduct.youTube} <a href="${selectedProduct.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.lastFM} <a href="${selectedProduct.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.cloudsound} <a href="${selectedProduct.cloudsound}" target="_blank" class="ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a> #{/if}
+                                    #{if selectedProduct.review} <a href="${selectedProduct.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.afisha} <a href="${selectedProduct.afisha}" target="_blank" class="ico-button ico-afisha title_hint" title="&{'afisha'}" onclick="event.stopPropagation();"></a> #{/if}
+                                    #{if selectedProduct.foursquare} <a href="${selectedProduct.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
                                 </p>
                             </div>
                         #{/if}

@@ -95,10 +95,26 @@ span[toggled_button~=true] .product_text_buttons {
     background-image: url(/public/images/cloudsound.ico);
 }
 
+.ico-review {
+    background-image: url(/public/images/review-default.ico);
+}
+
+.ico-review:hover {
+    background-image: url(/public/images/review.ico);
+}
+
 .ico-afisha {
     background-image: url(/public/images/afisha-default.ico);
 }
 
 .ico-afisha:hover {
     background-image: url(/public/images/afisha.ico);
+}
+
+.ico-foursquare {
+    background-image: url(/public/images/map-default.ico);
+}
+
+.ico-foursquare:hover {
+    background-image: url(/public/images/map.png);
 }
