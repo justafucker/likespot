@@ -78,7 +78,8 @@ public class Application extends Controller {
             for (Product product : user.products) {
                 pp.add(product.getId());
             }
-            renderArgs.put("userProducts", SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']'));
+            renderArgs.put("userProducts", !pp.isEmpty() ?
+                    SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']') : "[]");
             List<Product> products = getProducts(user, c, p, 0);
             render(products, user);
         } else {
