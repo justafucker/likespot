@@ -35,7 +35,7 @@ public class Products extends CRUD {
         SimpleEmail email = new SimpleEmail();
         email.addTo(user.email);
         email.setFrom("noreply@likespot.ru", "Likespot");
-        email.setSubject("Project in a category you moderate has been updated");
+        email.setSubject("Product in a category you moderate has been updated");
         email.setCharset("UTF-8");
         Mail.send(email.setMsg("Product " + product.getTitle() + "\n" + product.getDescription()));
     }
