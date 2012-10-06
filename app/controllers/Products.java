@@ -53,6 +53,8 @@ public class Products extends CRUD {
         Product product = Product.findById(Long.parseLong(id));
         notFoundIfNull(product);
         Category category = product.getCategory();
+        if (category == null && product.getParent() != null)
+            category = product.getParent().getCategory();
         if (category != null) {
             List<User> moderators = category.getModerators();
             if (moderators == null && category.getParent() != null)
