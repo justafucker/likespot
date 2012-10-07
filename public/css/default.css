@@ -103,12 +103,12 @@ span[toggled_button~=true] .product_text_buttons {
     background-image: url(/public/images/review.ico);
 }
 
-.ico-afisha {
-    background-image: url(/public/images/afisha-default.ico);
+.ico-store {
+    background-image: url(/public/images/store-default.ico);
 }
 
-.ico-afisha:hover {
-    background-image: url(/public/images/afisha.ico);
+.ico-store:hover {
+    background-image: url(/public/images/store.ico);
 }
 
 .ico-foursquare {

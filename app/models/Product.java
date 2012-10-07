@@ -46,7 +46,7 @@ public class Product extends Model {
 
     private String cloudsound;
 
-    private String afisha;
+    private String store;
 
     private String review;
 
@@ -142,12 +142,12 @@ public class Product extends Model {
         this.review = review;
     }
 
-    public String getAfisha() {
-        return afisha;
+    public String getStore() {
+        return store;
     }
 
-    public void setAfisha(String afisha) {
-        this.afisha = afisha;
+    public void setStore(String store) {
+        this.store = store;
     }
 
     public String getFoursquare() {
