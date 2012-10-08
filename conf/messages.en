@@ -28,6 +28,7 @@ categories = Categories
 products = Products
 users = Users
 author = Author
+moderators = Moderators
 
 like = Like
 dislike = You like it
