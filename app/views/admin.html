@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title: messages.get("admin") /}
+
+*{<div id="main">
+    <ul id="adminMenu">
+        <li class="${request.controller == 'Admin' ? 'selected' : ''}">
+            <a href="@{Admin.index()}">My posts</a>
+        </li>
+    #{secure.check 'admin'}
+        <li class="${request.controller == 'Products' ? 'selected' : ''}">
+            <a href="@{Products.list()}">&{'products'}</a>
+        </li>
+        <li class="${request.controller == 'Categories' ? 'selected' : ''}">
+            <a href="@{Categories.list()}">&{'categories'}</a>
+        </li>
+        <li class="${request.controller == 'Users' ? 'selected' : ''}">
+            <a href="@{Users.list()}">&{'users'}</a>
+        </li>
+    #{/secure.check}
+    </ul>
+</div>}*
+
+#{doLayout /}

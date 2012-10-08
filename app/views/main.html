@@ -100,6 +100,11 @@
         </script>
     </head>
     <body>
+        %{
+            if (controllers.Security.isConnected()) {
+                user = models.User.find("byEmail", controllers.Security.connected()).first();
+            }
+        }%
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner"  style="background-image: url(@{'/public/img/twitter_web_sprite_bgs.png'});
                     background-repeat: repeat-x; ">
@@ -107,11 +112,15 @@
                     <a class="brand" href="/">Likespot</a>
                     <ul class="nav pull-right">
                         #{if session.username }
+                            <li><a href="@{Products.blank()}">&{'crud.add'}</a></li>
                             <li class="dropdown">
                                 <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
                                     ${user.fullname} <b class="caret"></b></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-                                    <li><a tabindex="-1" href="@{CRUD.index()}">&{'admin'}</a></li>
+                                    <li><a tabindex="-1" href="@{Products.list(null, null, null, null, 'DESC')}">&{'Products'}</a></li>
+                                    <li class="divider"></li>
+                                    <li><a tabindex="-1" href="@{Categories.list()}">&{'Categories'}</a></li>
+                                    <li><a tabindex="-1" href="@{Users.list()}">&{'Users'}</a></li>
                                     <li class="divider"></li>
                                     <li><a tabindex="-1" href="@{Secure.logout()}">&{'signOut'}</a></li>
                                 </ul>

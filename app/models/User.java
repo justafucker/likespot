@@ -29,7 +29,7 @@ public class User extends Model {
 
     @Override
     public String toString() {
-        return email;
+        return fullname;
     }
 
     public static User connect(String email, String password) {

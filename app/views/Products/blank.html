@@ -1,0 +1,35 @@
+#{extends 'CRUD/layout.html' /}
+#{set title:messages.get('crud.blank.title', type.modelName) /}
+
+<div id="crudBlank" class="${type.name}">
+
+    <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px; background-color: white;">
+        <table style="width: 100%;">
+            <tr>
+                <td style="padding: 0 15px;">
+                    <h4 id="crudBlankTitle">&{'crud.blank.title'}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 15px; border-top:1px solid rgb(232, 232, 232);">
+
+                    <div class="objectForm">
+                    #{form action:@create(), enctype:'multipart/form-data'}
+                        #{crud.form /}
+                        <p class="crudButtons">
+                            <input type="submit" name="_save" value="&{'crud.save', type.modelName}" class="btn btn-primary"/>
+                            *{<input type="submit" name="_saveAndContinue"}*
+                                   *{value="&{'crud.saveAndContinue', type.modelName}" class="btn"/>}*
+                            *{<input type="submit" name="_saveAndAddAnother"}*
+                                   *{value="&{'crud.saveAndAddAnother', type.modelName}" class="btn"/>}*
+                        </p>
+                    #{/form}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

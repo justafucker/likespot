@@ -25,7 +25,9 @@ password = Password
 fullname = Full Name
 isAdmin = Is Admin
 categories = Categories
-products = Prodâucts
+products = Products
+users = Users
+author = Author
 
 like = Like
 dislike = You like it
@@ -42,3 +44,10 @@ signOut = Sign Out
 signIn = Sign In
 
 admin = Administration
+
+crud.show.title=Edit
+crud.blank.title=Add
+crud.add=Add
+crud.delete=Delete
+crud.save=Save
+crud.list.size=%d records

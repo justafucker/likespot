@@ -1,0 +1,38 @@
+#{extends 'CRUD/layout.html' /}
+#{set title:messages.get('crud.list.title', type.name) /}
+
+<div id="crudList" class="${type.name}">
+    <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px; background-color: white;">
+        <table style="width: 100%;">
+            <tr>
+                <td style="padding: 0 15px;">
+                    <h4 id="crudListTitle">&{type.name}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 15px; border-top:1px solid rgb(232, 232, 232); background-color: #fсfсfс;">
+                    <a href="@{blank()}" class="btn btn-primary"
+                       style="float: right;">&{'crud.add'}</a>
+                #{crud.search /}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0; border-top:1px solid rgb(232, 232, 232);">
+                    <div id="crudListTable">
+                        #{crud.table fields:['title'] /}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 0 10px 15px; border-top:1px solid rgb(232, 232, 232);">
+                    <div id="crudListPagination">
+                    #{crud.pagination /}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

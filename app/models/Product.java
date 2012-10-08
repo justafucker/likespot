@@ -32,6 +32,10 @@ public class Product extends Model {
     @ManyToOne
     private Category category;
 
+    @Required
+    @ManyToOne
+    private User author;
+
     private String url;
 
     private String twitter;
@@ -188,6 +192,14 @@ public class Product extends Model {
 
     public void setDraft(Boolean draft) {
         this.draft = draft;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     @Override

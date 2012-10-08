@@ -14,6 +14,8 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+# Administration
+GET     /admin/?                                Admin.index
 # Import CRUD routes
 *      /admin                                   module:crud
 
