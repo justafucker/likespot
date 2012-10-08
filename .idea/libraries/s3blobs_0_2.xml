@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="s3blobs-0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/modules/s3blobs-0.2/lib/aws-java-sdk-1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/s3blobs-0.2/lib/httpclient-4.2-alpha1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/s3blobs-0.2/lib/httpcore-4.2-alpha2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/s3blobs-0.2/lib/jackson-core-asl-1.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/s3blobs-0.2/lib/play-s3blobs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/s3blobs-0.2/lib/stax-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modules/s3blobs-0.2/lib/stax-api-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
