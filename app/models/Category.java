@@ -4,7 +4,9 @@ import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import java.util.List;
 
 @Entity
 public class Category extends Model {
@@ -13,6 +15,9 @@ public class Category extends Model {
 
     @ManyToOne
     private Category parent;
+
+    @ManyToMany
+    private List<User> moderators;
 
     public String getTitle() {
         return title;
@@ -28,6 +33,14 @@ public class Category extends Model {
 
     public void setParent(Category parent) {
         this.parent = parent;
+    }
+
+    public List<User> getModerators() {
+        return moderators;
+    }
+
+    public void setModerators(List<User> moderators) {
+        this.moderators = moderators;
     }
 
     @Override
