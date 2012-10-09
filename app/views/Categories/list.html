@@ -22,7 +22,15 @@
             <tr>
                 <td style="padding: 0; border-top:1px solid rgb(232, 232, 232);">
                     <div id="crudListTable">
-                        #{crud.table fields:['title'] /}
+                        #{crud.table fields:['title', 'moderators']}
+                            #{crud.custom 'moderators'}
+                                #{list items:object.moderators, as:'moderator'}
+                                    <a href="@{Users.show(moderator.id)}">
+                                        ${moderator.fullname}
+                                    </a>
+                                #{/list}
+                            #{/crud.custom}
+                        #{/crud.table}
                     </div>
                 </td>
             </tr>

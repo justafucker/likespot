@@ -8,6 +8,7 @@ import play.modules.s3blobs.S3Blob;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Product extends Model {
@@ -16,7 +17,7 @@ public class Product extends Model {
 
     @Lob
     @Required
-    @MaxSize(10000)
+    @MaxSize(130)
     @Type(type = "org.hibernate.type.TextType")
     private String description;
 
@@ -57,6 +58,9 @@ public class Product extends Model {
     private String foursquare;
 
     private Boolean draft;
+
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "parent")
+    public List<Product> children;
 
     public String getTitle() {
         return title;

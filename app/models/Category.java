@@ -3,9 +3,7 @@ package models;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -18,6 +16,12 @@ public class Category extends Model {
 
     @ManyToMany
     private List<User> moderators;
+
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "parent")
+    public List<Category> children;
+
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "category")
+    public List<Product> products;
 
     public String getTitle() {
         return title;

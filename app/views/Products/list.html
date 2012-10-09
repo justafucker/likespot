@@ -26,6 +26,14 @@
                             #{crud.custom 'date'}
                                 <span class="muted">${ object.date?.format('d, MMMM yyyy')}</span>
                             #{/crud.custom}
+
+                            #{crud.custom 'author'}
+                                #{if object.author }
+                                    <a href="@{Users.show(object.author.id)}">
+                                        ${object.author}
+                                    </a>
+                                #{/if}
+                            #{/crud.custom}
                         #{/crud.table}
                     </div>
                 </td>
