@@ -1,10 +1,8 @@
 package controllers;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
+import com.google.gson.*;
 import models.Category;
+import models.NoJSON;
 import models.Product;
 import models.User;
 import play.cache.Cache;
@@ -31,15 +29,30 @@ public class Application extends Controller {
             return new JsonPrimitive(dateFormatAsString);
         }
     };
+    private static final Gson GSON = new GsonBuilder().
+            registerTypeAdapter(Timestamp.class, JSON_TIMESTAMP_SERIALIZER).
+            setExclusionStrategies(new ExclusionStrategy() {
+                public boolean shouldSkipField(FieldAttributes fieldAttributes) {
+                    /**
+                     * This is a temporary solution.
+                     */
+                    return fieldAttributes.getAnnotation(NoJSON.class) != null;
+                }
+
+                public boolean shouldSkipClass(Class<?> aClass) {
+                    return false;
+                }
+            }).
+            create();
 
     public static void getProducts(Long c, Long p, int page) {
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
             List<Product> products = getProducts(user, c, p, page);
-            renderJSON(products, JSON_TIMESTAMP_SERIALIZER);
+            renderJSON(GSON.toJson(products));
         } else {
             List<Product> products = getProducts(null, c, p, page);
-            renderJSON(products, JSON_TIMESTAMP_SERIALIZER);
+            renderJSON(GSON.toJson(products));
         }
     }
 
@@ -78,7 +91,7 @@ public class Application extends Controller {
             for (Product product : user.products) {
                 pp.add(product.getId());
             }
-            renderArgs.put("userProducts", SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']'));
+            renderArgs.put("userProducts", !pp.isEmpty() ? SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']') : "[]");
             List<Product> products = getProducts(user, c, p, 0);
             render(products, user);
         } else {

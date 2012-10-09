@@ -1,7 +1,5 @@
 package models;
 
-import controllers.CRUD;
-import controllers.Products;
 import play.data.validation.Required;
 import play.db.jpa.JPA;
 import play.db.jpa.Model;
@@ -17,12 +15,15 @@ public class Category extends Model {
     @ManyToOne
     private Category parent;
 
+    @NoJSON
     @ManyToMany
     private List<User> moderators;
 
+    @NoJSON
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "parent")
     public List<Category> children;
 
+    @NoJSON
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "category")
     public List<Product> products;
 

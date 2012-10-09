@@ -34,6 +34,7 @@ public class Product extends Model {
     @ManyToOne
     private Category category;
 
+    @NoJSON
     @Required
     @ManyToOne
     private User author;
@@ -60,6 +61,7 @@ public class Product extends Model {
 
     private Boolean draft;
 
+    @NoJSON
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "parent")
     public List<Product> children;
 
