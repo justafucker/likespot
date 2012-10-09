@@ -217,6 +217,7 @@ public class Product extends Model {
             user.save();
         }
         super._delete();
+        photo.delete();
     }
 
 
