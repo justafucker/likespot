@@ -20,10 +20,7 @@ public class User extends Model {
     @ManyToMany
     public List<Product> products;
 
-    public User(String email, String password, String fullname) {
-        this.email = email;
-        this.password = password;
-        this.fullname = fullname;
+    public User() {
     }
 
     @Override

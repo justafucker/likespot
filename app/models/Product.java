@@ -3,6 +3,7 @@ package models;
 import org.hibernate.annotations.Type;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
+import play.db.jpa.JPA;
 import play.db.jpa.Model;
 import play.modules.s3blobs.S3Blob;
 
@@ -205,6 +206,17 @@ public class Product extends Model {
     public void setAuthor(User author) {
         this.author = author;
     }
+
+    @Override
+    public void _delete() {
+        List<User> users = JPA.em().createQuery("select user from User as user left join user.products as product where product.id = " + id).getResultList();
+        for (User user : users) {
+            user.products.remove(this);
+            user.save();
+        }
+        super._delete();
+    }
+
 
     @Override
     public String toString() {

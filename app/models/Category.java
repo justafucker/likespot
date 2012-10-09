@@ -1,6 +1,9 @@
 package models;
 
+import controllers.CRUD;
+import controllers.Products;
 import play.data.validation.Required;
+import play.db.jpa.JPA;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
@@ -45,6 +48,16 @@ public class Category extends Model {
 
     public void setModerators(List<User> moderators) {
         this.moderators = moderators;
+    }
+
+    @Override
+    public void _delete() {
+        List<User> users = JPA.em().createQuery("select user from User as user left join user.categories as category where category.id = " + id).getResultList();
+        for (User user : users) {
+            user.categories.remove(this);
+            user.save();
+        }
+        super._delete();
     }
 
     @Override
