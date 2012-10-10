@@ -4,6 +4,9 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
+        <meta property="og:title" content="#{get 'title' /}" />
+        <meta property="og:description" content="#{get 'description' /}" />
+        <meta property="og:image" content="#{get 'image' /}" />
         <link rel="stylesheet" media="screen" href="@{'/public/css/bootstrap.css'}">
         <style>
             body {

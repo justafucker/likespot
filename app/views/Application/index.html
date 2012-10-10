@@ -1,6 +1,14 @@
 #{extends 'main.html' /}
 #{if selectedProduct}
     #{set title: selectedProduct.title /}
+    #{set description: selectedProduct.description /}
+    %{
+        Map<String, Object> args = new HashMap<String, Object>();
+        args = new HashMap();
+        args.put("id", selectedProduct.id);
+        image = play.mvc.Router.getFullUrl("Application.productPhoto", args);
+    }%
+    #{set image: image /}
 #{/if}
 #{elseif selectedCategory}
     #{set title: selectedCategory.title /}
