@@ -122,11 +122,11 @@ public class Application extends Controller {
     public static void productPhoto(long id) throws IOException {
         final Product product = Product.findById(id);
         notFoundIfNull(product);
-        String contentType = Cache.get("product_photo_type" + id, String.class);
+        String contentType = Cache.get("product_photo_type_" + id, String.class);
         if (contentType == null) {
             if (product.getPhoto().exists()) {
                 contentType = product.getPhoto().type();
-                Cache.set("product_photo_type" + id, contentType);
+                Cache.set("product_photo_type_" + id, contentType);
             }
         }
         if (contentType != null) {

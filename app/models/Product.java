@@ -1,9 +1,11 @@
 package models;
 
 import org.hibernate.annotations.Type;
+import play.cache.Cache;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
 import play.db.jpa.JPA;
+import play.db.jpa.JPABase;
 import play.db.jpa.Model;
 import play.modules.s3blobs.S3Blob;
 
@@ -207,6 +209,13 @@ public class Product extends Model {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    @Override
+    public <T extends JPABase> T save() {
+        Cache.delete("product_photo_type_" + id);
+        Cache.delete("product_photo_bytes_" + id);
+        return super.save();
     }
 
     @Override
