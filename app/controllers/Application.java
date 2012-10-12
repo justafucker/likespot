@@ -82,6 +82,7 @@ public class Application extends Controller {
     }
 
     public static void index(Long c, Long p) {
+        renderArgs.put("home", true);
         renderArgs.put("c", c != null ? c : -1); // Override c
         renderArgs.put("p", p != null ? p : -1); // Override p
         renderArgs.put("selectedCategory", c != null ? Category.findById(c) : null);

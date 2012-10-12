@@ -18,6 +18,19 @@ import java.util.List;
 @CRUD.For(Product.class)
 @With(Secure.class)
 public class Products extends CRUD {
+    public static void blank() throws Exception {
+        renderArgs.put("blank", true);
+        ObjectType type = ObjectType.get(getControllerClass());
+        notFoundIfNull(type);
+        Constructor<?> constructor = type.entityClass.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        Model object = (Model) constructor.newInstance();
+        try {
+            render(type, object);
+        } catch (TemplateNotFoundException e) {
+            render("CRUD/blank.html", type, object);
+        }
+    }
 
     // TODO: there shall be a way to pass id of new created Product to sendNotofications
     public static void create() throws Exception {
