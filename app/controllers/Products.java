@@ -65,6 +65,31 @@ public class Products extends CRUD {
         redirect(request.controller + ".show", object._key());
     }
 
+    public static void save(String id) throws Exception {
+        ObjectType type = ObjectType.get(getControllerClass());
+        notFoundIfNull(type);
+        Product object = (Product) type.findById(id);
+        notFoundIfNull(object);
+        User author = object.getAuthor();
+        Binder.bind(object, "object", params.all());
+        object.setAuthor(author);
+        validation.valid(object);
+        if (validation.hasErrors()) {
+            renderArgs.put("error", Messages.get("crud.hasErrors"));
+            try {
+                render(request.controller.replace(".", "/") + "/show.html", type, object);
+            } catch (TemplateNotFoundException e) {
+                render("CRUD/show.html", type, object);
+            }
+        }
+        object._save();
+        flash.success(Messages.get("crud.saved", type.modelName));
+        if (params.get("_save") != null) {
+            redirect(request.controller + ".list");
+        }
+        redirect(request.controller + ".show", object._key());
+    }
+
     @After(only = {"save"})
     public static void sendNotifications(String id) throws Exception {
         Product product = Product.findById(Long.parseLong(id));
