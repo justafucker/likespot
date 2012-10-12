@@ -38,8 +38,12 @@ public class Products extends CRUD {
         notFoundIfNull(type);
         Constructor<?> constructor = type.entityClass.getDeclaredConstructor();
         constructor.setAccessible(true);
-        Model object = (Model) constructor.newInstance();
+        Product object = (Product) constructor.newInstance();
         Binder.bind(object, "object", params.all());
+        if (Security.isConnected()) {
+            User user = User.find("byEmail", Security.connected()).first();
+            object.setAuthor(user);
+        }
         validation.valid(object);
         if (validation.hasErrors()) {
             renderArgs.put("error", Messages.get("crud.hasErrors"));

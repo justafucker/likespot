@@ -1,5 +1,6 @@
 package models;
 
+import controllers.CRUD;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ public class User extends Model {
 
     @ManyToMany
     public List<Category> categories;
+    @CRUD.Hidden
     @ManyToMany
     public List<Product> products;
 

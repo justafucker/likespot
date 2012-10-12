@@ -1,5 +1,6 @@
 package models;
 
+import controllers.CRUD;
 import org.hibernate.annotations.Type;
 import play.cache.Cache;
 import play.data.validation.MaxSize;
@@ -39,6 +40,7 @@ public class Product extends Model {
     @NoJSON
     @Required
     @ManyToOne
+    @CRUD.Hidden
     private User author;
 
     private String url;
