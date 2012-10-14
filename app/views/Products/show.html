@@ -17,7 +17,36 @@
 
                 <div class="objectForm">
                 #{form action:@save(object._key()), enctype:'multipart/form-data'}
-                    #{crud.form /}
+                    #{crud.form}
+                        #{crud.custom 'parent'}
+                            <label for="object_parent_helper">
+                                &{'parent'}
+                            </label>
+                            <input type="hidden" id="object_parent" #{if object.parent } value="${object.parent.id}" #{/if}
+                                   name="object.parent.id">
+                            <input id="object_parent_helper" class="typeahead" type="text" autocomplete="off"
+                                   data-provide="typeahead" #{if object.parent } value="${object.parent.title}" #{/if}
+                                   placeholder="&{'crud.none'}">
+                            <script type="text/javascript">
+                                $('#object_parent_helper').typeahead({
+                                    ajax: {
+                                        url: "/application/suggestproducts", triggerLength: 1, method: "get"
+                                    },
+                                    display: "title",
+                                    itemSelected: function (item, val, text) {
+                                        $("#object_parent").val(val);
+                                        $("#object_parent_helper").css("font-weight", "bold");
+                                    }
+                                });
+                                $('#object_parent_helper').keydown(function(e) {
+                                    if ($.inArray(e.keyCode, [16, 17, 18, 37, 38, 39, 40, 91, 9]) == -1) {
+                                        $("#object_parent").val(null);
+                                        $("#object_parent_helper").css("font-weight", "normal");
+                                    }
+                                });
+                            </script>
+                        #{/crud.custom}
+                    #{/crud.form}
                     <p class="crudButtons" style="float: right;">
                         <input type="submit" name="_save" value="&{'crud.save'}" class="btn btn-primary"/>
                         *{<input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" class="btn"/>}*

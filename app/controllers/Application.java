@@ -15,6 +15,7 @@ import java.lang.reflect.Type;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -54,6 +55,18 @@ public class Application extends Controller {
             List<Product> products = getProducts(null, c, p, page);
             renderJSON(GSON.toJson(products));
         }
+    }
+
+    //public static class Suggestion
+
+    public static void suggestProducts(String query) {
+        List<Product> products;
+        if (query != null || query.trim().length() > 0) {
+            products = Product.find("title like " + SqlQuery.inlineParam("%" + query + "%")).fetch(PAGE_SIZE);
+        } else {
+            products = Collections.EMPTY_LIST;
+        }
+        renderJSON(GSON.toJson(products));
     }
 
     private static List<Product> getProducts(User user, Long c, Long p, int page) {

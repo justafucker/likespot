@@ -53,3 +53,4 @@ crud.delete=Delete
 crud.save=Save
 crud.list.size=%d records
 home=Home
+favorite=Favorite

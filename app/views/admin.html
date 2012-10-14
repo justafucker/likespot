@@ -1,6 +1,9 @@
 #{extends 'main.html' /}
 #{set title: messages.get("admin") /}
 
+%{
+    c = -1; p = -1; userProducts = [];
+}%
 *{<div id="main">
     <ul id="adminMenu">
         <li class="${request.controller == 'Admin' ? 'selected' : ''}">
