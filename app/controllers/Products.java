@@ -71,6 +71,18 @@ public class Products extends CRUD {
         Product object = (Product) type.findById(id);
         notFoundIfNull(object);
         User author = object.getAuthor();
+        if (author == null)  {
+            if (Security.isConnected()) {
+                author = User.find("byEmail", Security.connected()).first();
+            }
+        }
+        /*List<Upload> uploads = (List<Upload>) Http.Request.current().args.get("__UPLOADS");
+        for (Upload upload : uploads) {
+            if (upload.getFieldName().equals("object.photo") && upload.getSize() > 0) {
+                System.out.println(upload.asBytes());
+                System.out.println(upload.getFileName());
+            }
+        }*/
         Binder.bind(object, "object", params.all());
         object.setAuthor(author);
         validation.valid(object);
