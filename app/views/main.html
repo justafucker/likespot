@@ -35,19 +35,20 @@
             var requestingNextPage = false;
             var noMoreResults = false;
             var selectedCategoryId = ${c};
+            var u = ${u};
             var selectedProductId = #{if selectedProduct}${selectedProduct.id}#{/if}#{else}-1#{/else};
             var userProducts = ${userProducts};
             $(function(){
                 $(window).scroll(function(){
                     if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 100 && !noMoreResults && !requestingNextPage) {
-                        var listAction = #{jsAction @Application.getProducts(null, null, u, ':page') /};
+                        var listAction = #{jsAction @Application.getProducts(null, null, ':u', ':page') /};
                         requestingNextPage = true;
                         $.getJSON(
                             selectedCategoryId != -1 ?
-                                    ("/application/getproducts?c=" + selectedCategoryId + "&p=-1&page=" + (currentPage + 1)) :
+                                    ("/application/getproducts?u=" + u + "&c=" + selectedCategoryId + "&p=-1&page=" + (currentPage + 1)) :
                                     selectedProductId != -1 ?
-                                            "/application/getproducts?c=-1&p=" + selectedProductId + "&page=" + (currentPage + 1) :
-                                            "/application/getproducts?c=-1&p=-1&page=" + (currentPage + 1),
+                                            "/application/getproducts?u=" + u + "&c=-1&p=" + selectedProductId + "&page=" + (currentPage + 1) :
+                                            "/application/getproducts?u=" + u + "&c=-1&p=-1&page=" + (currentPage + 1),
                             function(data) {
                                 currentPage++;
                                 for (var i = 0; i < data.length; i++) {
