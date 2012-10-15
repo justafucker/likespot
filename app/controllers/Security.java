@@ -8,10 +8,10 @@ public class Security extends Secure.Security {
     }
 
     static void onAuthenticated() {
-        Application.index(null, null);
+        Application.index(null, null, null);
     }
 
     static void onDisconnected() {
-        Application.index(null, null);
+        Application.index(null, null, null);
     }
 }
