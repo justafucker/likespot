@@ -1,15 +1,13 @@
 package controllers;
 
+import utils.EmailQueue;
 import models.Category;
 import models.Product;
 import models.User;
-import org.apache.commons.mail.SimpleEmail;
 import play.data.binding.Binder;
 import play.db.Model;
 import play.exceptions.TemplateNotFoundException;
 import play.i18n.Messages;
-import play.jobs.Job;
-import play.libs.Mail;
 import play.mvc.*;
 
 import java.lang.reflect.Constructor;
@@ -71,7 +69,7 @@ public class Products extends CRUD {
         Product object = (Product) type.findById(id);
         notFoundIfNull(object);
         User author = object.getAuthor();
-        if (author == null)  {
+        if (author == null) {
             if (Security.isConnected()) {
                 author = User.find("byEmail", Security.connected()).first();
             }
@@ -113,27 +111,11 @@ public class Products extends CRUD {
             List<User> moderators = category.getModerators();
             if (moderators == null && category.getParent() != null)
                 moderators = category.getParent().getModerators();
-            boolean isNewProduct = "create".equals(Http.Request.current.get().actionMethod);
             if (moderators != null && !moderators.isEmpty()) {
                 for (User user : moderators)
-                    sendEmail(product, user, isNewProduct);
+                    EmailQueue.getInstance().add(user, product);
             }
 
         }
-    }
-
-    private static void sendEmail(final Product product, User user, boolean isNewProduct) throws Exception {
-        final SimpleEmail email = new SimpleEmail();
-        email.addTo(user.email);
-        email.setFrom("noreply@likespot.ru", "Likespot");
-        email.setSubject(isNewProduct ? "New product in a category you moderate has been created" :
-                "Product in a category you moderate has been updated");
-        email.setCharset("UTF-8");
-        new Job<Void>() {
-            @Override
-            public void doJob() throws Exception {
-                Mail.send(email.setMsg("Product " + product.getTitle() + "\n" + product.getDescription()));
-            }
-        }.now();
     }
 }

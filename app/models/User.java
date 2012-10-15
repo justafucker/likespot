@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name="_user")
+@Table(name = "_user")
 public class User extends Model {
     public String email;
     public String password;
@@ -32,5 +32,24 @@ public class User extends Model {
 
     public static User connect(String email, String password) {
         return find("byEmailAndPassword", email, password).first();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        User user = (User) o;
+
+        return id.equals(user.id);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + id.hashCode();
+        return result;
     }
 }
