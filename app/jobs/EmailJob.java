@@ -5,7 +5,6 @@ import models.User;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import play.Logger;
-import play.jobs.Every;
 import play.jobs.Job;
 import play.libs.Mail;
 import utils.EmailQueue;
@@ -16,12 +15,14 @@ import java.util.*;
 /**
  * @author Denis Davydov
  */
-@Every("1h")
 public class EmailJob extends Job {
 
     @Override
     public void doJob() throws Exception {
         List<Pair<User, Product>> events = EmailQueue.getInstance().getAndClear();
+
+        Logger.info("Email events are going to be processed: " + events.size());
+
         Map<User, List<Product>> aggregationMap = new HashMap<User, List<Product>>();
 
         for (Pair<User, Product> pair : events) {
