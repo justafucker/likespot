@@ -1,6 +1,7 @@
 package models;
 
 import controllers.CRUD;
+import play.data.validation.Password;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -12,6 +13,7 @@ import java.util.List;
 @Table(name = "_user")
 public class User extends Model {
     public String email;
+    @Password
     public String password;
     public String fullname;
     public boolean isAdmin;
