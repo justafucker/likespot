@@ -168,7 +168,7 @@
                 <p>
                 #{if !user.categories.isEmpty()}
                     <ul class="unstyled">
-                        <li><a href="@{Application.index()}">
+                        <li><a href="@{Application.index(null, null, u != -1 ? u : null)}">
                             <small>
                                 #{if c == -1 && p == -1 }<strong>#{/if}
                                     &{'all'}
@@ -176,7 +176,7 @@
                             </small>
                         </a></li>
                         #{list items:user.categories, as:'category'}
-                        <li><a href="@{Application.index(category.id, null, u)}">
+                        <li><a href="@{Application.index(category.id, null, u != -1 ? u : null)}">
                                 <small>
                                     #{if c > 0 && c == category.id }<strong>#{/if}
                                         ${category}
