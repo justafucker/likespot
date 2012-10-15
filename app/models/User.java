@@ -20,7 +20,6 @@ public class User extends Model {
 
     @ManyToMany
     public List<Category> categories;
-    @CRUD.Hidden
     @ManyToMany
     public List<Product> products;
 
