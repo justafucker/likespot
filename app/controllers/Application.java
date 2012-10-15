@@ -75,7 +75,10 @@ public class Application extends Controller {
             String query = "select product from User as user inner join user.products as product where user.id = 1";
             if (c != null && c != -1) {
                 List<Long> categories = new ArrayList<Long>(user.categories.size());
-                query += " and " + safeInlineParams("category.id in ", categories);
+                for (Category category : user.categories) {
+                    categories.add(category.getId());
+                }
+                query += " and " + safeInlineParams("product.category.id in ", categories);
             }
             query += " order by product.date desc, product.id desc";
             return (List<Product>) JPA.em().createQuery(query).setMaxResults(PAGE_SIZE).setFirstResult(page * PAGE_SIZE).getResultList();

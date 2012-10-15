@@ -176,7 +176,7 @@
                             </small>
                         </a></li>
                         #{list items:user.categories, as:'category'}
-                        <li><a href="@{Application.index(category.id)}">
+                        <li><a href="@{Application.index(category.id, null, u)}">
                                 <small>
                                     #{if c > 0 && c == category.id }<strong>#{/if}
                                         ${category}
