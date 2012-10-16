@@ -56,7 +56,7 @@ public class EmailJob extends Job {
             final HtmlEmail email = new HtmlEmail();
             email.addTo(key.email);
             email.setFrom("noreply@likespot.ru", "Likespot");
-            email.setSubject(filteredProducts.size() + " products have been changed");
+            email.setSubject(filteredProducts.size() + (filteredProducts.size() > 1 ? " products have" : " product has") +" been changed");
             email.setCharset("UTF-8");
 
             email.setHtmlMsg(createHtmlMsg(filteredProducts));
@@ -77,14 +77,15 @@ public class EmailJob extends Job {
 
     private String createHtmlMsg(List<Product> filteredProducts) {
         StringBuilder builder = new StringBuilder();
-        builder.append("<html>");
+        builder.append("<html><body>");
 
         for (Product product : filteredProducts) {
             builder.append("<p>").append("<b>").
-                    append(product.getTitle()).append("</b>").append("<br>").
+                    append("<a href='http://likespot.ru/?p=").append(product.getId()).append("'>").append(product.getTitle()).append("</a>").
+                    append("</b>").append("<br>").
                     append(product.getDescription()).append("</p>");
         }
 
-        return builder.append("</html>").toString();
+        return builder.append("</body></html>").toString();
     }
 }
