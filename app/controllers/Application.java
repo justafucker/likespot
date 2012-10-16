@@ -72,7 +72,7 @@ public class Application extends Controller {
 
     private static List<Product> getProducts(User user, Long c, Long p, Long u, int page) {
         if (user != null && u != null && u != -1) {
-            String query = "select product from User as user inner join user.products as product where user.id = 1";
+            String query = "select product from User as user inner join user.products as product where user.id = " + u;
             if (c != null && c != -1) {
                 query += " and product.category.id = " + c;
             }

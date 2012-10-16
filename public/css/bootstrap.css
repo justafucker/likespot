@@ -4252,11 +4252,11 @@ input[type="submit"].btn.btn-mini {
     vertical-align: text-top;
 }
 
-.nav .active .nav-favorite, .nav a:hover .nav-favorite {
+.nav .active .nav-likes, .nav a:hover .nav-likes {
     background-position: -40px -80px
 }
 
-.nav .nav-favorite {
+.nav .nav-likes {
     margin: -4px 6px 0 0;
     background-image: url(https://si0.twimg.com/a/1349904391/t1/img/twitter_web_sprite_icons.png);
     width: 21px;

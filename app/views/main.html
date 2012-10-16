@@ -129,7 +129,7 @@
                 <div class="container">
                     <ul class="nav">
                         <li class="#{if home && u == -1 }active#{/if}"><a href="/"><i class="nav-home"></i>&{'home'}</a></li>
-                        #{if user } <li class="#{if home && u != -1 }active#{/if}"><a href="@{Application.index(null, null, user.id)}"><i class="nav-favorite"></i>&{'favorite'}</a></li> #{/if}
+                        #{if user } <li class="#{if home && u != -1 }active#{/if}"><a href="@{Application.index(null, null, user.id)}"><i class="nav-likes"></i>&{'likes'}</a></li> #{/if}
                     </ul>
                     <span class="brand">Likespot</span>
                     <ul class="nav pull-right">
