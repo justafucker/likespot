@@ -3,15 +3,22 @@ package controllers;
 import models.Category;
 import models.Product;
 import models.User;
-import org.apache.commons.mail.SimpleEmail;
+import play.data.Upload;
 import play.data.binding.Binder;
 import play.db.Model;
 import play.exceptions.TemplateNotFoundException;
 import play.i18n.Messages;
-import play.jobs.Job;
-import play.libs.Mail;
-import play.mvc.*;
+import play.modules.s3blobs.S3Blob;
+import play.mvc.After;
+import play.mvc.Http;
+import play.mvc.With;
+import utils.EmailQueue;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.List;
 
@@ -39,7 +46,7 @@ public class Products extends CRUD {
         Constructor<?> constructor = type.entityClass.getDeclaredConstructor();
         constructor.setAccessible(true);
         Product object = (Product) constructor.newInstance();
-        Binder.bind(object, "object", params.all());
+        bindAndProcessPhoto(object, false);
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
             object.setAuthor(user);
@@ -71,19 +78,12 @@ public class Products extends CRUD {
         Product object = (Product) type.findById(id);
         notFoundIfNull(object);
         User author = object.getAuthor();
-        if (author == null)  {
+        if (author == null) {
             if (Security.isConnected()) {
                 author = User.find("byEmail", Security.connected()).first();
             }
         }
-        /*List<Upload> uploads = (List<Upload>) Http.Request.current().args.get("__UPLOADS");
-        for (Upload upload : uploads) {
-            if (upload.getFieldName().equals("object.photo") && upload.getSize() > 0) {
-                System.out.println(upload.asBytes());
-                System.out.println(upload.getFileName());
-            }
-        }*/
-        Binder.bind(object, "object", params.all());
+        bindAndProcessPhoto(object, true);
         object.setAuthor(author);
         validation.valid(object);
         if (validation.hasErrors()) {
@@ -102,6 +102,38 @@ public class Products extends CRUD {
         redirect(request.controller + ".show", object._key());
     }
 
+    private static void bindAndProcessPhoto(Product product, boolean remove) throws IOException {
+        params.checkAndParse();
+        List<Upload> uploads = (List<Upload>) Http.Request.current().args.get("__UPLOADS");
+        for (Upload upload : uploads) {
+            if (upload.getFieldName().equals("object.photo") && upload.getSize() > 0) {
+                BufferedImage image = ImageIO.read(upload.asStream());
+                int size = Math.min(image.getWidth(), image.getHeight());
+                BufferedImage cropped = image.getSubimage((image.getWidth() - size) / 2,
+                        (image.getHeight() - size) / 2,
+                        size,
+                        size);
+                final ByteArrayOutputStream output = new ByteArrayOutputStream() {
+                    @Override
+                    public synchronized byte[] toByteArray() {
+                        return this.buf;
+                    }
+                };
+                ImageIO.write(cropped, "png", output);
+                if (remove && product.getPhoto().exists()) {
+                    product.getPhoto().delete();
+                }
+                if (product.getPhoto() == null) {
+                    product.setPhoto(new S3Blob());
+                }
+                product.getPhoto().set(new ByteArrayInputStream(output.toByteArray(), 0, output.size()),
+                        "image/png");
+                params.remove("object.photo");
+            }
+        }
+        Binder.bind(product, "object", params.all());
+    }
+
     @After(only = {"save"})
     public static void sendNotifications(String id) throws Exception {
         Product product = Product.findById(Long.parseLong(id));
@@ -113,27 +145,11 @@ public class Products extends CRUD {
             List<User> moderators = category.getModerators();
             if (moderators == null && category.getParent() != null)
                 moderators = category.getParent().getModerators();
-            boolean isNewProduct = "create".equals(Http.Request.current.get().actionMethod);
             if (moderators != null && !moderators.isEmpty()) {
                 for (User user : moderators)
-                    sendEmail(product, user, isNewProduct);
+                    EmailQueue.getInstance().add(user, product);
             }
 
         }
-    }
-
-    private static void sendEmail(final Product product, User user, boolean isNewProduct) throws Exception {
-        final SimpleEmail email = new SimpleEmail();
-        email.addTo(user.email);
-        email.setFrom("noreply@likespot.ru", "Likespot");
-        email.setSubject(isNewProduct ? "New product in a category you moderate has been created" :
-                "Product in a category you moderate has been updated");
-        email.setCharset("UTF-8");
-        new Job<Void>() {
-            @Override
-            public void doJob() throws Exception {
-                Mail.send(email.setMsg("Product " + product.getTitle() + "\n" + product.getDescription()));
-            }
-        }.now();
     }
 }

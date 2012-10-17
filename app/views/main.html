@@ -16,6 +16,7 @@
         </style>
         <link href="@{'/public/css/bootstrap.css'}" rel="stylesheet">
         <link href="@{'/public/css/default.css'}" rel="stylesheet">
+        <link href="@{'/public/css/datepicker.css'}" rel="stylesheet">
 
         #{get 'moreStyles' /}
 
@@ -24,6 +25,7 @@
         <script src="@{'/public/js/jquery-1.8.1.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/js/bootstrap.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/js/typeahead.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/js/datepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
 
         <script type="text/javascript">
@@ -35,19 +37,20 @@
             var requestingNextPage = false;
             var noMoreResults = false;
             var selectedCategoryId = ${c};
+            var u = #{if u}${u}#{/if}#{else}-1#{/else};
             var selectedProductId = #{if selectedProduct}${selectedProduct.id}#{/if}#{else}-1#{/else};
             var userProducts = ${userProducts};
             $(function(){
                 $(window).scroll(function(){
                     if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 100 && !noMoreResults && !requestingNextPage) {
-                        var listAction = #{jsAction @Application.getProducts(null, null, ':page') /};
+                        var listAction = #{jsAction @Application.getProducts(null, null, ':u', ':page') /};
                         requestingNextPage = true;
                         $.getJSON(
                             selectedCategoryId != -1 ?
-                                    ("/application/getproducts?c=" + selectedCategoryId + "&p=-1&page=" + (currentPage + 1)) :
+                                    ("/application/getproducts?u=" + u + "&c=" + selectedCategoryId + "&p=-1&page=" + (currentPage + 1)) :
                                     selectedProductId != -1 ?
-                                            "/application/getproducts?c=-1&p=" + selectedProductId + "&page=" + (currentPage + 1) :
-                                            "/application/getproducts?c=-1&p=-1&page=" + (currentPage + 1),
+                                            "/application/getproducts?u=" + u + "&c=-1&p=" + selectedProductId + "&page=" + (currentPage + 1) :
+                                            "/application/getproducts?u=" + u + "&c=-1&p=-1&page=" + (currentPage + 1),
                             function(data) {
                                 currentPage++;
                                 for (var i = 0; i < data.length; i++) {
@@ -127,7 +130,8 @@
                     background-repeat: repeat-x; ">
                 <div class="container">
                     <ul class="nav">
-                        <li class="#{if home }active#{/if}"><a href="/"><i class="nav-home"></i>&{'home'}</a></li>
+                        <li class="#{if home && u == -1 }active#{/if}"><a href="/"><i class="nav-home"></i>&{'home'}</a></li>
+                        #{if user } <li class="#{if home && u != -1 }active#{/if}"><a href="@{Application.index(null, null, user.id)}"><i class="nav-likes"></i>&{'likes'}</a></li> #{/if}
                     </ul>
                     <span class="brand">Likespot</span>
                     <ul class="nav pull-right">
@@ -161,6 +165,7 @@
         <script type="text/javascript">
             $('.title_hint').tooltip({placement: 'bottom'});
             $('.slow_title_hint').tooltip({placement: 'bottom', delay: 1000});
+            $('.datepicker').datepicker({format: "yyyy-mm-dd", weekStart: 1});
             $(document).ready(function() {
                 var img1 = new Image();
                 var img2 = new Image();

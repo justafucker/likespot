@@ -108,7 +108,7 @@
                             <span>
                                 <small>
                                     <a id="like_button_${selectedProduct.id}" href="#" class="product_text_buttons slow_title_hint" onclick="
-                                            toggleLike(${selectedProduct.id}, '${selectedProduct.title}',
+                                            toggleLike(${selectedProduct.id}, '${selectedProduct.title.addSlashes()}',
                                                 '@{index(null, selectedProduct.id)}', true);
                                             event.stopPropagation(); event.preventDefault();"
                                        like="#{if user.products.contains(selectedProduct)}true#{/if}#{else}false#{/else}"
@@ -168,7 +168,7 @@
                 <p>
                 #{if !user.categories.isEmpty()}
                     <ul class="unstyled">
-                        <li><a href="@{Application.index()}">
+                        <li><a href="@{Application.index(null, null, u != -1 ? u : null)}">
                             <small>
                                 #{if c == -1 && p == -1 }<strong>#{/if}
                                     &{'all'}
@@ -176,7 +176,7 @@
                             </small>
                         </a></li>
                         #{list items:user.categories, as:'category'}
-                        <li><a href="@{Application.index(category.id)}">
+                        <li><a href="@{Application.index(category.id, null, u != -1 ? u : null)}">
                                 <small>
                                     #{if c > 0 && c == category.id }<strong>#{/if}
                                         ${category}
@@ -214,32 +214,5 @@
                 </p>
             #{/else}
         </div>
-    #{if user != null}
-        <br/>
-        <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
-                -webkit-border-radius: 5px;
-                -khtml-border-radius: 5px;
-                border-radius: 5px; padding: 10px 15px;">
-            <span>&{'products'}</span>
-            ·
-            <small><a href="@{Users.show(user.id)}" class="small">&{'edit'}</a></small>
-            <p>
-                <ul id="user_products" class="unstyled">
-                    #{list items:user.products, as:'product'}
-                        <li id="user_product_${product.id}"><a href="@{Application.index(null, product.id)}">
-                            <small>
-                                #{if p > 0 && p == product.id }<strong>#{/if}
-                            ${product}
-                                #{if p > 0 && p == product.id }</strong>#{/if}
-                            </small>
-                        </a></li>
-                    #{/list}
-                </ul>
-                <div id="no_user_products" class="muted" style="display:#{if !user.products.isEmpty()}none#{/if}#{else}block#{/else}">
-                    <small>&{'notSelected'}</small>
-                </div>
-            </p>
-        </div>
-    #{/if}
     </div>
 </div>
