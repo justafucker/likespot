@@ -5,7 +5,6 @@ import models.Product;
 import models.User;
 import play.data.Upload;
 import play.data.binding.Binder;
-import play.data.binding.RootParamNode;
 import play.db.Model;
 import play.exceptions.TemplateNotFoundException;
 import play.i18n.Messages;
