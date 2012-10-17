@@ -1,15 +1,25 @@
 package controllers;
 
-import utils.EmailQueue;
 import models.Category;
 import models.Product;
 import models.User;
+import play.data.Upload;
 import play.data.binding.Binder;
+import play.data.binding.RootParamNode;
 import play.db.Model;
 import play.exceptions.TemplateNotFoundException;
 import play.i18n.Messages;
-import play.mvc.*;
+import play.modules.s3blobs.S3Blob;
+import play.mvc.After;
+import play.mvc.Http;
+import play.mvc.With;
+import utils.EmailQueue;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.List;
 
@@ -37,7 +47,7 @@ public class Products extends CRUD {
         Constructor<?> constructor = type.entityClass.getDeclaredConstructor();
         constructor.setAccessible(true);
         Product object = (Product) constructor.newInstance();
-        Binder.bind(object, "object", params.all());
+        bindAndProcessPhoto(object, false);
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
             object.setAuthor(user);
@@ -74,14 +84,7 @@ public class Products extends CRUD {
                 author = User.find("byEmail", Security.connected()).first();
             }
         }
-        /*List<Upload> uploads = (List<Upload>) Http.Request.current().args.get("__UPLOADS");
-        for (Upload upload : uploads) {
-            if (upload.getFieldName().equals("object.photo") && upload.getSize() > 0) {
-                System.out.println(upload.asBytes());
-                System.out.println(upload.getFileName());
-            }
-        }*/
-        Binder.bind(object, "object", params.all());
+        bindAndProcessPhoto(object, true);
         object.setAuthor(author);
         validation.valid(object);
         if (validation.hasErrors()) {
@@ -98,6 +101,38 @@ public class Products extends CRUD {
             redirect(request.controller + ".list");
         }
         redirect(request.controller + ".show", object._key());
+    }
+
+    private static void bindAndProcessPhoto(Product product, boolean remove) throws IOException {
+        params.checkAndParse();
+        List<Upload> uploads = (List<Upload>) Http.Request.current().args.get("__UPLOADS");
+        for (Upload upload : uploads) {
+            if (upload.getFieldName().equals("object.photo") && upload.getSize() > 0) {
+                BufferedImage image = ImageIO.read(upload.asStream());
+                int size = Math.min(image.getWidth(), image.getHeight());
+                BufferedImage cropped = image.getSubimage((image.getWidth() - size) / 2,
+                        (image.getHeight() - size) / 2,
+                        size,
+                        size);
+                final ByteArrayOutputStream output = new ByteArrayOutputStream() {
+                    @Override
+                    public synchronized byte[] toByteArray() {
+                        return this.buf;
+                    }
+                };
+                ImageIO.write(cropped, "png", output);
+                if (remove && product.getPhoto().exists()) {
+                    product.getPhoto().delete();
+                }
+                if (product.getPhoto() == null) {
+                    product.setPhoto(new S3Blob());
+                }
+                product.getPhoto().set(new ByteArrayInputStream(output.toByteArray(), 0, output.size()),
+                        "image/png");
+                params.remove("object.photo");
+            }
+        }
+        Binder.bind(product, "object", params.all());
     }
 
     @After(only = {"save"})
