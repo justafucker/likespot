@@ -175,7 +175,7 @@ label {
 .crudField {
 	padding: 10px 0;
 	/*border-bottom: 1px solid #eee;*/
-	position: relative;
+	/*position: relative;*/
 }
 
 .crud_hidden {
