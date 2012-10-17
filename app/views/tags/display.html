@@ -44,7 +44,7 @@
                     <a id="like_button_${_product.id}" href="#" class="product_text_buttons slow_title_hint"
                        onclick="toggleLike(${_product.id}, '${_product.title}', '@{index(null, _product.id)}',
                            #{if selectedProduct && selectedProduct.id == _product.id}true#{/if}#{else}false#{/else} );
-                            event.stopPropagation();"
+                            event.stopPropagation(); event.preventDefault();"
                        like="#{if _user.products.contains(_product)}true#{/if}#{else}false#{/else}"
                        title="#{if _user.products.contains(_product)}&{'unsubscribe'}#{/if}#{else}&{'subscribe'}#{/else}">
                     #{if _user.products.contains(_product)}&{'dislike'}#{/if}#{else}&{'like'}#{/else}

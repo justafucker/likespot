@@ -83,7 +83,7 @@
                                                     "<span id='product_text_buttons_" + data[i].id + "'>" +
                                                     "<small><a id='like_button_" + data[i].id + "' href='#' class='product_text_buttons slow_title_hint'" +
                                                     " onclick=\"toggleLike(" + data[i].id + ", '" + data[i].title + "', '/?p=" + data[i].id + "'," +
-                                                    " selectedProductId == " + data[i].id + " ? true : false); event.stopPropagation(); return false;\" " +
+                                                    " selectedProductId == " + data[i].id + " ? true : false); event.stopPropagation(); event.preventDefault();\" " +
                                                     " like=\"" + ($.inArray(data[i].id, userProducts) != -1 ? "true" : "false") + "\" " +
                                                     " title=\"" + ($.inArray(data[i].id, userProducts) != -1 ? "&{'unsubscribe'}" : "&{'subscribe'}") + "\">" +
                                                     ($.inArray(data[i].id, userProducts) != -1 ? "&{'dislike'}" : "&{'like'}") +
