@@ -138,6 +138,17 @@
                             #{elseif selectedProduct}
                                 &{'timeline'}
                             #{/elseif}
+                            #{elseif u}
+                                %{
+                                    uu = models.User.findById(u);
+                                }%
+                                #{if uu}
+                                    ${ uu.fullname }
+                                #{/if}
+                                #{else}
+                                &{'timeline'}
+                                #{/else}
+                            #{/elseif}
                             #{else}
                                 &{'timeline'}
                             #{/else}
