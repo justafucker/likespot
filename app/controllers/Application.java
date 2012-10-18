@@ -53,7 +53,7 @@ public class Application extends Controller {
             List<Product> products = getProducts(user, c, p, u, page);
             renderJSON(GSON.toJson(products));
         } else {
-            List<Product> products = getProducts(null, c, p, null, page);
+            List<Product> products = getProducts(null, c, p, u, page);
             renderJSON(GSON.toJson(products));
         }
     }
@@ -71,7 +71,7 @@ public class Application extends Controller {
     }
 
     private static List<Product> getProducts(User user, Long c, Long p, Long u, int page) {
-        if (user != null && u != null && u != -1) {
+        if (u != null && u != -1) {
             String query = "select product from User as user inner join user.products as product where user.id = " + u;
             if (c != null && c != -1) {
                 query += " and product.category.id = " + c;
@@ -110,10 +110,15 @@ public class Application extends Controller {
         renderArgs.put("selectedCategory", c != null ? Category.findById(c) : null);
         renderArgs.put("selectedProduct", p != null ? Product.findById(p) : null);
         User user = Security.isConnected() ? (User) User.find("byEmail", Security.connected()).first() : null;
-        if (user != null && u != null && u != -1) {
-            List<Long> pp = new ArrayList<Long>(user.products.size());
-            for (Product product : user.products) {
-                pp.add(product.getId());
+        if (u != null && u != -1) {
+            List<Long> pp;
+            if (user != null) {
+                pp = new ArrayList<Long>(user.products.size());
+                for (Product product : user.products) {
+                    pp.add(product.getId());
+                }
+            } else {
+                pp = Collections.emptyList();
             }
             renderArgs.put("userProducts", !pp.isEmpty() ? SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']') : "[]");
             List<Product> products = getProducts(user, c, null, u, 0);
