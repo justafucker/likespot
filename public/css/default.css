@@ -3,10 +3,10 @@ span[toggled_button~=true] .product_text_buttons {
 }
 
 .highlighted {
-    background-color: #fdfdfe;
+    background-color: #fbfbfb;
 }
 
-.hovered-item:hover, .highlighted[toggled_parent~=true] {
+.hovered-item:hover, hovered-item[toggled_parent~=true], .highlighted[toggled_parent~=true] {
     background-color: #fcfefe;
 }
 
