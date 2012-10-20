@@ -1,13 +1,13 @@
-.hovered-item:hover {
-    background-color: #fcfefe;
-}
-
 span[toggled_button~=true] .product_text_buttons {
     opacity: 1;
 }
 
 .highlighted {
     background-color: #fdfdfe;
+}
+
+.hovered-item:hover, .highlighted[toggled_parent~=true] {
+    background-color: #fcfefe;
 }
 
 .hovered-item .product_text_buttons {
