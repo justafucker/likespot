@@ -6,6 +6,10 @@ span[toggled_button~=true] .product_text_buttons {
     opacity: 1;
 }
 
+.highlighted {
+    background-color: #fdfdfe;
+}
+
 .hovered-item .product_text_buttons {
     opacity: 0;
     -webkit-transition: opacity 300ms ease-out;
