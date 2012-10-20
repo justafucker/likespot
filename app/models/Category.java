@@ -27,6 +27,8 @@ public class Category extends Model {
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "category")
     public List<Product> products;
 
+    private Boolean draft;
+
     public String getTitle() {
         return title;
     }
@@ -59,6 +61,14 @@ public class Category extends Model {
             user.save();
         }
         super._delete();
+    }
+
+    public boolean isDraft() {
+        return draft == Boolean.TRUE;
+    }
+
+    public void setDraft(Boolean draft) {
+        this.draft = draft;
     }
 
     @Override

@@ -187,13 +187,15 @@
                             </small>
                         </a></li>
                         #{list items:user.categories, as:'category'}
-                        <li><a href="@{Application.index(category.id, null, u != -1 ? u : null)}">
-                                <small>
-                                    #{if c > 0 && c == category.id }<strong>#{/if}
-                                        ${category}
-                                    #{if c > 0 && c == category.id }</strong>#{/if}
-                                </small>
-                            </a></li>
+                        #{if !category.draft }
+                            <li><a href="@{Application.index(category.id, null, u != -1 ? u : null)}">
+                                    <small>
+                                        #{if c > 0 && c == category.id }<strong>#{/if}
+                                            ${category}
+                                        #{if c > 0 && c == category.id }</strong>#{/if}
+                                    </small>
+                                </a></li>
+                        #{/if}
                         #{/list}
                     </ul>
                 #{/if}

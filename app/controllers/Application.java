@@ -81,7 +81,9 @@ public class Application extends Controller {
         } else if (user != null && (c == null || c == -1) && (p == null || p == -1)) {
             List<Long> categories = new ArrayList<Long>(user.categories.size());
             for (Category category : user.categories) {
-                categories.add(category.getId());
+                if (!category.isDraft()) {
+                    categories.add(category.getId());
+                }
             }
             List<Long> parents = new ArrayList<Long>(user.products.size());
             for (Product product : user.products) {
@@ -92,13 +94,13 @@ public class Application extends Controller {
             String query = IS_NOT_DRAFT_CRITERIA + " and (" + categoryCriteria + " or " + parentCriteria + ") order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else if (c != null && c != -1) {
-            String query = IS_NOT_DRAFT_CRITERIA + " and category.id = " + c + " order by date desc, id desc";
+            String query = IS_NOT_DRAFT_CRITERIA + " and category.id = " + c + " and (category.draft is null or category.draft = false) order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else if (p != null && p != -1) {
-            String query = IS_NOT_DRAFT_CRITERIA + " and parent.id = " + p + " order by date desc, id desc";
+            String query = IS_NOT_DRAFT_CRITERIA + " and parent.id = " + p + " and (category.draft is null or category.draft = false) order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else {
-            return Product.find("draft is null or draft is false order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+            return Product.find(IS_NOT_DRAFT_CRITERIA + " and (category.draft is null or category.draft = false) order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         }
     }
 
@@ -111,18 +113,18 @@ public class Application extends Controller {
         renderArgs.put("selectedProduct", p != null ? Product.findById(p) : null);
         User user = Security.isConnected() ? (User) User.find("byEmail", Security.connected()).first() : null;
         if (u != null && u != -1) {
-            List<Long> pp;
+            List<Product> products = getProducts(user, c, null, u, 0);
             if (user != null) {
-                pp = new ArrayList<Long>(user.products.size());
+                List<Long> pp = new ArrayList<Long>(user.products.size());
                 for (Product product : user.products) {
                     pp.add(product.getId());
                 }
+                renderArgs.put("userProducts", !pp.isEmpty() ? SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']') : "[]");
+                render(products, user);
             } else {
-                pp = Collections.emptyList();
+                List<Category> categories = Category.find(IS_NOT_DRAFT_CRITERIA).fetch();
+                render(products, categories);
             }
-            renderArgs.put("userProducts", !pp.isEmpty() ? SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']') : "[]");
-            List<Product> products = getProducts(user, c, null, u, 0);
-            render(products, user);
         } else if (user != null) {
             List<Long> pp = new ArrayList<Long>(user.products.size());
             for (Product product : user.products) {
@@ -133,7 +135,7 @@ public class Application extends Controller {
             render(products, user);
         } else {
             renderArgs.put("userProducts", "[]");
-            List<Category> categories = Category.all().fetch();
+            List<Category> categories = Category.find(IS_NOT_DRAFT_CRITERIA).fetch();
             List<Product> products = getProducts(user, c, p, null, 0);
             render(products, categories);
         }
