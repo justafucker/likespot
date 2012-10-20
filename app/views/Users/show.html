@@ -17,7 +17,13 @@
 
                 <div class="objectForm">
                 #{form action:@save(object._key()), enctype:'multipart/form-data'}
-                    #{crud.form fields:['email', 'fullname', 'password', 'isAdmin', 'categories' ] /}
+                    #{if user.isAdmin}
+                        #{crud.form fields:['email', 'fullname', 'password', 'isAdmin', 'categories' ] /}
+                    #{/if}
+                    #{else}
+                        #{crud.form fields:['email', 'fullname', 'password', 'categories' ] /}
+                    #{/else}
+
                     <p class="crudButtons" style="float: right;">
                         <input type="submit" name="_save" value="&{'crud.save'}" class="btn btn-primary"/>
                         *{<input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" class="btn"/>}*

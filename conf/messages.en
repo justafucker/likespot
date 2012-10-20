@@ -30,6 +30,8 @@ users = Users
 author = Author
 moderators = Moderators
 
+settings = Settings
+
 like = Like
 dislike = You like it
 subscribe = Subscribe for updates

@@ -135,17 +135,20 @@
                     </ul>
                     <span class="brand">Likespot</span>
                     <ul class="nav pull-right">
-                        #{if session.username }
-                            <li class="#{if blank }active#{/if}"><a href="@{Products.blank()}">&{'crud.add'}</a></li>
+                        #{if user}
+                            #{if user.isAdmin}<li class="#{if blank }active#{/if}"><a href="@{Products.blank()}">&{'crud.add'}</a></li>#{/if}
                             <li class="dropdown">
                                 <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
                                     ${user.fullname} <b class="caret"></b></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-                                    <li><a tabindex="-1" href="@{Products.list(null, null, null, null, 'DESC')}">&{'Products'}</a></li>
+                                    <li><a tabindex="-1" href="@{Users.show(user.id)}">&{'settings'}</a></li>
                                     <li class="divider"></li>
+                                    #{if user.isAdmin}
+                                    <li><a tabindex="-1" href="@{Products.list(null, null, null, null, 'DESC')}">&{'Products'}</a></li>
                                     <li><a tabindex="-1" href="@{Categories.list()}">&{'Categories'}</a></li>
                                     <li><a tabindex="-1" href="@{Users.list()}">&{'Users'}</a></li>
                                     <li class="divider"></li>
+                                    #{/if}
                                     <li><a tabindex="-1" href="@{Secure.logout()}">&{'signOut'}</a></li>
                                 </ul>
                             </li>
