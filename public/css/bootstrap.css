@@ -69,7 +69,7 @@ sub {
 }
 
 img {
-  width: auto\9;
+  width: auto;
   height: auto;
   max-width: 100%;
   vertical-align: middle;
@@ -174,7 +174,7 @@ a {
 }
 
 a:hover {
-  color: #005580;
+  /*color: #005580;*/
   text-decoration: underline;
 }
 
