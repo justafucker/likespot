@@ -21,19 +21,21 @@ public class EmailJob extends Job {
     public void doJob() throws Exception {
         List<Pair<User, Product>> events = EmailQueue.getInstance().getAndClear();
 
-        Logger.info("Email events are going to be processed: " + events.size());
+        if (events.size() > 0) {
+            Logger.info("Email events are going to be processed: " + events.size());
 
-        Map<User, List<Product>> aggregationMap = new HashMap<User, List<Product>>();
+            Map<User, List<Product>> aggregationMap = new HashMap<User, List<Product>>();
 
-        for (Pair<User, Product> pair : events) {
-            List<Product> changedProductsForUser = aggregationMap.get(pair.getFirst());
-            if (changedProductsForUser == null)
-                aggregationMap.put(pair.getFirst(), changedProductsForUser = new ArrayList<Product>());
-            changedProductsForUser.add(pair.getSecond());
+            for (Pair<User, Product> pair : events) {
+                List<Product> changedProductsForUser = aggregationMap.get(pair.getFirst());
+                if (changedProductsForUser == null)
+                    aggregationMap.put(pair.getFirst(), changedProductsForUser = new ArrayList<Product>());
+                changedProductsForUser.add(pair.getSecond());
+            }
+
+            for (Map.Entry<User, List<Product>> entry : aggregationMap.entrySet())
+                processUser(entry.getKey(), entry.getValue());
         }
-
-        for (Map.Entry<User, List<Product>> entry : aggregationMap.entrySet())
-            processUser(entry.getKey(), entry.getValue());
     }
 
     private void processUser(User key, List<Product> value) {
