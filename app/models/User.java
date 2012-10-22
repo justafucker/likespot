@@ -43,14 +43,15 @@ public class User extends Model {
 
         User user = (User) o;
 
-        return id.equals(user.id);
+        if (id != null ? !id.equals(user.id) : user.id != null) return false;
 
+        return true;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + id.hashCode();
+        result = 31 * result + (id != null ? id.hashCode() : 0);
         return result;
     }
 }
