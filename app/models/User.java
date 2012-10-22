@@ -43,9 +43,7 @@ public class User extends Model {
 
         User user = (User) o;
 
-        if (id != null ? !id.equals(user.id) : user.id != null) return false;
-
-        return true;
+        return !(id != null ? !id.equals(user.id) : user.id != null);
     }
 
     @Override
