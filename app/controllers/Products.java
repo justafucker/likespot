@@ -3,6 +3,7 @@ package controllers;
 import models.Category;
 import models.Product;
 import models.User;
+import play.cache.Cache;
 import play.data.Upload;
 import play.data.binding.Binder;
 import play.db.Model;
@@ -131,6 +132,8 @@ public class Products extends CRUD {
                 params.remove("object.photo");
             }
         }
+        Cache.delete("product_photo_type_" + product.id);
+        Cache.delete("product_photo_bytes_" + product.id);
         Binder.bind(product, "object", params.all());
     }
 

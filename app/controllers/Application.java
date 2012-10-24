@@ -9,9 +9,11 @@ import play.cache.Cache;
 import play.db.helper.SqlQuery;
 import play.db.jpa.JPA;
 import play.i18n.Lang;
+import play.modules.s3blobs.S3Blob;
 import play.mvc.Controller;
 
 import java.io.*;
+import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -111,6 +113,7 @@ public class Application extends Controller {
         renderArgs.put("u", u != null ? u : -1); // Override u
         renderArgs.put("selectedCategory", c != null ? Category.findById(c) : null);
         renderArgs.put("selectedProduct", p != null ? Product.findById(p) : null);
+        renderArgs.put("selectedUser", u != null ? User.findById(u) : null);
         User user = Security.isConnected() ? (User) User.find("byEmail", Security.connected()).first() : null;
         if (u != null && u != -1) {
             List<Product> products = getProducts(user, c, null, u, 0);
@@ -158,6 +161,19 @@ public class Application extends Controller {
         }
     }
 
+    public static void toggleFollow(long id) {
+        if (Security.isConnected()) {
+            User user = User.find("byEmail", Security.connected()).first();
+            User friend = User.findById(id);
+            if (!user.friends.contains(friend)) {
+                user.friends.add(friend);
+            } else {
+                user.friends.remove(friend);
+            }
+            user.save();
+        }
+    }
+
     public static void productPhoto(long id) throws IOException {
         final Product product = Product.findById(id);
         notFoundIfNull(product);
@@ -184,6 +200,40 @@ public class Application extends Controller {
                 Cache.set("product_photo_bytes_" + id, bytes);
             }
             renderBinary(new ByteArrayInputStream(bytes));
+        }
+    }
+
+    public static void userPhoto(long id) throws IOException, NoSuchFieldException, IllegalAccessException {
+        final User user = User.findById(id);
+        notFoundIfNull(user);
+        String contentType = Cache.get("user_photo_type_" + id, String.class);
+        if (contentType == null) {
+            Field field = S3Blob.class.getDeclaredField("key");
+            field.setAccessible(true);
+            Object key = field.get(user.photo);
+            if (key != null && !key.equals("null") && user.photo.exists()) {
+                contentType = user.photo.type();
+                Cache.set("user_photo_type_" + id, contentType);
+            }
+        }
+        if (contentType != null) {
+            response.setContentTypeIfNotSet(contentType);
+            byte[] bytes = (byte[]) Cache.get("user_photo_bytes_" + id);
+            if (bytes == null)  {
+                ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+                InputStream is = user.photo.get();
+                int nRead;
+                byte[] data = new byte[16384];
+                while ((nRead = is.read(data, 0, data.length)) != -1) {
+                    buffer.write(data, 0, nRead);
+                }
+                buffer.flush();
+                bytes =  buffer.toByteArray();
+                Cache.set("user_photo_bytes_" + id, bytes);
+            }
+            renderBinary(new ByteArrayInputStream(bytes));
+        } else {
+            renderBinary(new File("public/images/noimage.gif"));
         }
     }
 

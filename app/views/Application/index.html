@@ -44,23 +44,40 @@
                 $('#like_button_' + id).attr('title', '&{'subscribe'}');
                 $('#like_button_' + id).attr('data-original-title', '&{'subscribe'}');
                 $('#like_button_' + id).html("&{'like'}");
-                $('#user_product_' + id).remove();
             } else {
                 $('#like_button_' + id).attr('like', 'true');
                 $('#like_button_' + id).attr('title', '&{'unsubscribe'}');
                 $('#like_button_' + id).attr('data-original-title', '&{'unsubscribe'}');
                 $('#like_button_' + id).html("&{'dislike'}");
-                if (selected) {
-                    $('#user_products').append("<li id='user_product_" + id +"'>" +
+            }
+        });
+    }
+
+    function toggleFollow(id, title, href, selected) {
+        var toggleFollowF = #{jsAction @toggleFollow(':id') /};
+        $.post(toggleFollowF({ id: id}), function(data) {
+            if ($('#follow_button_' + id).attr('follow') == 'true') {
+                $('#follow_button_' + id).attr('follow', 'false');
+                $('#follow_button_' + id).attr('title', '&{'subscribe'}');
+                $('#follow_button_' + id).attr('data-original-title', '&{'subscribe'}');
+                $('#follow_button_' + id).html("&{'follow'}");
+                /*$('#user_friend_' + id).remove();*/
+            } else {
+                $('#follow_button_' + id).attr('follow', 'true');
+                $('#follow_button_' + id).attr('title', '&{'unsubscribe'}');
+                $('#follow_button_' + id).attr('data-original-title', '&{'unsubscribe'}');
+                $('#follow_button_' + id).html("&{'unfollow'}");
+                /*if (selected) {
+                    $('#user_friends').append("<li id='user_product_" + id +"'>" +
                             "<a href='" + href + "'><small><strong>" + title + "</strong></small></a></li>");
                 } else {
-                    $('#user_products').append("<li id='user_product_" + id +"'>" +
+                    $('#user_friends').append("<li id='user_product_" + id +"'>" +
                             "<a href='" + href + "'><small>" + title + "</small></a></li>");
-                }
+                }*/
             }
-            $('#no_user_products').css({ display :
-                    $(('#user_products')).children().length > 0 ? "none" : "block"
-            });
+            /*$('#no_user_friends').css({ display :
+                    $(('#user_friends')).children().length > 0 ? "none" : "block"
+            });*/
         });
     }
 </script>
@@ -127,6 +144,40 @@
             </div>
             <br/>
         #{/if}
+        #{if selectedUser }
+            <div style="border:1px solid #efdfcc; -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -khtml-border-radius: 5px;
+                    border-radius: 5px; background-color: #fffffa;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="padding: 14px; width: 65px; vertical-align: top;">
+                            <img src="@{userPhoto(selectedUser.id)}" class="img-rounded" style="width:65px">
+                        </td>
+                        <td valign="top" style="padding: 10px 10px 10px 0;">
+                            <strong>${selectedUser.fullname}</strong>
+                            <p>
+                            ${selectedUser.about?.nl2br()}
+                            </p>
+                            <small class="muted">&{'Россия, Санкт-Петербург'}&nbsp;</small>
+                            #{if user != null}
+                                <small>
+                                    <a id="follow_button_${selectedUser.id}" style="margin-top: -3px" href="#" class="product_text_buttons slow_title_hint" onclick="
+                                            toggleFollow(${selectedUser.id}, '${selectedUser.fullname.addSlashes()}',
+                                            '@{index(null, selectedUser.id)}', true);
+                                            event.stopPropagation(); event.preventDefault();"
+                                       follow="#{if user.friends.contains(selectedUser)}true#{/if}#{else}false#{/else}"
+                                       title="#{if user.friends.contains(selectedUser)}&{'unsubscribe'}#{/if}#{else}&{'subscribe'}#{/else}">
+                                        #{if user.friends.contains(selectedUser)}&{'unfollow'}#{/if}#{else}&{'follow'}#{/else}
+                                    </a>
+                                </small>
+                            #{/if}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+        #{/if}
         <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
                 -webkit-border-radius: 5px;
                 -khtml-border-radius: 5px;
@@ -141,16 +192,8 @@
                             #{elseif selectedProduct}
                                 &{'timeline'}
                             #{/elseif}
-                            #{elseif u}
-                                %{
-                                    uu = models.User.findById(u);
-                                }%
-                                #{if uu}
-                                    ${ uu.fullname }
-                                #{/if}
-                                #{else}
-                                &{'timeline'}
-                                #{/else}
+                            #{elseif selectedUser }
+                                &{'likes'}
                             #{/elseif}
                             #{else}
                                 &{'timeline'}

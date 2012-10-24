@@ -214,13 +214,6 @@ public class Product extends Model {
     }
 
     @Override
-    public <T extends JPABase> T save() {
-        Cache.delete("product_photo_type_" + id);
-        Cache.delete("product_photo_bytes_" + id);
-        return super.save();
-    }
-
-    @Override
     public void _delete() {
         List<User> users = JPA.em().createQuery("select user from User as user left join user.products as product where product.id = " + id).getResultList();
         for (User user : users) {
@@ -230,7 +223,6 @@ public class Product extends Model {
         super._delete();
         photo.delete();
     }
-
 
     @Override
     public String toString() {

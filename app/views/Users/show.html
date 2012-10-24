@@ -18,10 +18,10 @@
                 <div class="objectForm">
                 #{form action:@save(object._key()), enctype:'multipart/form-data'}
                     #{if user.isAdmin}
-                        #{crud.form fields:['email', 'fullname', 'password', 'isAdmin', 'categories' ] /}
+                        #{crud.form fields:['email', 'fullname', 'password', 'photo', 'about', 'isAdmin', 'categories' ] /}
                     #{/if}
                     #{else}
-                        #{crud.form fields:['email', 'fullname', 'password', 'categories' ] /}
+                        #{crud.form fields:['email', 'fullname', 'password', 'photo', 'about', 'categories' ] /}
                     #{/else}
 
                     <p class="crudButtons" style="float: right;">
