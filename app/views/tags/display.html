@@ -11,12 +11,12 @@
         }
     }
 }%
-<tr class="hovered-item #{if "false".equals(params.get("highlight"))}highlighted#{/if}">
+<tr onclick="toggleProduct(${_product.id})" class="hovered-item #{if "false".equals(params.get("highlight"))}highlighted#{/if}">
     <td style="padding: 14px; border-top:1px solid rgb(232, 232, 232); width: 65px; vertical-align: top;">
         <img src="@{productPhoto(_product.id)}" class="img-rounded" style="width:65px">
     </td>
     <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);"
-        onclick="toggleProduct(${_product.id})">
+        >
 
         <a href="@{index(null, _product.id)}" style="color: black;" onclick="event.stopPropagation();"><strong>${_product.title}</strong></a>
 

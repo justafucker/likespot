@@ -2,22 +2,340 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Application/template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conf/messages.ru" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/conf/messages" afterPath="$PROJECT_DIR$/conf/messages.en" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.java" afterPath="$PROJECT_DIR$/app/controllers/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Products.java" afterPath="$PROJECT_DIR$/app/controllers/Products.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Product.java" afterPath="$PROJECT_DIR$/app/models/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/jobs/EmailJob.java" afterPath="$PROJECT_DIR$/app/jobs/EmailJob.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Application/index.html" afterPath="$PROJECT_DIR$/app/views/Application/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="$PROJECT_DIR$/app/views/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tags/display.html" afterPath="$PROJECT_DIR$/app/views/tags/display.html" />
-    </list>
-    <list id="94db5a70-d62f-436c-b527-b6eb5ea7b980" name="Local Changes" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
+    </list>
+    <list id="94db5a70-d62f-436c-b527-b6eb5ea7b980" name="Local Changes" comment="Local Changes">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/likespot.iml" afterPath="$PROJECT_DIR$/likespot.iml" />
     </list>
     <ignored path="yabe.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/conf/application.conf" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1321296536522" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351455383958" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-jetty-config-1.0.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-openejb-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-web-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-jetty-config-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-client-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-jetty-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-security-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-tomcat-config-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/plugins-1.3.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-connector-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608780" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/openejb-jar-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-naming-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-jetty-2.0.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-web-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-login-config-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-web-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/plugins-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-module-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-web-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/attributes-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-naming-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-tomcat-2.0.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-security-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-config-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/openejb-jar-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/openejb-pkgen-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-web-2.0.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/local-attribute.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-tomcat-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-naming-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-client-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-credential-store-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-login-config-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-connector-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608779" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-connector-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-javabean-xmlattribute-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/plugins-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-jetty-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-jetty-2.0.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/corba-css-config-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/openejb-jar-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-jsptaglibrary_2_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-tomcat-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-module-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-fragment_3_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-tomcat-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_5.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-login-config-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/attributes-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_client_1_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/corba-tss-config-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-subject-info-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-jsptaglibrary_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-login-config-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_3_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-tomcat-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring-form.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-client-1.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608778" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-application-client-1.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_5.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Geronimo/lib/geronimoIntegration.jar!/descriptors/geronimo-security-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_6.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-web-ext_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-common-bnd_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-common_3_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-ejb-jar-bnd_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_5.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-application-bnd_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_2_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-common-ext_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-common-bnd_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_3_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-common-ext_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_client_1_3.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-application-bnd_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-common-ext-pme_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_2_5.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-web-ext-pme_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_5.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-ejb-jar-ext-pme_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/orm_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-web-bnd_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/j2ee_1_4.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-ejb-jar-ext_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_6.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608777" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-web-ext_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-ejb-jar-bnd_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-ejb-jar-ext_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-application-ext-pme_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_1_3.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-application-ext_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_2_4.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/webSphereIntegration/lib/webSphereIntegration.jar!/descriptors/ibm-web-bnd_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_6.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jspxml.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/orm_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jspxml.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-facesconfig_1_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/persistence.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/persistence_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_3_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_1_4.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_6.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_1_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.taglib.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesuicomponent_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_1_4.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608776" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_1_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/j2ee_web_services_client_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/facelets_jsf_core.taglib.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_web_services_1_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl.core.facelets.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-rdbms20-persistence.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/mojarra_ext.taglib.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-application.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core_2_0.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-j2ee.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-ejb-jar.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-web-app.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/html5/xhtml5.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xml.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/catalog.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608775" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xinclude.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325608774" ignored="false" />
+    <file path="/Dummy.txt" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351325603163" ignored="false" />
+    <file path="/main.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350754432246" ignored="false" />
+    <file path="/EmailJob.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350751143074" ignored="false" />
+    <file path="/display.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350744731411" ignored="false" />
+    <file path="/Category.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350740682684" ignored="false" />
+    <file path="/__dummy.css" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350739990654" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/CDI/lib/cdi-support.jar!/resources/schemas/web-beans.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997852" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/CDI/lib/cdi-support.jar!/resources/schemas/beans_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997852" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/CDI/lib/cdi-support.jar!/resources/schemas/beans_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997852" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997852" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997852" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/xml.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.taglib.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl.fn.facelets.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-partialresponse_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/ui.taglib.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-core.taglib.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-fn.taglib.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_web_services_client_1_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facelettaglibrary_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui-2_0.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic_2_0.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.tld" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_5.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/drools-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/bpm-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/jms-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/remoting-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/navigation-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/document-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/spring-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997849" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/cache-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/drools-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/drools-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/BeanValidation/lib/bean_validation.jar!/resources/schemas/validation-configuration-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/framework-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/BeanValidation/lib/bean_validation.jar!/resources/schemas/validation-mapping-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/spring-seam-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/web-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/mail-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/security-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/guice-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pages-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pages-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/bpm-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/web-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/theme-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/navigation-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/mail-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/theme-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/components-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/components-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/transaction-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/excel-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/international-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pageflow-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997848" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/spring-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pages-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pageflow-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/wicket-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/mail-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/jms-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/ui-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/plugin-1.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/core-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/async-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/security-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/framework-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/international-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/transaction-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/cache-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/persistence-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/wicket-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/jms-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/components-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/core-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pdf-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/transaction-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/async-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/seam-components_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/theme-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/core-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/remoting-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pdf-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/framework-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/web-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/persistence-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997847" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/persistence-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/security-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/remoting-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/document-2.1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/ui-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/resteasy-2.2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Seam/lib/seam-support.jar!/resources/schemas/pageflow-2.0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/business-process.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/xjc.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jersey.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wadl20061109.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/sun-jaxws.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/j2ee_jaxrpc_mapping_1_1.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/cxf-jaxws.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/soap-envelope.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997846" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11_soapbinding.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350732997845" ignored="false" />
+    <file path="/routes" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349977822797" ignored="false" />
+    <file path="/SkipJson.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349818390736" ignored="false" />
+    <file path="/dependencies.yml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349815530689" ignored="false" />
+    <file path="/table.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349639557869" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11_httpbinding.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415129" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl20.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415129" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-addr2006.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415129" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdd_provider_java.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11soap12.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/bindingschema_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl_customizationschema_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jboss-jaxws-config_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/bindingfile.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl12.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/soap-encoding.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-eventing.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/XMLSchema.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-policy.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jboss-ws-security_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jboss-jaxrpc-config_2_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jbossws-tool_1_0.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11_mimebinding.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-addr.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/cxf-soap.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415130" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/soap-encoding1_2.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wadl20090202.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/REST_SWDP.web.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/cxf-servlet.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/sun-jaxws.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/JAXRPCServlet.web.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/jaxrpc-ri-runtime.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis2.conf_axis2.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis2Servlet.web.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/WSServlet.web.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/cxf.web.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis2.services.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/AxisServlet.web.xml" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis.services.wsdd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/wsdl.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/http/wsdl11_httpbinding.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/soap/wsdl11_soapbinding.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/mime/wsdl11_mimebinding.xsd" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1348779415131" ignored="false" />
+    <file path="/crud.css" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349723262037" ignored="false" />
+    <file path="/messages" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349729877290" ignored="false" />
+    <file path="/search.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349729992089" ignored="false" />
+    <file path="/blank.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349732220951" ignored="false" />
+    <file path="/list.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349736728983" ignored="false" />
+    <file path="/UserCategoryLike.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1349809901037" ignored="false" />
+    <file path="/Product.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350074829107" ignored="false" />
+    <file path="/Admin.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350211615292" ignored="false" />
+    <file path="/fragment.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350331807335" ignored="false" />
+    <file path="/Security.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350332677714" ignored="false" />
+    <file path="/dateField.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350499776346" ignored="false" />
+    <file path="/admin.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350577783201" ignored="false" />
+    <file path="/default.css" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1350852252651" ignored="false" />
+    <file path="/show.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351021411807" ignored="false" />
+    <file path="/messages.ru" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351022277030" ignored="false" />
+    <file path="/bootstrap.css" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351022570712" ignored="false" />
+    <file path="/messages.en" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351024296424" ignored="false" />
+    <file path="/Play Framework" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351025961909" ignored="false" />
+    <file path="/Application.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351026273266" ignored="false" />
+    <file path="/fileField.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351026333277" ignored="false" />
+    <file path="/Users.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351026444350" ignored="false" />
+    <file path="/Products.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351100681562" ignored="false" />
+    <file path="/JobScheduler.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351101437009" ignored="false" />
+    <file path="/Play!" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351101480832" ignored="false" />
+    <file path="/User.java" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351102805645" ignored="false" />
+    <file path="/a.dummy" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351103676529" ignored="false" />
+    <file path="/index.html" changelist="1c02b3f7-cad0-4c51-bbbc-718e56e3a721" time="1351106372774" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +345,19 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-    <option name="REVERSE_PATCH" value="false" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="true" />
+  </component>
   <component name="DebuggerManager">
-    <breakpoint_any>
+    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -41,6 +365,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -56,6 +381,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -65,80 +391,51 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/Products.java" line="107" class="controllers.Products" package="controllers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/Application.java" line="206" class="controllers.Application" package="controllers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="yabe" />
+    <favorites_list name="The Like Spot" />
+    <favorites_list name="Current task" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.conf" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <file leaf-file-name="Users.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="207" column="0" selection-start="6463" selection-end="6463" vertical-scroll-proportion="4.0116277">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bootstrap.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Bootstrap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages.ru" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/messages.ru">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="59" selection-start="719" selection-end="719" vertical-scroll-proportion="-8.181818">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages.en" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/messages.en">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="212" selection-end="280" vertical-scroll-proportion="-8.181818">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="288" selection-end="288" vertical-scroll-proportion="-10.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="775" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Application/template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="129" selection-end="129" vertical-scroll-proportion="-2.5">
+            <state line="38" column="0" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -147,10 +444,8 @@
       <file leaf-file-name="Products.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Products.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="4" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="126" column="14" selection-start="5021" selection-end="5021" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,10 +453,8 @@
       <file leaf-file-name="Product.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="941" selection-end="941" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="215" column="0" selection-start="3850" selection-end="4214" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,10 +462,64 @@
       <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="21" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
+            <state line="76" column="55" selection-start="2918" selection-end="2918" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="162" column="77" selection-start="10603" selection-end="10603" vertical-scroll-proportion="-3.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="118" selection-start="2845" selection-end="2845" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmailJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/jobs/EmailJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="display.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/tags/display.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JobScheduler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/jobs/JobScheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="23" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,34 +532,58 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/Bootstrap.java" />
-        <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/controllers/Categories.java" />
-        <option value="$PROJECT_DIR$/app/controllers/Security.java" />
-        <option value="$PROJECT_DIR$/conf/messages" />
-        <option value="$PROJECT_DIR$/conf/dependencies.yml" />
-        <option value="$PROJECT_DIR$/app/views/tags/display.html" />
-        <option value="$PROJECT_DIR$/app/models/Product.java" />
-        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
-        <option value="$PROJECT_DIR$/app/controllers/Admin.java" />
-        <option value="$PROJECT_DIR$/app/controllers/Products.java" />
-        <option value="$PROJECT_DIR$/app/views/Application/index.html" />
-        <option value="$PROJECT_DIR$/conf/messages.en" />
+        <option value="$PROJECT_DIR$/app/views/Users/blank.html" />
+        <option value="$PROJECT_DIR$/app/views/Users/show.html" />
+        <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/conf/messages.ru" />
-        <option value="$PROJECT_DIR$/app/views/Application/template.html" />
+        <option value="$PROJECT_DIR$/conf/messages.en" />
+        <option value="$PROJECT_DIR$/public/stylesheets/crud.css" />
+        <option value="$PROJECT_DIR$/app/views/tags/crud/fileField.html" />
+        <option value="$PROJECT_DIR$/app/controllers/Users.java" />
+        <option value="$PROJECT_DIR$/app/controllers/Products.java" />
+        <option value="$PROJECT_DIR$/app/models/Product.java" />
+        <option value="$PROJECT_DIR$/app/jobs/JobScheduler.java" />
+        <option value="$PROJECT_DIR$/app/views/Application/1.js" />
+        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
+        <option value="$PROJECT_DIR$/app/views/Application/index.html" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
+        <option value="$PROJECT_DIR$/app/models/User.java" />
       </list>
     </option>
   </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="411" />
+    <option name="y" value="22" />
+    <option name="width" value="1711" />
+    <option name="height" value="1255" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -221,6 +592,8 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
@@ -236,13 +609,30 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Favorites" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,15 +640,9 @@
               <option name="myItemId" value="The Like Spot" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="The Like Spot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="likespot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -267,15 +651,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="likespot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="h2" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,7 +683,119 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="likespot" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -293,7 +803,595 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="attachments" />
+              <option name="myItemId" value="binding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="binding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="types" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jpa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-1.2.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="binding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.6 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.6 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.6 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javax" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.6 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javax" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imageio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.6 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.6 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.6 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reflect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="secure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="secure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="secure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="s3blobs-0.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="s3blobs-0.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="s3blobs-0.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="s3blobs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,6 +1477,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="tags" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -401,7 +1521,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="errors" />
+              <option name="myItemId" value="tags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,40 +1565,337 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="likespot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The Like Spot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Default" />
+        <subPane subId="Problems" />
+        <subPane subId="Tests" />
+        <subPane subId="Production" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="likespot">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Local Changes" />
+        <subPane subId="Changed Files" />
+        <subPane subId="All" />
+        <subPane subId="Likespot">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="modules/s3blobs-0.2/src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="play/modules/s3blobs">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="errors">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Application">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="models">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="likespot">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="Persistence.ERD.GroupObjects" value="false" />
+    <property name="Persistence.ERD.MergeEmbedded" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/play-1.2.3/framework/src" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="Html" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="RESOURCE_BUNDLE_SPLITTER_PROPORTION" value="0.5" />
+    <property name="options.lastSelected" value="editor" />
+    <property name="Persistence.ERD.SimpleMode" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="Persistence.ERD.MergeInherited" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Remote.Play">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/app/views/tags/crud" />
+      <recent name="$PROJECT_DIR$/public/js" />
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/app/views" />
+    </key>
+    <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="controllers.Application" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/app/views" />
+      <recent name="$PROJECT_DIR$/public/html" />
+      <recent name="$PROJECT_DIR$/public/js" />
+      <recent name="$PROJECT_DIR$/public/css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Remote.Remote">
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -487,14 +1908,10 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -506,14 +1923,10 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -531,12 +1944,20 @@
       </option>
       <envs />
       <patterns />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
     </configuration>
     <configuration default="false" name="Play" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -552,16 +1973,45 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="Remote" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8000" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8000" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Remote.Play" />
+      <item index="1" class="java.lang.String" itemvalue="Remote.Remote" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+  <component name="ShelveChangesManager" show_recycled="false">
+    <changelist date="1349730993852">
+      <option name="PATH" value="$USER_HOME$/Library/Preferences/IntelliJIdea12/shelf/Local_changes_.patch" />
+      <option name="DESCRIPTION" value="Local changes " />
+    </changelist>
+    <recycled_changelist date="1350337691739">
+      <option name="PATH" value="$USER_HOME$/Library/Preferences/IntelliJIdea12/shelf/Application_conf_and_data_sources.patch" />
+      <option name="DESCRIPTION" value="Application conf and data sources" />
+      <binary>
+        <option name="BEFORE_PATH" />
+        <option name="AFTER_PATH" value=".idea/dataSources.ids" />
+        <option name="SHELVED_PATH" value="$USER_HOME$/Library/Preferences/IntelliJIdea12/shelf/dataSources.ids" />
+      </binary>
+    </recycled_changelist>
+  </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -576,6 +2026,7 @@
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
     <configuration useDefault="true">$USER_HOME$/.subversion_IDEA</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
@@ -586,33 +2037,457 @@
       <created>1320955753655</created>
       <updated>1321091630657</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Test 16">
+      <created>1347562864934</created>
+      <updated>1347562864934</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Twitter Bootstrap&#10;Database Changes&#10;Timeline Layout Update">
+      <created>1347732416835</created>
+      <updated>1347732416835</updated>
+    </task>
+    <task id="LOCAL-00005" summary="User model&#10;Security tweaks">
+      <created>1347791899488</created>
+      <updated>1347791899488</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Bugfix: User is reserved work for PostgreSql.">
+      <created>1347792758441</created>
+      <updated>1347792758441</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Product description is long now">
+      <created>1347793480866</created>
+      <updated>1347793480866</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Product description is long now (bugfix for PostgreSql)">
+      <created>1347793730673</created>
+      <updated>1347793730673</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Security authentication based on users in database.">
+      <created>1347794792154</created>
+      <updated>1347794792154</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Layout update&#10;Sign in and sign out menus&#10;JQuery version update">
+      <created>1347799278990</created>
+      <updated>1347799278990</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Sign in menu bugfix">
+      <created>1347799632138</created>
+      <updated>1347799632138</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Sign in menu bugfix">
+      <created>1347800089195</created>
+      <updated>1347800089195</updated>
+    </task>
+    <task id="LOCAL-00013" summary="No photo bugfix">
+      <created>1347802524881</created>
+      <updated>1347802524881</updated>
+    </task>
+    <task id="LOCAL-00014" summary="No photo bugfix">
+      <created>1347802874428</created>
+      <updated>1347802874428</updated>
+    </task>
+    <task id="LOCAL-00015" summary="No photo bugfix">
+      <created>1347803158820</created>
+      <updated>1347803158820</updated>
+    </task>
+    <task id="LOCAL-00016" summary="No photo bugfix">
+      <created>1347803300757</created>
+      <updated>1347803300757</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Show only products from user subscription">
+      <created>1347806215763</created>
+      <updated>1347806215763</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Show only products from user subscription (bugfix)">
+      <created>1347806477205</created>
+      <updated>1347806477205</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Show only products from user subscription (bugfix)">
+      <created>1347806810846</created>
+      <updated>1347806810846</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Show only products from user subscription (rollback)">
+      <created>1347807617993</created>
+      <updated>1347807617993</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Show only products from user subscription">
+      <created>1347823417649</created>
+      <updated>1347823417649</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Local Changes">
+      <created>1347824902251</created>
+      <updated>1347824902251</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Categories filter">
+      <created>1347910949415</created>
+      <updated>1347910949415</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Categories filter (bugfix)">
+      <created>1347911371161</created>
+      <updated>1347911371161</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Categories filter (bugfix)">
+      <created>1347912746608</created>
+      <updated>1347912746608</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Categories filter (bugfix)">
+      <created>1347912852783</created>
+      <updated>1347912852783</updated>
+    </task>
+    <task id="LOCAL-00027" summary="CSS enhancements (experimental)">
+      <created>1348071703662</created>
+      <updated>1348071703662</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Logo home link">
+      <created>1348072059373</created>
+      <updated>1348072059374</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Do not show draft products.">
+      <created>1348083017004</created>
+      <updated>1348083017004</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Bugfix">
+      <created>1348166498178</created>
+      <updated>1348166498178</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Show url for selected product.&#10;Basic preset of icons for facebook, home page, afisha, myspace and youtube.">
+      <created>1348513425170</created>
+      <updated>1348513425170</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added Youtube, Facebook and Afisha links to product.">
+      <created>1348515522786</created>
+      <updated>1348515522786</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Bugfix">
+      <created>1348516096857</created>
+      <updated>1348516096857</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Bugfix">
+      <created>1348516330859</created>
+      <updated>1348516330859</updated>
+    </task>
+    <task id="LOCAL-00035" summary="CSS tweaks">
+      <created>1348549656197</created>
+      <updated>1348549656197</updated>
+    </task>
+    <task id="LOCAL-00036" summary="CSS tweaks">
+      <created>1348550086802</created>
+      <updated>1348550086802</updated>
+    </task>
+    <task id="LOCAL-00037" summary="CSS tweaks">
+      <created>1348550885730</created>
+      <updated>1348550885730</updated>
+    </task>
+    <task id="LOCAL-00038" summary="CSS tweaks">
+      <created>1348554190037</created>
+      <updated>1348554190037</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Images pre-loading">
+      <created>1348554896343</created>
+      <updated>1348554896343</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Last FM added">
+      <created>1348598078754</created>
+      <updated>1348598078754</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Twitter added">
+      <created>1348598774299</created>
+      <updated>1348598774299</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Twitter added (part 2)">
+      <created>1348598793839</created>
+      <updated>1348598793839</updated>
+    </task>
+    <task id="LOCAL-00043" summary="VK added">
+      <created>1348600564959</created>
+      <updated>1348600564959</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Soundcloud reference">
+      <created>1348999437483</created>
+      <updated>1348999437483</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Infinite scrolling (part 1)">
+      <created>1349078872487</created>
+      <updated>1349078872487</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Infinite scrolling (bugfix)">
+      <created>1349079301065</created>
+      <updated>1349079301065</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Infinite scrolling (bugfix)">
+      <created>1349079963283</created>
+      <updated>1349079963283</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Infinite scrolling (bugfix)">
+      <created>1349080249897</created>
+      <updated>1349080249897</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Infinite scrolling (bugfix)">
+      <created>1349080738752</created>
+      <updated>1349080738752</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Infinite scrolling (bugfix)">
+      <created>1349081254153</created>
+      <updated>1349081254153</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Infinite scrolling (bugfix)">
+      <created>1349081991504</created>
+      <updated>1349081991504</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Infinite scrolling (bugfix)">
+      <created>1349082012276</created>
+      <updated>1349082012277</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Infinite scrolling (bugfix)">
+      <created>1349082693858</created>
+      <updated>1349082693858</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Infinite scrolling (bugfix)">
+      <created>1349082879040</created>
+      <updated>1349082879041</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Infinite scrolling (bugfix)">
+      <created>1349082926723</created>
+      <updated>1349082926724</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Infinite scrolling (bugfix)">
+      <created>1349083188038</created>
+      <updated>1349083188038</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Minor bugfix">
+      <created>1349156672288</created>
+      <updated>1349156672288</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Review link">
+      <created>1349202541332</created>
+      <updated>1349202541333</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Foursquare link">
+      <created>1349203850649</created>
+      <updated>1349203850649</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Minor bugfix">
+      <created>1349204651236</created>
+      <updated>1349204651236</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Afisha link has been replaced with store">
+      <created>1349598043252</created>
+      <updated>1349598043252</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Afisha link has been replaced with store (minor fix)">
+      <created>1349598090016</created>
+      <updated>1349598090016</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Customized CRUD (part 1)">
+      <created>1349730202010</created>
+      <updated>1349730202010</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Local changes&#10;">
+      <created>1349730994295</created>
+      <updated>1349730994296</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Resources&#10;SendGrid settings">
+      <created>1349733930649</created>
+      <updated>1349733930649</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Cascade delete for products &lt;-&gt; categories">
+      <created>1349809649622</created>
+      <updated>1349809649623</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Cascade delete for products and categories --&gt; user.products and user.categories">
+      <created>1349813042176</created>
+      <updated>1349813042177</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Exclude strategy for JSON serialization to avoid circular dependencies.">
+      <created>1349818447628</created>
+      <updated>1349818447628</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Delete photo after product deleted.">
+      <created>1349818897855</created>
+      <updated>1349818897855</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Open graph tags test">
+      <created>1349899518971</created>
+      <updated>1349899518971</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Clear photo cache on product save">
+      <created>1349976544872</created>
+      <updated>1349976544872</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Re-design of navigation bar">
+      <created>1350020519471</created>
+      <updated>1350020519471</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Re-design of navigation bar (minor fix)">
+      <created>1350021002916</created>
+      <updated>1350021002916</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Hidden author set automatically">
+      <created>1350068529118</created>
+      <updated>1350068529118</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Hidden author set automatically (bugfix)">
+      <created>1350075296126</created>
+      <updated>1350075296126</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Improved source field">
+      <created>1350224052208</created>
+      <updated>1350224052208</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Fix for products without author">
+      <created>1350231726504</created>
+      <updated>1350231726504</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Fix for products without author (bugfix)">
+      <created>1350231905634</created>
+      <updated>1350231905634</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Test favorites products page">
+      <created>1350333239450</created>
+      <updated>1350333239450</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Test favorites products page (part 2)">
+      <created>1350333714457</created>
+      <updated>1350333714457</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Test favorites products page (part 3)">
+      <created>1350334868775</created>
+      <updated>1350334868775</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Test favorites products page (part 4)">
+      <created>1350336100833</created>
+      <updated>1350336100834</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Test favorites products page (part 5)">
+      <created>1350336313357</created>
+      <updated>1350336313357</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Test favorites products page (part 6)">
+      <created>1350336811852</created>
+      <updated>1350336811852</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Application conf and data sources">
+      <created>1350337692213</created>
+      <updated>1350337692213</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Do not show passwords">
+      <created>1350338725445</created>
+      <updated>1350338725445</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Do not erase user products on save">
+      <created>1350339725926</created>
+      <updated>1350339725926</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Changed email job settings">
+      <created>1350340075293</created>
+      <updated>1350340075293</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Date picker added">
+      <created>1350500803014</created>
+      <updated>1350500803014</updated>
+    </task>
+    <task id="LOCAL-00090" summary="User likes bugfix">
+      <created>1350578246768</created>
+      <updated>1350578246769</updated>
+    </task>
+    <task id="LOCAL-00091" summary="User likes bugfix (part 2)">
+      <created>1350578964194</created>
+      <updated>1350578964194</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Favicon">
+      <created>1350740168532</created>
+      <updated>1350740168532</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Hide categories">
+      <created>1350741190843</created>
+      <updated>1350741190843</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Highlight different categories">
+      <created>1350743291033</created>
+      <updated>1350743291034</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Highlight selected product">
+      <created>1350744995742</created>
+      <updated>1350744995743</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Highlight selected product (part 2)">
+      <created>1350745426235</created>
+      <updated>1350745426235</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Bugfix">
+      <created>1350753185865</created>
+      <updated>1350753185866</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Check is admin role and settings menu">
+      <created>1350755129884</created>
+      <updated>1350755129884</updated>
+    </task>
+    <task id="LOCAL-00099" summary="CSS bugfix">
+      <created>1350926803615</created>
+      <updated>1350926803615</updated>
+    </task>
+    <task id="LOCAL-00100" summary="User profile, friends, etc.">
+      <created>1351102866292</created>
+      <updated>1351102866292</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <option name="trackContextForNewChangelist" value="false" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1327" extended-state="6" />
+    <frame x="411" y="22" width="1711" height="1255" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32955465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955465" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955465" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960192" sideWeight="0.6704453" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34801763" sideWeight="0.32416108" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22748815" sideWeight="0.3227513" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912913" sideWeight="0.675485" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50176364" sideWeight="0.49463087" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50196594" sideWeight="0.50067115" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892415" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2018018" sideWeight="0.57583773" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23063064" sideWeight="0.65198237" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32539684" sideWeight="0.48389262" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JPA Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56349206" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32451499" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.6704453" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -633,13 +2508,21 @@
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="User profile, friends, etc." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -652,133 +2535,178 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Improved source field" />
+    <MESSAGE value="Fix for products without author" />
+    <MESSAGE value="Fix for products without author (bugfix)" />
+    <MESSAGE value="Test favorites products page" />
+    <MESSAGE value="Test favorites products page (part 2)" />
+    <MESSAGE value="Test favorites products page (part 3)" />
+    <MESSAGE value="Test favorites products page (part 4)" />
+    <MESSAGE value="Test favorites products page (part 5)" />
+    <MESSAGE value="Test favorites products page (part 6)" />
+    <MESSAGE value="Application conf and data sources" />
+    <MESSAGE value="Do not show passwords" />
+    <MESSAGE value="Do not erase user products on save" />
+    <MESSAGE value="Changed email job settings" />
+    <MESSAGE value="Date picker added" />
+    <MESSAGE value="User likes bugfix" />
+    <MESSAGE value="User likes bugfix (part 2)" />
+    <MESSAGE value="Favicon" />
+    <MESSAGE value="Hide categories" />
+    <MESSAGE value="Highlight different categories" />
+    <MESSAGE value="Highlight selected product" />
+    <MESSAGE value="Highlight selected product (part 2)" />
+    <MESSAGE value="Bugfix" />
+    <MESSAGE value="Check is admin role and settings menu" />
+    <MESSAGE value="CSS bugfix" />
+    <MESSAGE value="User profile, friends, etc." />
+  </component>
+  <component name="VssConfiguration">
+    <option name="CLIENT_PATH" value="" />
+    <option name="SRCSAFEINI_PATH" value="" />
+    <option name="USER_NAME" value="" />
+    <option name="PWD" value="" />
+    <CheckoutOptions>
+      <option name="COMMENT" value="" />
+      <option name="DO_NOT_GET_LATEST_VERSION" value="false" />
+      <option name="REPLACE_WRITABLE" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckoutOptions>
+    <CheckinOptions>
+      <option name="COMMENT" value="" />
+      <option name="KEEP_CHECKED_OUT" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckinOptions>
+    <AddOptions>
+      <option name="STORE_ONLY_LATEST_VERSION" value="false" />
+      <option name="CHECK_OUT_IMMEDIATELY" value="false" />
+    </AddOptions>
+    <UndocheckoutOptions>
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="REPLACE_LOCAL_COPY" value="2" />
+      <option name="RECURSIVE" value="false" />
+    </UndocheckoutOptions>
+    <GetOptions>
+      <option name="REPLACE_WRITABLE" value="0" />
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="ANSWER_NEGATIVELY" value="false" />
+      <option name="ANSWER_POSITIVELY" value="false" />
+      <option name="RECURSIVE" value="false" />
+      <option name="VERSION" />
+    </GetOptions>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/conf/routes">
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="48" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
+        <state line="56" column="12" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Downloads/play-1.2.3/framework/play.jar!/play/data/validation/Required.class">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/crud.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="423" selection-end="423" vertical-scroll-proportion="0.088907704">
+        <state line="178" column="4" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/s3blobs-0.2/src/play/modules/s3blobs/S3Blob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/initial-data.yml">
+    <entry file="file://$PROJECT_DIR$/app/views/tags/crud/fileField.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="12" column="42" selection-start="469" selection-end="469" vertical-scroll-proportion="-7.5" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/play-1.2.3/framework/src/play/db/jpa/GenericModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="33" selection-start="8589" selection-end="8589" vertical-scroll-proportion="-2.7771318" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/play-1.2.3/framework/src/play/jobs/OnApplicationStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="18" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Categories.java">
+    <entry file="file://$PROJECT_DIR$/app/jobs/JobScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tags/display.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="43" selection-start="148" selection-end="148" vertical-scroll-proportion="-2.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/dependencies.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="20" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
+        <state line="9" column="23" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="941" selection-end="941" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="215" column="0" selection-start="3850" selection-end="4214" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+    <entry file="file://$PROJECT_DIR$/app/controllers/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="21" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="38" column="0" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Products.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/messages.en">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="212" selection-end="280" vertical-scroll-proportion="-8.181818">
+        <state line="126" column="14" selection-start="5021" selection-end="5021" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/messages.ru">
+    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="59" selection-start="719" selection-end="719" vertical-scroll-proportion="-8.181818">
+        <state line="76" column="55" selection-start="2918" selection-end="2918" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="288" selection-end="288" vertical-scroll-proportion="-10.0">
+        <state line="162" column="77" selection-start="10603" selection-end="10603" vertical-scroll-proportion="-3.125">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="775" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Application/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="129" selection-end="129" vertical-scroll-proportion="-2.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Bootstrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/application.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="0" selection-start="6463" selection-end="6463" vertical-scroll-proportion="4.0116277">
+        <state line="86" column="118" selection-start="2845" selection-end="2845" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="13" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/jobs/EmailJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tags/display.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -800,7 +2728,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android</last-edited>
+          <last-edited>JPA (likespot)|JPA</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -812,6 +2740,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>jquery.endless-scroll</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -840,7 +2769,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -868,6 +2796,21 @@
               </list>
             </option>
           </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Likespot</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="Likespot" />
+          </order>
         </settings>
       </state>
     </states>

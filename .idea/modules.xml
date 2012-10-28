@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Downloads/play-1.2.3/modules/crud/crud.iml" filepath="$USER_HOME$/Downloads/play-1.2.3/modules/crud/crud.iml" />
       <module fileurl="file://$PROJECT_DIR$/likespot.iml" filepath="$PROJECT_DIR$/likespot.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/play-1.2.3/modules/secure/secure.iml" filepath="$USER_HOME$/Downloads/play-1.2.3/modules/secure/secure.iml" />
     </modules>
   </component>
 </project>

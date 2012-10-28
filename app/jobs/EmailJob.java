@@ -85,7 +85,8 @@ public class EmailJob extends Job {
             builder.append("<p>").append("<b>").
                     append("<a href='http://likespot.ru/?p=").append(product.getId()).append("'>").append(product.getTitle()).append("</a>").
                     append("</b>").append("<br>").
-                    append(product.getDescription()).append("</p>");
+                    append("<i>").append(product.getAuthor().fullname).append("</i>").
+                    append("<br>").append(product.getDescription()).append("</p>");
         }
 
         return builder.append("</body></html>").toString();
