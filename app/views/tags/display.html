@@ -31,8 +31,8 @@
         ${_product.description.nl2br()}
         </p>
         #{if _product.url || _product.twitter || _product.facebook || _product.vk || _product.youTube || _product.review || _product.store || _product.lastFM || _product.cloudsound || _product.foursquare}
-        <div id="product_buttons_${_product.id}" style="display: none; margin: 0; padding: 5px 0;">
-            <p>
+        <div id="product_buttons_${_product.id}" style="display: none;">
+            <p style="margin: 0; padding: 5px 0;">
                 #{if _product.url} <a href="${_product.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.twitter} <a href="${_product.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.facebook} <a href="${_product.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
