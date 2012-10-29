@@ -160,7 +160,7 @@
                             ${selectedUser.about?.nl2br()}
                             </p>
                             <small class="muted">&{'Россия, Санкт-Петербург'}&nbsp;</small>
-                            #{if user != null && _user.id != selectedUser.id }}
+                            #{if user != null && user.id != selectedUser.id }}
                                 <small>
                                     <a id="follow_button_${selectedUser.id}" style="margin-top: -3px" href="#" class="product_text_buttons slow_title_hint" onclick="
                                             toggleFollow(${selectedUser.id}, '${selectedUser.fullname.addSlashes()}',
