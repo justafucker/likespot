@@ -81,7 +81,7 @@
         });
     }
 </script>
-<div class="row" xmlns="http://www.w3.org/1999/html">
+<div class="row">
     <div class="span8">
         #{if selectedProduct}
             <div style="border:1px solid #efdfcc; -moz-border-radius: 5px;
@@ -272,6 +272,13 @@
                     </ul>
                 </p>
             #{/else}
+        </div>
+        <br/>
+        <div style="border:1px solid rgb(232, 232, 232); -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px; padding: 10px 15px;">
+            <p><small>&copy; 2012 Likespot&nbsp;&nbsp;<a class="muted" href="@{About.index()}">&{'about'}</a></small></p>
         </div>
     </div>
 </div>

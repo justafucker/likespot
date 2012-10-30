@@ -5802,17 +5802,19 @@ a.badge:hover {
 }
 
 .hero-unit {
-  padding: 60px;
-  margin-bottom: 30px;
-  background-color: #eeeeee;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #eeffff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid
+    #cceeee;
 }
 
 .hero-unit h1 {
   margin-bottom: 0;
-  font-size: 60px;
+  font-size: 40px;
   line-height: 1;
   letter-spacing: -1px;
   color: inherit;
