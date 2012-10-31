@@ -1,6 +1,8 @@
 #{extends 'main.html'/}
 
-#{set title: messages.get("about") /}
+#{set title: "Мы ищем редакторов!" /}
+#{set image: "http://cs403629.userapi.com/v403629612/4bc8/iryYcdjB25U.jpg" /}
+#{set description: "В рамках нового медиа-проекта мы открываем стажерскую программую для начинающих журналистов. Мы ищем таланлтивых молодых людей, готовых учиться и участвовать в создании медиа нового формата." /}
 
 <div class="row">
     <header class="hero-unit" id="overview">
@@ -79,5 +81,13 @@
                 <li><a href="#"><small>Гаджеты</small></a></li>
             </ul>
         </div>
+        <br/>
+        <script type="text/javascript" src="//vk.com/js/api/openapi.js?62"></script>
+
+        <!-- VK Widget -->
+        <div id="vk_groups"></div>
+        <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", {mode: 1, wide: 1, width: "300", height: "290"}, 31929469);
+        </script>
     </div>
 </div>
