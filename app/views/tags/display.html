@@ -37,12 +37,15 @@
                 #{if _product.twitter} <a href="${_product.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.facebook} <a href="${_product.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.vk} <a href="${_product.vk}" target="_blank" class="ico-button ico-vk title_hint" title="&{'vk'}" onclick="event.stopPropagation();"></a> #{/if}
-                #{if _product.youTube} <a href="${_product.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.lastFM} <a href="${_product.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.cloudsound} <a href="${_product.cloudsound}" target="_blank" class="ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.review} <a href="${_product.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.store} <a href="${_product.store}" target="_blank" class="ico-button ico-store title_hint" title="&{'store'}" onclick="event.stopPropagation();"></a> #{/if}
                 #{if _product.foursquare} <a href="${_product.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
+
+                #{if _product.youTube}
+                    <a id="YTPlayer_${_product.id}" href="${_product.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
+                #{/if}
             </p>
         </div>
         #{/if}

@@ -34,6 +34,8 @@
             $('#product_text_buttons_' + id).parent().parent().removeAttr("toggled_parent");
             window['previous_product_buttons'] = 0;
         }
+        // Stop current YT video.
+        YTCurrent && YTCurrent.stopVideo();
     }
 
     function toggleLike(id, title, href, selected) {
@@ -201,9 +203,64 @@
                         </h4>
                     </td>
                 </tr>
+
                 #{list items:products, as:'product'}
                     #{display product:product, user:user /}
                 #{/list}
+
+                <script type="text/javascript">
+                    // Loading the IFrame You Tube Player API code asynchronously.
+                    var tag = document.createElement('script');
+                    tag.src = "//www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    var YTCurrent = null;
+
+                    function onYouTubeIframeAPIReady(){
+
+                        function getId( url ){
+                            if( !url ) return null;
+                            var idx = url.indexOf( 'v=' );
+                            if( !(idx + 1) && !( url[ idx-1 ] == '&' ) && !( url[ idx-1 ] == '?' ) ) return null;
+                            // YT id consist of 11 characters.
+                            return url.substr( idx+2, 11 );
+                        }
+
+                        var pieces = document.getElementsByClassName( 'YTPlayer' );
+
+                        if( !pieces.length ) return;
+
+                        var i = pieces.length,
+                                player;
+                        while( i ){
+                            var j = i- 1,
+                                videoId = getId( pieces[ j ].getAttribute( 'href' ) );
+                            i--;
+                            if( !videoId || !pieces[ j ].id ) continue;
+
+                            var container = document.createElement( 'div' );
+                            container.id = pieces[ j ].id;
+
+                            pieces[ j ].parentNode.insertBefore( container, pieces[ j ] );
+                            pieces[ j ].parentNode.removeChild( pieces[ j ] );
+
+                            player = new YT.Player( container.id , {
+                                height: '320',
+                                width: '480',
+                                videoId: videoId,
+                                events: {
+                                    'onStateChange': function( event ){
+                                        if( event.data == YT.PlayerState.PLAYING ){
+                                            YTCurrent = event.target;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                </script>
+
                 #{if products.isEmpty()}
                     <tr class="hovered-item">
                         <td colspan="2" style="padding: 14px; border-top:1px solid rgb(232, 232, 232); width: 65px; vertical-align: top;">

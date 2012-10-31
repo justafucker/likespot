@@ -53,6 +53,7 @@
                                             "/application/getproducts?u=" + u + "&c=-1&p=-1&page=" + (currentPage + 1),
                             function(data) {
                                 currentPage++;
+                                var isYT = false;
                                 for (var i = 0; i < data.length; i++) {
                                     $("#products_table").append(
                                             "<tr class='hovered-item' onclick='toggleProduct(" + data[i].id + ")'>" +
@@ -73,12 +74,12 @@
                                                                     (data[i].twitter ? "<a href='" + data[i].twitter + "' target='_blank' class='ico-button ico-twitter title_hint' title=\"&{'twitter'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].facebook ? "<a href='" + data[i].facebook + "' target='_blank' class='ico-button ico-facebook title_hint' title=\"&{'facebook'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].vk ? "<a href='" + data[i].vk + "' target='_blank' class='ico-button ico-vk title_hint' title=\"&{'vk'}\" onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].youTube ? "<a href='" + data[i].youTube + "' target='_blank' class='ico-button ico-youtube title_hint' title=\"&{'youTube'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].review ? "<a href='" + data[i].review + "' target='_blank' class='ico-button ico-review title_hint' title=\"&{'review'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].store ? "<a href='" + data[i].store + "' target='_blank' class='ico-button ico-store title_hint' title=\"&{'store'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].foursquare ? "<a href='" + data[i].foursquare + "' target='_blank' class='ico-button ico-foursquare title_hint' title=\"&{'foursquare'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].lastFM ? "<a href='" + data[i].lastFM + "' target='_blank' class='ico-button ico-lastfm title_hint' title=\"&{'lastFM'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].cloudsound ? "<a href='" + data[i].cloudsound + "' target='_blank' class='ico-button ico-cloudsound title_hint' title=\"&{'cloudsound'}\" onclick='event.stopPropagation();'></a> " : "") +
+                                                                    (data[i].youTube ? "<a id='YTPlayer_" + data[i].id + "' href='" + data[i].youTube + "' target='_blank' class='YTPlayer ico-button ico-youtube title_hint' title=\"&{'youTube'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     "</p></div>" : "") +
                                                     "<small class='muted'>" + data[i].date + "</small>" +
                                                     #{if user != null}
@@ -94,11 +95,16 @@
                                                     #{/if}
                                                     "</td>" +
                                                     "</tr>");
+                                    // Collect You tube videos.
+                                    isYT = ( data[i].youTube ) ? true : isYT;
                                 }
                                 requestingNextPage = false;
                                 noMoreResults = data.length == 0;
                                 $('.title_hint').tooltip({placement: 'bottom'});
                                 $('.slow_title_hint').tooltip({placement: 'bottom', delay: 1000});
+                                // Substitute links with videos if YT API is ready.
+                                isYT && YT && onYouTubeIframeAPIReady();
+
                             }
                         )
                     }
