@@ -115,12 +115,15 @@
                                     #{if selectedProduct.twitter} <a href="${selectedProduct.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.facebook} <a href="${selectedProduct.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.vk} <a href="${selectedProduct.vk}" target="_blank" class="ico-button ico-vk title_hint" title="&{'vk'}" onclick="event.stopPropagation();"></a> #{/if}
-                                    #{if selectedProduct.youTube} <a href="${selectedProduct.youTube}" target="_blank" class="ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.lastFM} <a href="${selectedProduct.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.cloudsound} <a href="${selectedProduct.cloudsound}" target="_blank" class="ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.review} <a href="${selectedProduct.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.store} <a href="${selectedProduct.store}" target="_blank" class="ico-button ico-store title_hint" title="&{'store'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.foursquare} <a href="${selectedProduct.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
+
+                                    #{if selectedProduct.youTube}
+                                        <a id="YTPlayer_${selectedProduct.id}" href="${selectedProduct.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
+                                    #{/if}
                                 </p>
                             </div>
                         #{/if}
@@ -241,14 +244,21 @@
 
                             var container = document.createElement( 'div' );
                             container.id = pieces[ j ].id;
+                            container.style.paddingTop = '10px';
 
                             pieces[ j ].parentNode.insertBefore( container, pieces[ j ] );
                             pieces[ j ].parentNode.removeChild( pieces[ j ] );
 
                             player = new YT.Player( container.id , {
-                                height: '320',
+                                height: '360',
                                 width: '480',
                                 videoId: videoId,
+                                playerVars: {
+                                    controls:2,
+                                    showinfo:0,
+                                    modestbranding:1,
+                                    autohide:1
+                                },
                                 events: {
                                     'onStateChange': function( event ){
                                         if( event.data == YT.PlayerState.PLAYING ){
