@@ -34,6 +34,7 @@ public class Bootstrap extends Job {
                     product.getThumbnail().set(new ByteArrayInputStream(thumbnailOutput.toByteArray(), 0, thumbnailOutput.size()),
                             "image/png");
                     product.save();
+                    Logger.debug("Product #" + product.getId() + " updated.");
                 }
             } catch (IOException e) {
                 Logger.error("Error while updating thumbnail", e);
