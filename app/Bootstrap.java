@@ -17,7 +17,7 @@ import java.util.List;
 @OnApplicationStart
 public class Bootstrap extends Job {
     public void doJob() {
-        List<Product> products = Product.all().fetch();
+        /*List<Product> products = Product.all().fetch();
         for (Product product : products) {
             try {
                 if (!product.hasThumbnail() && product.hasPhoto() && product.getPhoto().exists()) {
@@ -41,6 +41,6 @@ public class Bootstrap extends Job {
             } catch (AmazonS3Exception e) {
                 Logger.error("Error while updating thumbnail", e);
             }
-        }
+        }*/
     }
 }
