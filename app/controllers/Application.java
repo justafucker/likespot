@@ -113,6 +113,7 @@ public class Application extends Controller {
 
     public static void index(Long c, Long p, Long u) {
         List<Product> aa = Product.all().fetch();
+        int a = 0;
         for (Product product : aa) {
             try {
                 if (!product.hasThumbnail() && product.hasPhoto() && product.getPhoto().exists()) {
@@ -130,6 +131,10 @@ public class Application extends Controller {
                             "image/png");
                     product.save();
                     Logger.debug("Product #" + product.getId() + " updated.");
+                    a++;
+                    if (a > 30) {
+                        break;
+                    }
                 }
             } catch (IOException e) {
                 Logger.error("Error while updating thumbnail", e);
