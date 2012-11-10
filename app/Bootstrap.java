@@ -1,3 +1,4 @@
+import com.amazonaws.services.s3.model.AmazonS3Exception;
 import controllers.Products;
 import play.*;
 import play.jobs.*;
@@ -35,6 +36,8 @@ public class Bootstrap extends Job {
                     product.save();
                 }
             } catch (IOException e) {
+                Logger.error("Error while updating thumbnail", e);
+            } catch (AmazonS3Exception e) {
                 Logger.error("Error while updating thumbnail", e);
             }
         }
