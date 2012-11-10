@@ -179,8 +179,8 @@ public class Application extends Controller {
         notFoundIfNull(product);
         String contentType = Cache.get("product_photo_type_" + id, String.class);
         if (contentType == null) {
-            if (product.getPhoto().exists()) {
-                contentType = product.getPhoto().type();
+            if (product.getThumbnail().exists()) {
+                contentType = product.getThumbnail().type();
                 Cache.set("product_photo_type_" + id, contentType);
             }
         }
@@ -189,7 +189,7 @@ public class Application extends Controller {
             byte[] bytes = (byte[]) Cache.get("product_photo_bytes_" + id);
             if (bytes == null)  {
                 ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-                InputStream is = product.getPhoto().get();
+                InputStream is = product.getThumbnail().get();
                 int nRead;
                 byte[] data = new byte[16384];
                 while ((nRead = is.read(data, 0, data.length)) != -1) {

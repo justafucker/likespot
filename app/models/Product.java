@@ -11,6 +11,7 @@ import play.db.jpa.Model;
 import play.modules.s3blobs.S3Blob;
 
 import javax.persistence.*;
+import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +31,9 @@ public class Product extends Model {
 
     @Required
     public S3Blob photo;
+
+    @Required
+    public S3Blob thumbnail;
 
     @ManyToOne
     private Product parent;
@@ -227,5 +231,41 @@ public class Product extends Model {
     @Override
     public String toString() {
         return title;
+    }
+
+    public S3Blob getThumbnail() {
+        return thumbnail;
+    }
+
+    public boolean hasPhoto() {
+        if (photo == null) return false;
+        try {
+            Field field = S3Blob.class.getDeclaredField("key");
+            field.setAccessible(true);
+            String key = (String) field.get(photo);
+            return key != null && key.length() > 0;
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean hasThumbnail() {
+        if (thumbnail == null) return false;
+        try {
+            Field field = S3Blob.class.getDeclaredField("key");
+            field.setAccessible(true);
+            String key = (String) field.get(thumbnail);
+            return key != null && key.length() > 0;
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void setThumbnail(S3Blob thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

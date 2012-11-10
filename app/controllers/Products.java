@@ -1,8 +1,10 @@
 package controllers;
 
+import com.amazonaws.services.s3.model.AmazonS3Exception;
 import models.Category;
 import models.Product;
 import models.User;
+import play.Logger;
 import play.cache.Cache;
 import play.data.Upload;
 import play.data.binding.Binder;
@@ -16,6 +18,7 @@ import play.mvc.With;
 import utils.EmailQueue;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -26,6 +29,9 @@ import java.util.List;
 @CRUD.For(Product.class)
 @With(Secure.class)
 public class Products extends CRUD {
+
+    public static final int THUMBNAIL_SIZE = 65;
+
     public static void blank() throws Exception {
         renderArgs.put("blank", true);
         ObjectType type = ObjectType.get(getControllerClass());
@@ -108,26 +114,35 @@ public class Products extends CRUD {
         List<Upload> uploads = (List<Upload>) Http.Request.current().args.get("__UPLOADS");
         for (Upload upload : uploads) {
             if (upload.getFieldName().equals("object.photo") && upload.getSize() > 0) {
-                BufferedImage image = ImageIO.read(upload.asStream());
-                int size = Math.min(image.getWidth(), image.getHeight());
-                BufferedImage cropped = image.getSubimage((image.getWidth() - size) / 2,
-                        (image.getHeight() - size) / 2,
+                BufferedImage original = ImageIO.read(upload.asStream());
+                int size = Math.min(original.getWidth(), original.getHeight());
+                BufferedImage cropped = original.getSubimage((original.getWidth() - size) / 2,
+                        (original.getHeight() - size) / 2,
                         size,
                         size);
-                final ByteArrayOutputStream output = new ByteArrayOutputStream() {
-                    @Override
-                    public synchronized byte[] toByteArray() {
-                        return this.buf;
-                    }
-                };
-                ImageIO.write(cropped, "png", output);
-                if (remove && product.getPhoto().exists()) {
+                Image thumbnailImage = cropped.getScaledInstance(THUMBNAIL_SIZE, THUMBNAIL_SIZE, Image.SCALE_SMOOTH);
+                BufferedImage thumbnail = new BufferedImage(THUMBNAIL_SIZE, THUMBNAIL_SIZE, BufferedImage.TYPE_INT_RGB);
+                Graphics graphics = thumbnail.createGraphics();
+                graphics.drawImage(thumbnailImage, 0, 0, new Color(0, 0, 0), null);
+                graphics.dispose();
+
+                if (remove && product.hasPhoto() && product.getPhoto().exists()) {
                     product.getPhoto().delete();
+                }
+                if (remove && product.hasThumbnail() && product.getThumbnail().exists()) {
+                    product.getThumbnail().delete();
                 }
                 if (product.getPhoto() == null) {
                     product.setPhoto(new S3Blob());
                 }
-                product.getPhoto().set(new ByteArrayInputStream(output.toByteArray(), 0, output.size()),
+                if (product.getThumbnail() == null) {
+                    product.setThumbnail(new S3Blob());
+                }
+                final ByteArrayOutputStream originalOutput = getImageAsStream(original);
+                product.getPhoto().set(new ByteArrayInputStream(originalOutput.toByteArray(), 0, originalOutput.size()),
+                        "image/png");
+                final ByteArrayOutputStream thumbnailOutput = getImageAsStream(thumbnail);
+                product.getThumbnail().set(new ByteArrayInputStream(thumbnailOutput.toByteArray(), 0, thumbnailOutput.size()),
                         "image/png");
                 params.remove("object.photo");
             }
@@ -135,6 +150,17 @@ public class Products extends CRUD {
         Cache.delete("product_photo_type_" + product.id);
         Cache.delete("product_photo_bytes_" + product.id);
         Binder.bind(product, "object", params.all());
+    }
+
+    public static ByteArrayOutputStream getImageAsStream(BufferedImage cropped) throws IOException {
+        final ByteArrayOutputStream output = new ByteArrayOutputStream() {
+            @Override
+            public synchronized byte[] toByteArray() {
+                return this.buf;
+            }
+        };
+        ImageIO.write(cropped, "png", output);
+        return output;
     }
 
     @After(only = {"save"})
