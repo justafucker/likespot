@@ -112,37 +112,6 @@ public class Application extends Controller {
     }
 
     public static void index(Long c, Long p, Long u) {
-        List<Product> aa = Product.all().fetch();
-        int a = 0;
-        for (Product product : aa) {
-            try {
-                if (!product.hasThumbnail() && product.hasPhoto() && product.getPhoto().exists()) {
-                    BufferedImage original = ImageIO.read(product.getPhoto().get());
-                    int size = Math.min(original.getWidth(), original.getHeight());
-                    BufferedImage cropped = original.getSubimage((original.getWidth() - size) / 2,
-                            (original.getHeight() - size) / 2, size, size);
-                    Image thumbnailImage = cropped.getScaledInstance(Products.THUMBNAIL_SIZE, Products.THUMBNAIL_SIZE, Image.SCALE_SMOOTH);
-                    BufferedImage thumbnail = new BufferedImage(Products.THUMBNAIL_SIZE, Products.THUMBNAIL_SIZE, BufferedImage.TYPE_INT_RGB);
-                    Graphics graphics = thumbnail.createGraphics();
-                    graphics.drawImage(thumbnailImage, 0, 0, new Color(0, 0, 0), null);
-                    graphics.dispose();
-                    final ByteArrayOutputStream thumbnailOutput = Products.getImageAsStream(thumbnail);
-                    product.getThumbnail().set(new ByteArrayInputStream(thumbnailOutput.toByteArray(), 0, thumbnailOutput.size()),
-                            "image/png");
-                    product.save();
-                    Logger.debug("Product #" + product.getId() + " updated.");
-                    a++;
-                    if (a > 30) {
-                        break;
-                    }
-                }
-            } catch (IOException e) {
-                Logger.error("Error while updating thumbnail", e);
-            } catch (AmazonS3Exception e) {
-                Logger.error("Error while updating thumbnail", e);
-            }
-        }
-
         renderArgs.put("home", true);
         renderArgs.put("c", c != null ? c : -1); // Override c
         renderArgs.put("p", p != null ? p : -1); // Override p
@@ -212,6 +181,28 @@ public class Application extends Controller {
 
     public static void productPhoto(long id) throws IOException {
         final Product product = Product.findById(id);
+        try {
+            if (!product.hasThumbnail() && product.hasPhoto() && product.getPhoto().exists()) {
+                BufferedImage original = ImageIO.read(product.getPhoto().get());
+                int size = Math.min(original.getWidth(), original.getHeight());
+                BufferedImage cropped = original.getSubimage((original.getWidth() - size) / 2,
+                        (original.getHeight() - size) / 2, size, size);
+                Image thumbnailImage = cropped.getScaledInstance(Products.THUMBNAIL_SIZE, Products.THUMBNAIL_SIZE, Image.SCALE_SMOOTH);
+                BufferedImage thumbnail = new BufferedImage(Products.THUMBNAIL_SIZE, Products.THUMBNAIL_SIZE, BufferedImage.TYPE_INT_RGB);
+                Graphics graphics = thumbnail.createGraphics();
+                graphics.drawImage(thumbnailImage, 0, 0, new Color(0, 0, 0), null);
+                graphics.dispose();
+                final ByteArrayOutputStream thumbnailOutput = Products.getImageAsStream(thumbnail);
+                product.getThumbnail().set(new ByteArrayInputStream(thumbnailOutput.toByteArray(), 0, thumbnailOutput.size()),
+                        "image/png");
+                product.save();
+                Logger.debug("Product #" + product.getId() + " updated.");
+            }
+        } catch (IOException e) {
+            Logger.error("Error while updating thumbnail", e);
+        } catch (AmazonS3Exception e) {
+            Logger.error("Error while updating thumbnail", e);
+        }
         notFoundIfNull(product);
         String contentType = Cache.get("product_photo_type_" + id, String.class);
         if (contentType == null) {
