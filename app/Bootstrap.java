@@ -19,7 +19,7 @@ public class Bootstrap extends Job {
         List<Product> products = Product.all().fetch();
         for (Product product : products) {
             try {
-                if (!product.hasThumbnail() && product.hasPhoto()) {
+                if (!product.hasThumbnail() && product.hasPhoto() && product.getPhoto().exists()) {
                     BufferedImage original = ImageIO.read(product.getPhoto().get());
                     int size = Math.min(original.getWidth(), original.getHeight());
                     BufferedImage cropped = original.getSubimage((original.getWidth() - size) / 2,
