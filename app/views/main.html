@@ -149,9 +149,18 @@
                                 *{<input name="c" type="hidden" value="${c}">
                                 <input name="p" type="hidden" value="${p}">
                                 <input name="u" type="hidden" value="${u}">}*
-                                <input name="s" type="text" class="search-query" placeholder="&{'search'}" value="${s}">
+                                <input id="search_helper" name="s" type="text" class="search-query" placeholder="&{'search'}" value="${s}"
+                                       data-provide="typeahead" autocomplete="off">
                                 <button type="submit" class="search-icon" tabindex="-1"></button>
                             </form>
+                            <script type="text/javascript">
+                                $('#search_helper').typeahead({
+                                    ajax: {
+                                        url: "/application/suggestproducts", triggerLength: 3, method: "get"
+                                    },
+                                    display: "title"
+                                });
+                            </script>
                         </li>
                         #{if user}
                             #{if user.isAdmin}<li class="#{if blank }active#{/if}"><a href="@{Products.blank()}">&{'crud.add'}</a></li>#{/if}

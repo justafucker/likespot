@@ -84,7 +84,7 @@ public class Application extends Controller {
                 query += " and product.category.id = " + c;
             }
             if (s != null && s.length() > 0) {
-                query += " and (title like '%" + s.replaceAll("\'", "''") + "%' or description like '%" + s.replaceAll("\'", "''") + "%')";
+                query += getSearchCriteria(s);
             }
             query += " order by product.date desc, product.id desc";
             return (List<Product>) JPA.em().createQuery(query).setMaxResults(PAGE_SIZE).setFirstResult(page * PAGE_SIZE).getResultList();
@@ -103,7 +103,7 @@ public class Application extends Controller {
             String parentCriteria = safeInlineParams("parent.id in ", parents);
             String searchCriteria = "";
             if (s != null && s.length() > 0) {
-                searchCriteria += " and (title like '%" + s.replaceAll("\'", "''") + "%' or description like '%" + s.replaceAll("\'", "''") + "%')";
+                searchCriteria += getSearchCriteria(s);
             }
             String query = IS_NOT_DRAFT_CRITERIA + " and (" + categoryCriteria + " or " + parentCriteria + ")" + searchCriteria + " order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
@@ -116,10 +116,14 @@ public class Application extends Controller {
         } else {
             String searchCriteria = "";
             if (s != null && s.length() > 0) {
-                searchCriteria += " and (title like '%" + s.replaceAll("\'", "''") + "%' or description like '%" + s.replaceAll("\'", "''") + "%')";
+                searchCriteria += getSearchCriteria(s);
             }
             return Product.find(IS_NOT_DRAFT_CRITERIA + " and (category.draft is null or category.draft = false)" + searchCriteria + " order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         }
+    }
+
+    private static String getSearchCriteria(String s) {
+        return " and (title like '%" + s.replaceAll("\'", "''") + "%' or description like '%" + s.replaceAll("\'", "''") + "%')";
     }
 
     public static void index(Long c, Long p, Long u, String s) {
