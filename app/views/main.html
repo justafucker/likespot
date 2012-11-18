@@ -94,7 +94,7 @@
                                                     " like=\"" + ($.inArray(data[i].id, userProducts) != -1 ? "true" : "false") + "\" " +
                                                     " title=\"" + ($.inArray(data[i].id, userProducts) != -1 ? "&{'unsubscribe'}" : "&{'subscribe'}") + "\">" +
                                                     ($.inArray(data[i].id, userProducts) != -1 ? "&{'dislike'}" : "&{'like'}") +
-                                                    "</a></small></span>" +
+                                                    "</a>#{if user.isAdmin}&nbsp;&nbsp;<a href='/admin/products/" + data[i].id + "' class='product_text_buttons slow_title_hint btn btn-mini' onclick='event.stopPropagation();' style='margin-top: -2px'>&{'edit_product'}</a>#{/if}</small></span>" +
                                                     #{/if}
                                                     "</td>" +
                                                     "</tr>");

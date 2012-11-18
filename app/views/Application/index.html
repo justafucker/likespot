@@ -139,7 +139,9 @@
                                        like="#{if user.products.contains(selectedProduct)}true#{/if}#{else}false#{/else}"
                                        title="#{if user.products.contains(selectedProduct)}&{'unsubscribe'}#{/if}#{else}&{'subscribe'}#{/else}">
                                         #{if user.products.contains(selectedProduct)}&{'dislike'}#{/if}#{else}&{'like'}#{/else}
-                                    </a>
+                                    </a>#{if user.isAdmin}&nbsp;&nbsp;<a href="@{Products.show(selectedProduct.id)}" class="product_text_buttons slow_title_hint btn btn-mini"
+                                                                          onclick="event.stopPropagation();"
+                                                                          style="margin-top: -2px">&{'edit_product'}</a>#{/if}
                                 </small>
                             </span>
                         #{/if}
