@@ -37,15 +37,18 @@
             var requestingNextPage = false;
             var noMoreResults = false;
             var selectedCategoryId = ${c};
+            var search = '${s}'; /* escape characters */
             var u = #{if u}${u}#{/if}#{else}-1#{/else};
             var selectedProductId = #{if selectedProduct}${selectedProduct.id}#{/if}#{else}-1#{/else};
             var userProducts = ${userProducts};
             $(function(){
                 $(window).scroll(function(){
                     if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 100 && !noMoreResults && !requestingNextPage) {
-                        var listAction = #{jsAction @Application.getProducts(null, null, ':u', ':page') /};
+                        var listAction = #{jsAction @Application.getProducts(null, null, ':u', ':s', ':page') /};
                         requestingNextPage = true;
                         $.getJSON(
+                            search.length > 0 ?
+                                    ("/application/getproducts?s=" + search + "&page=" + (currentPage + 1)) :
                             selectedCategoryId != -1 ?
                                     ("/application/getproducts?u=" + u + "&c=" + selectedCategoryId + "&p=-1&page=" + (currentPage + 1)) :
                                     selectedProductId != -1 ?
@@ -141,6 +144,15 @@
                     </ul>
                     <span class="brand">Likespot</span>
                     <ul class="nav pull-right">
+                        <li>
+                            <form class="navbar-search pull-left">
+                                *{<input name="c" type="hidden" value="${c}">
+                                <input name="p" type="hidden" value="${p}">
+                                <input name="u" type="hidden" value="${u}">}*
+                                <input name="s" type="text" class="search-query" placeholder="&{'search'}" value="${s}">
+                                <button type="submit" class="search-icon" tabindex="-1"></button>
+                            </form>
+                        </li>
                         #{if user}
                             #{if user.isAdmin}<li class="#{if blank }active#{/if}"><a href="@{Products.blank()}">&{'crud.add'}</a></li>#{/if}
                             <li class="dropdown">

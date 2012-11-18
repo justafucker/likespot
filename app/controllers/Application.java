@@ -54,13 +54,13 @@ public class Application extends Controller {
             }).
             create();
 
-    public static void getProducts(Long c, Long p, Long u, int page) {
+    public static void getProducts(Long c, Long p, Long u, String s, int page) {
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
-            List<Product> products = getProducts(user, c, p, u, page);
+            List<Product> products = getProducts(user, c, p, u, s, page);
             renderJSON(GSON.toJson(products));
         } else {
-            List<Product> products = getProducts(null, c, p, u, page);
+            List<Product> products = getProducts(null, c, p, u, s, page);
             renderJSON(GSON.toJson(products));
         }
     }
@@ -77,11 +77,14 @@ public class Application extends Controller {
         renderJSON(GSON.toJson(products));
     }
 
-    private static List<Product> getProducts(User user, Long c, Long p, Long u, int page) {
+    private static List<Product> getProducts(User user, Long c, Long p, Long u, String s, int page) {
         if (u != null && u != -1) {
             String query = "select product from User as user inner join user.products as product where user.id = " + u;
             if (c != null && c != -1) {
                 query += " and product.category.id = " + c;
+            }
+            if (s != null && s.length() > 0) {
+                query += " and (title like '%" + s.replaceAll("\'", "''") + "%' or description like '%" + s.replaceAll("\'", "''") + "%')";
             }
             query += " order by product.date desc, product.id desc";
             return (List<Product>) JPA.em().createQuery(query).setMaxResults(PAGE_SIZE).setFirstResult(page * PAGE_SIZE).getResultList();
@@ -98,7 +101,11 @@ public class Application extends Controller {
             }
             String categoryCriteria = safeInlineParams("category.id in ", categories);
             String parentCriteria = safeInlineParams("parent.id in ", parents);
-            String query = IS_NOT_DRAFT_CRITERIA + " and (" + categoryCriteria + " or " + parentCriteria + ") order by date desc, id desc";
+            String searchCriteria = "";
+            if (s != null && s.length() > 0) {
+                searchCriteria += " and (title like '%" + s.replaceAll("\'", "''") + "%' or description like '%" + s.replaceAll("\'", "''") + "%')";
+            }
+            String query = IS_NOT_DRAFT_CRITERIA + " and (" + categoryCriteria + " or " + parentCriteria + ")" + searchCriteria + " order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else if (c != null && c != -1) {
             String query = IS_NOT_DRAFT_CRITERIA + " and category.id = " + c + " and (category.draft is null or category.draft = false) order by date desc, id desc";
@@ -107,21 +114,26 @@ public class Application extends Controller {
             String query = IS_NOT_DRAFT_CRITERIA + " and parent.id = " + p + " and (category.draft is null or category.draft = false) order by date desc, id desc";
             return Product.find(query).from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         } else {
-            return Product.find(IS_NOT_DRAFT_CRITERIA + " and (category.draft is null or category.draft = false) order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
+            String searchCriteria = "";
+            if (s != null && s.length() > 0) {
+                searchCriteria += " and (title like '%" + s.replaceAll("\'", "''") + "%' or description like '%" + s.replaceAll("\'", "''") + "%')";
+            }
+            return Product.find(IS_NOT_DRAFT_CRITERIA + " and (category.draft is null or category.draft = false)" + searchCriteria + " order by date desc, id desc").from(page * PAGE_SIZE).fetch(PAGE_SIZE);
         }
     }
 
-    public static void index(Long c, Long p, Long u) {
+    public static void index(Long c, Long p, Long u, String s) {
         renderArgs.put("home", true);
         renderArgs.put("c", c != null ? c : -1); // Override c
         renderArgs.put("p", p != null ? p : -1); // Override p
         renderArgs.put("u", u != null ? u : -1); // Override u
+        renderArgs.put("s", s != null ? s : ""); // Override u
         renderArgs.put("selectedCategory", c != null ? Category.findById(c) : null);
         renderArgs.put("selectedProduct", p != null ? Product.findById(p) : null);
         renderArgs.put("selectedUser", u != null ? User.findById(u) : null);
         User user = Security.isConnected() ? (User) User.find("byEmail", Security.connected()).first() : null;
         if (u != null && u != -1) {
-            List<Product> products = getProducts(user, c, null, u, 0);
+            List<Product> products = getProducts(user, c, null, u, s, 0);
             if (user != null) {
                 List<Long> pp = new ArrayList<Long>(user.products.size());
                 for (Product product : user.products) {
@@ -139,12 +151,12 @@ public class Application extends Controller {
                 pp.add(product.getId());
             }
             renderArgs.put("userProducts", !pp.isEmpty() ? SqlQuery.inlineParam(pp).replace('(', '[').replace(')', ']') : "[]");
-            List<Product> products = getProducts(user, c, p, null, 0);
+            List<Product> products = getProducts(user, c, p, null, s, 0);
             render(products, user);
         } else {
             renderArgs.put("userProducts", "[]");
             List<Category> categories = Category.find(IS_NOT_DRAFT_CRITERIA).fetch();
-            List<Product> products = getProducts(user, c, p, null, 0);
+            List<Product> products = getProducts(user, c, p, null, s, 0);
             render(products, categories);
         }
     }
@@ -181,6 +193,7 @@ public class Application extends Controller {
 
     public static void productPhoto(long id) throws IOException {
         final Product product = Product.findById(id);
+        notFoundIfNull(product);
         try {
             if (!product.hasThumbnail() && product.hasPhoto() && product.getPhoto().exists()) {
                 BufferedImage original = ImageIO.read(product.getPhoto().get());
@@ -203,7 +216,6 @@ public class Application extends Controller {
         } catch (AmazonS3Exception e) {
             Logger.error("Error while updating thumbnail", e);
         }
-        notFoundIfNull(product);
         String contentType = Cache.get("product_photo_type_" + id, String.class);
         if (contentType == null) {
             if (product.getThumbnail().exists()) {
