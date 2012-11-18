@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class Application extends Controller {
-    public static final int PAGE_SIZE = 2;
+    public static final int PAGE_SIZE = 15;
     private static final String IS_NOT_DRAFT_CRITERIA = "(draft is null or draft is false)";
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("d, MMMM yyyy", new Locale(Lang.get()));
