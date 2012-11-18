@@ -61,7 +61,7 @@
                        like="#{if _user.products.contains(_product)}true#{/if}#{else}false#{/else}"
                        title="#{if _user.products.contains(_product)}&{'unsubscribe'}#{/if}#{else}&{'subscribe'}#{/else}">
                     #{if _user.products.contains(_product)}&{'dislike'}#{/if}#{else}&{'like'}#{/else}
-                </a>
+                </a>#{if _user.isAdmin}&nbsp;&nbsp;<a href="@{Products.show(_product.id)}" class="product_text_buttons slow_title_hint btn btn-mini btn-info">&{'edit_product'}</a>#{/if}
                 </small>
             </span>
         #{/if}
