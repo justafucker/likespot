@@ -127,7 +127,15 @@
                                 </p>
                             </div>
                         #{/if}
-                        <small class="muted">${selectedProduct.date?.format('d, MMMM yyyy')}</small>
+                        #{if selectedProduct.startDate != null && selectedProduct.endDate != null}
+                            <small class="muted">${selectedProduct.startDate.format('d, MMMM yyyy')} &mdash; ${selectedProduct.endDate.format('d, MMMM yyyy')}</small>
+                        #{/if}
+                        #{elseif selectedProduct.startDate != null}
+                            <small class="muted">${selectedProduct.startDate?.format('d, MMMM yyyy')}</small>
+                        #{/elseif}
+                        #{else}
+                            <small class="muted">${selectedProduct.date?.format('d, MMMM yyyy')}</small>
+                        #{/else}
                         #{if user != null}
                             &nbsp;
                             <span>

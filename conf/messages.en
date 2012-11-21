@@ -63,3 +63,6 @@ likes=Likes
 about=About
 
 edit_product=Edit
+
+startDate= Start Date
+endDate= End Date

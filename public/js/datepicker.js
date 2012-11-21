@@ -112,7 +112,8 @@
 			if (!this.isInput) {
 				$(document).off('mousedown', this.hide);
 			}
-			this.set();
+            // Do not set current date if we hide popup without selection
+			// this.set();
 			this.element.trigger({
 				type: 'hide',
 				date: this.date
@@ -129,6 +130,8 @@
 			} else {
 				this.element.prop('value', formated);
 			}
+            // Auto hide after selection
+            this.hide();
 		},
 		
 		setValue: function(newDate) {

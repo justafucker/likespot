@@ -24,6 +24,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 @CRUD.For(Product.class)
@@ -54,6 +56,7 @@ public class Products extends CRUD {
         constructor.setAccessible(true);
         Product object = (Product) constructor.newInstance();
         bindAndProcessPhoto(object, false);
+        object.setDate(new Date()); // todo fix locale
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
             object.setAuthor(user);

@@ -17,7 +17,7 @@
 
                 <div class="objectForm">
                 #{form action:@save(object._key()), enctype:'multipart/form-data'}
-                    #{crud.form fields:['title', 'description', 'date', 'photo', 'parent', 'category', 'url', 'twitter', 'facebook', 'vk', 'youTube', 'cloudsound', 'store', 'review', 'foursquare', 'draft' ]}
+                    #{crud.form fields:['title', 'description', 'photo', 'parent', 'category', 'date', 'startDate', 'endDate', 'url', 'twitter', 'facebook', 'vk', 'youTube', 'cloudsound', 'store', 'review', 'foursquare', 'draft' ]}
                         #{crud.custom 'parent'}
                             <label for="object_parent_helper">
                                 &{'parent'}

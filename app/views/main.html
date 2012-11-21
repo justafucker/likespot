@@ -83,8 +83,10 @@
                                                                     (data[i].lastFM ? "<a href='" + data[i].lastFM + "' target='_blank' class='ico-button ico-lastfm title_hint' title=\"&{'lastFM'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].cloudsound ? "<a href='" + data[i].cloudsound + "' target='_blank' class='ico-button ico-cloudsound title_hint' title=\"&{'cloudsound'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].youTube ? "<a id='YTPlayer_" + data[i].id + "' href='" + data[i].youTube + "' target='_blank' class='YTPlayer ico-button ico-youtube title_hint' title=\"&{'youTube'}\" onclick='event.stopPropagation();'></a> " : "") +
-                                                                    "</p></div>" : "") +
-                                                    "<small class='muted'>" + data[i].date + "</small>" +
+                                                                    "</p></div>" : "") + (data[i].startDate && data[i].endDate ?
+                                                    ( "<small class='muted'>" + data[i].startDate + " &mdash; " + data[i].endDate + "</small>" ) :
+                                                    data[i].startDate ? ("<small class='muted'>" + data[i].startDate + "</small>") :
+                                                            ("<small class='muted'>" + data[i].date + "</small>")) +
                                                     #{if user != null}
                                                     "&nbsp;&nbsp;" +
                                                     "<span id='product_text_buttons_" + data[i].id + "'>" +

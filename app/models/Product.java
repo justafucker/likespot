@@ -29,6 +29,9 @@ public class Product extends Model {
     @Required
     private Date date;
 
+    private Date startDate;
+    private Date endDate;
+
     @Required
     public S3Blob photo;
 
@@ -95,6 +98,22 @@ public class Product extends Model {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public S3Blob getPhoto() {

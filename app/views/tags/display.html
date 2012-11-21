@@ -49,7 +49,16 @@
             </p>
         </div>
         #{/if}
-        <small class="muted">${_product.date?.format('d, MMMM yyyy')}</small>
+        #{if _product.startDate != null && _product.endDate != null}
+            <small class="muted">${_product.startDate.format('d, MMMM yyyy')} &mdash; ${_product.endDate.format('d, MMMM yyyy')}</small>
+        #{/if}
+        #{elseif _product.startDate != null}
+            <small class="muted">${_product.startDate?.format('d, MMMM yyyy')}</small>
+        #{/elseif}
+        #{else}
+            <small class="muted">${_product.date?.format('d, MMMM yyyy')}
+        #{/else}
+        </small>
         #{if _user != null}
             &nbsp;
             <span id="product_text_buttons_${_product.id}">
