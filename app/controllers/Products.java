@@ -24,8 +24,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 import java.util.List;
 
 @CRUD.For(Product.class)
@@ -33,6 +32,7 @@ import java.util.List;
 public class Products extends CRUD {
 
     public static final int THUMBNAIL_SIZE = 65;
+    private static final TimeZone DEFAULT_TIME_ZONE = TimeZone.getTimeZone("GMT+4");
 
     public static void blank() throws Exception {
         renderArgs.put("blank", true);
@@ -56,7 +56,7 @@ public class Products extends CRUD {
         constructor.setAccessible(true);
         Product object = (Product) constructor.newInstance();
         bindAndProcessPhoto(object, false);
-        object.setDate(new Date()); // todo fix locale
+        object.setDate(Calendar.getInstance(DEFAULT_TIME_ZONE).getTime()); // todo: we need to receive client time
         if (Security.isConnected()) {
             User user = User.find("byEmail", Security.connected()).first();
             object.setAuthor(user);
