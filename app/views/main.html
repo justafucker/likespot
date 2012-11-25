@@ -26,6 +26,7 @@
         <script src="@{'/public/js/bootstrap.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/js/typeahead.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/js/datepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA5D6Zbxai-5DyR1yQbG18fyIzP40cNHB8&sensor=false"></script>
         #{get 'moreScripts' /}
 
         <script type="text/javascript">
@@ -83,7 +84,11 @@
                                                                     (data[i].lastFM ? "<a href='" + data[i].lastFM + "' target='_blank' class='ico-button ico-lastfm title_hint' title=\"&{'lastFM'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].cloudsound ? "<a href='" + data[i].cloudsound + "' target='_blank' class='ico-button ico-cloudsound title_hint' title=\"&{'cloudsound'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].youTube ? "<a id='YTPlayer_" + data[i].id + "' href='" + data[i].youTube + "' target='_blank' class='YTPlayer ico-button ico-youtube title_hint' title=\"&{'youTube'}\" onclick='event.stopPropagation();'></a> " : "") +
-                                                                    "</p></div>" : "") + (data[i].startDate && data[i].endDate ?
+                                                                    "</p>" + (data[i].address ?
+                                                                    ("<div style='margin-bottom: 5px; padding: 5px 0;'>" +
+                                                                            "<div id='map_canvas_" + data[i].id + "' onclick='event.stopPropagation();' data='" + data[i].address + "' style='width: 480px; height: 360px;' class='map_canvas'></div>" +
+                                                                            "</div>") : "") +
+                                                                    "</div>" : "") + (data[i].startDate && data[i].endDate ?
                                                     ( "<small class='muted'>" + data[i].startDate + " &mdash; " + data[i].endDate + "</small>" ) :
                                                     data[i].startDate ? ("<small class='muted'>" + data[i].startDate + "</small>") :
                                                             ("<small class='muted'>" + data[i].date + "</small>")) +
@@ -199,6 +204,9 @@
             $('.slow_title_hint').tooltip({placement: 'bottom', delay: 1000});
             $('.datepicker').datepicker({format: "yyyy-mm-dd", weekStart: 1});
             $(document).ready(function() {
+                #{if selectedProduct}
+                    toggleMap(${selectedProduct.id});
+                #{/if}
                 var img1 = new Image();
                 var img2 = new Image();
                 var img3 = new Image();

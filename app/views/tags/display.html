@@ -47,6 +47,11 @@
                     <a id="YTPlayer_${_product.id}" href="${_product.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
                 #{/if}
             </p>
+            #{if _product.address}
+                <div style="margin: 0; padding: 5px 0 10px;">
+                    <div id="map_canvas_${_product.id}" onclick="event.stopPropagation();" data="${_product.address}" style="width: 480px; height: 360px;" class="map_canvas"></div>
+                </div>
+            #{/if}
         </div>
         #{/if}
         #{if _product.startDate != null && _product.endDate != null}

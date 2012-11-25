@@ -2,11 +2,9 @@ package models;
 
 import controllers.CRUD;
 import org.hibernate.annotations.Type;
-import play.cache.Cache;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
 import play.db.jpa.JPA;
-import play.db.jpa.JPABase;
 import play.db.jpa.Model;
 import play.modules.s3blobs.S3Blob;
 
@@ -25,6 +23,11 @@ public class Product extends Model {
     @MaxSize(130)
     @Type(type = "org.hibernate.type.TextType")
     private String description;
+
+    @Lob
+    @MaxSize(800)
+    @Type(type = "org.hibernate.type.TextType")
+    private String text;
 
     @Required
     private Date date;
@@ -49,6 +52,8 @@ public class Product extends Model {
     @ManyToOne
     @CRUD.Hidden
     private User author;
+
+    private String address;
 
     private String url;
 
@@ -218,6 +223,22 @@ public class Product extends Model {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public Boolean getDraft() {

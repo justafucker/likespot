@@ -17,6 +17,48 @@
     #{set title: messages.get("timeline") /}
 #{/else}
 <script type="text/javascript">
+    function toggleMap(id) {
+        var canvas = $("#map_canvas_" + id)[0];
+        if (canvas) {
+            var data = canvas.getAttribute("data");
+            if (data) {
+                canvas.style.border = "1px solid rgb(232, 232, 232)";
+                var geocoder = new google.maps.Geocoder();
+                var mapOptions = {
+                    zoom: 16, mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false, streetViewControl: false
+                };
+                var map = new google.maps.Map(canvas, mapOptions);
+                geocoder.geocode( { 'address': "Санкт-Петербург, " + data}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                        var opened = false;
+                        var showInfo = function() {
+                            if (!opened) {
+                                var infoWindow = new google.maps.InfoWindow({
+                                    content: "<small>" + data + "</small>"
+                                });
+                                google.maps.event.addListener(infoWindow, 'closeclick', function() {
+                                    opened = false;
+                                });
+                                infoWindow.open(map, marker);
+                                opened = true;
+                            }
+                        };
+                        google.maps.event.addListener(marker, 'click', showInfo);
+                        window.setTimeout(showInfo, 500);
+                    } else {
+                        $(canvas).remove();
+                    }
+                });
+                canvas.removeAttribute("data");
+            }
+        }
+    }
     function toggleProduct(id) {
         if (window['previous_product_buttons'] != id) {
             if (window['previous_product_buttons']) {
@@ -34,6 +76,7 @@
             $('#product_text_buttons_' + id).parent().parent().removeAttr("toggled_parent");
             window['previous_product_buttons'] = 0;
         }
+        toggleMap(id);
         // Stop current YT video.
         YTCurrent && YTCurrent.stopVideo();
     }
@@ -123,6 +166,12 @@
 
                                     #{if selectedProduct.youTube}
                                         <a id="YTPlayer_${selectedProduct.id}" href="${selectedProduct.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
+                                    #{/if}
+
+                                    #{if selectedProduct.address}
+                                        <div style="margin: 0; padding: 5px 0 10px;">
+                                            <div id="map_canvas_${selectedProduct.id}" onclick="event.stopPropagation();" data="${selectedProduct.address}" style="width: 480px; height: 360px;" class="map_canvas"></div>
+                                        </div>
                                     #{/if}
                                 </p>
                             </div>

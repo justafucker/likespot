@@ -77,7 +77,7 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-#map_canvas img {
+.map_canvas img {
   max-width: none;
 }
 
