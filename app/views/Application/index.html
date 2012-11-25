@@ -116,10 +116,13 @@
                                     #{if selectedProduct.facebook} <a href="${selectedProduct.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.vk} <a href="${selectedProduct.vk}" target="_blank" class="ico-button ico-vk title_hint" title="&{'vk'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.lastFM} <a href="${selectedProduct.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
-                                    #{if selectedProduct.cloudsound} <a href="${selectedProduct.cloudsound}" target="_blank" class="ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.review} <a href="${selectedProduct.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.store} <a href="${selectedProduct.store}" target="_blank" class="ico-button ico-store title_hint" title="&{'store'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.foursquare} <a href="${selectedProduct.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
+
+                                    #{if selectedProduct.cloudsound}
+                                        <a id="SoundPlayer_${selectedProduct.id}" href="${selectedProduct.cloudsound}" target="_blank" class="SoundPlayer ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a>
+                                    #{/if}
 
                                     #{if selectedProduct.youTube}
                                         <a id="YTPlayer_${selectedProduct.id}" href="${selectedProduct.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
@@ -222,7 +225,7 @@
                 #{/list}
 
                 <script type="text/javascript">
-                    // Loading the IFrame You Tube Player API code asynchronously.
+                    // Likespot.ru: [ Embedding YouTube Player. ]
                     var tag = document.createElement('script');
                     tag.src = "//www.youtube.com/iframe_api";
                     var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -279,6 +282,16 @@
                             });
                         }
                     }
+
+                    // Likespot.ru: [ Embedding Sound Player. ]
+                    $(function(){
+
+                        soundManager.onready(function() {
+                            $( '.SoundPlayer').each(function( index, elem ){
+                                new LS_SOUND_PLAYER({ url:elem.href, id:elem.id });
+                            });
+                        });
+                    });
                 </script>
 
                 #{if products.isEmpty()}
