@@ -76,7 +76,7 @@
                                                     "<p>" + nl2br(data[i].description) + "</p>" +
                                                     ((data[i].url || data[i].twitter || data[i].facebook || data[i].vk || data[i].youTube ||
                                                             data[i].review || data[i].store || data[i].foursquare || data[i].lastFM || data[i].cloudsound) ?
-                                                            "<div id='product_buttons_" + data[i].id + "' style='display: none;'><p> " +
+                                                            "<div id='product_buttons_" + data[i].id + "' style='display: none;'><p style='margin: 0; padding: 5px 0;'> " +
                                                                     (data[i].url ? "<a href='" + data[i].url + "' target='_blank' class='ico-button ico-home title_hint' title=\"&{'url'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].twitter ? "<a href='" + data[i].twitter + "' target='_blank' class='ico-button ico-twitter title_hint' title=\"&{'twitter'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].facebook ? "<a href='" + data[i].facebook + "' target='_blank' class='ico-button ico-facebook title_hint' title=\"&{'facebook'}\" onclick='event.stopPropagation();'></a> " : "") +
