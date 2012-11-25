@@ -130,7 +130,7 @@
     left: 0;
     height: 4px;
     z-index: 100;
-    background-color: #2e628e;
+    background-color: #0084B4;
     display: inline-block;
 }
 
@@ -142,7 +142,7 @@
     top: -2px;
     right: -4px;
     z-index: 150;
-    background-color: #2e628e;
+    background-color: #0084B4;
     opacity: 0;
 }
 
@@ -152,16 +152,17 @@
     padding: 0;
 }
 
-.player .tracks li:hover {
+/*.player .tracks li:hover {
     background-color: #e8ebee;
-}
+}*/
 
 .player .tracks li {
     margin: 2px 0;
     cursor: pointer;
     color: #000;
     list-style: none;
-    font-size: 12px;
+    font-size: 95%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 300;
     position: relative;
 }
 
@@ -203,26 +204,26 @@
     height: 12px;
     width: 12px;
     top: 4px;
-    left: -16px;
+    left: -24px;
 
     display: inline-block;
 }
 
 .player .tracks li.active {
-    background-color: #e6ebf3;
-    color: #000095;
+    /*background-color: #e6ebf3;*/
+    /*color: #0084B4;*/
 }
 
 .player .tracks li.active.paused s,
 .player .tracks li.active.playing s{
     background-image: none;
     background-size: 10px auto;
-    background-color: #2e628e;
+    background-color: #0084B4;
 
     height: 8px;
     width: 8px;
     top: 6px;
-    left: -14px;
+    left: -22px;
 
     display: inline-block;
 }
@@ -253,6 +254,8 @@
     width: 10%;
     white-space: nowrap;
     display: inline-block;
+    font-size: 95%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 300;
 }
 
 .pause {display: none; }

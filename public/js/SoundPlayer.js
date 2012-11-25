@@ -179,7 +179,7 @@ LS_SOUND_PLAYER.prototype.createSoundManagerObject = function( tracksSkeleton ){
 
                     var current = _CLASS.calculateEstimateDuration( _this );
 
-                    _CLASS.activeTrack.find( '.duration').html( '- ' + current[0] + '&#58;' + current[1] );
+                    _CLASS.activeTrack.find( '.duration').html( current[0] + '&#58;' + current[1] );
                 }
                 currentTime = new Date().getTime();
                 if( currentTime - timeStamp > 1000 ){
