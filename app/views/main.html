@@ -75,7 +75,7 @@
                                                     (data[i].parent ? " <a href='/?p=" + data[i].parent.id + "' class='muted' onclick='event.stopPropagation();'><small>" + data[i].parent.title + "</small></a>" : "") +
                                                     "<p>" + nl2br(data[i].description) + "</p>" +
                                                     "<div id='product_buttons_" + data[i].id + "' style='display: none;'>" +
-                                                    (data[i].text ? ("<div style='margin: 0; padding: 5px 0 10px; text-align: justify; width: 480px'>" + nl2br(data[i].text) + "</div>") : "") +
+                                                    (data[i].text ? ("<div class='product_text'>" + nl2br(data[i].text) + "</div>") : "") +
                                                     (data[i].url || data[i].twitter || data[i].facebook || data[i].vk ||
                                                             data[i].review || data[i].store || data[i].foursquare || data[i].lastFM || data[i].cloudsound ?
                                                     ("<p style='margin: 0; padding: 0 0 10px;'> " +
