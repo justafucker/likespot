@@ -151,9 +151,15 @@
                         <p>
                         ${selectedProduct.description.nl2br()}
                         </p>
-                        #{if selectedProduct.url || selectedProduct.twitter || selectedProduct.facebook || selectedProduct.vk || selectedProduct.youTube || selectedProduct.review || selectedProduct.store || selectedProduct.lastFM || selectedProduct.cloudsound || selectedProduct.foursquare}
-                            <div>
-                                <p>
+                        <div>
+                            #{if selectedProduct.text}
+                                <div style="margin: 0; padding: 5px 0 10px; text-align: justify; width: 480px">
+                                ${selectedProduct.text.nl2br()}
+                                </div>
+                            #{/if}
+
+                            #{if selectedProduct.url || selectedProduct.twitter || selectedProduct.facebook || selectedProduct.vk || selectedProduct.review || selectedProduct.store || selectedProduct.lastFM || selectedProduct.foursquare}
+                                <p style="margin: 0; padding: 0 0 10px;">
                                     #{if selectedProduct.url} <a href="${selectedProduct.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.twitter} <a href="${selectedProduct.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.facebook} <a href="${selectedProduct.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
@@ -162,23 +168,27 @@
                                     #{if selectedProduct.review} <a href="${selectedProduct.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.store} <a href="${selectedProduct.store}" target="_blank" class="ico-button ico-store title_hint" title="&{'store'}" onclick="event.stopPropagation();"></a> #{/if}
                                     #{if selectedProduct.foursquare} <a href="${selectedProduct.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
-
-                                    #{if selectedProduct.cloudsound}
-                                        <a id="SoundPlayer_${selectedProduct.id}" href="${selectedProduct.cloudsound}" target="_blank" class="SoundPlayer ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a>
-                                    #{/if}
-
-                                    #{if selectedProduct.youTube}
-                                        <a id="YTPlayer_${selectedProduct.id}" href="${selectedProduct.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
-                                    #{/if}
-
-                                    #{if selectedProduct.address}
-                                        <div style="margin: 0; padding: 5px 0 10px;">
-                                            <div id="map_canvas_${selectedProduct.id}" onclick="event.stopPropagation();" data="${selectedProduct.address}" style="width: 480px; height: 360px;" class="map_canvas"></div>
-                                        </div>
-                                    #{/if}
                                 </p>
-                            </div>
-                        #{/if}
+                                #{/if}
+
+                                #{if selectedProduct.youTube}
+                                    <div style="margin: 0; padding: 5px 0 10px">
+                                        <a id="YTPlayer_${selectedProduct.id}" href="${selectedProduct.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
+                                    </div>
+                                #{/if}
+
+                                #{if selectedProduct.cloudsound}
+                                    <div style="margin: 0; padding: 5px 0 10px; width: 480px">
+                                        <a id="SoundPlayer_${selectedProduct.id}" href="${selectedProduct.cloudsound}" target="_blank" class="SoundPlayer ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a>
+                                    </div>
+                                #{/if}
+
+                                #{if selectedProduct.address}
+                                    <div style="margin: 0; padding: 5px 0 10px;">
+                                        <div id="map_canvas_${selectedProduct.id}" onclick="event.stopPropagation();" data="${selectedProduct.address}" style="width: 480px; height: 360px;" class="map_canvas"></div>
+                                    </div>
+                                #{/if}
+                        </div>
                         #{if selectedProduct.startDate != null && selectedProduct.endDate != null}
                             <small class="muted">${selectedProduct.startDate.format('d, MMMM yyyy')} &mdash; ${selectedProduct.endDate.format('d, MMMM yyyy')}</small>
                         #{/if}
@@ -306,7 +316,7 @@
 
                             var container = document.createElement( 'div' );
                             container.id = pieces[ j ].id;
-                            container.style.paddingTop = '10px';
+                            //container.style.paddingTop = '10px';
                             container.style.display    = 'block';
 
                             pieces[ j ].parentNode.insertBefore( container, pieces[ j ] );

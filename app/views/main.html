@@ -74,9 +74,10 @@
                                                     (data[i].category ? " <a href='/?c=" + data[i].category.id + "' class='muted' onclick='event.stopPropagation();'><small>" + data[i].category.title + "</small></a>" : "") +
                                                     (data[i].parent ? " <a href='/?p=" + data[i].parent.id + "' class='muted' onclick='event.stopPropagation();'><small>" + data[i].parent.title + "</small></a>" : "") +
                                                     "<p>" + nl2br(data[i].description) + "</p>" +
-                                                    ((data[i].url || data[i].twitter || data[i].facebook || data[i].vk || data[i].youTube ||
-                                                            data[i].review || data[i].store || data[i].foursquare || data[i].lastFM || data[i].cloudsound) ?
-                                                            "<div id='product_buttons_" + data[i].id + "' style='display: none;'><p style='margin: 0; padding: 5px 0;'> " +
+                                                    "<div id='product_buttons_" + data[i].id + "' style='display: none;'>" +
+                                                    (data[i].url || data[i].twitter || data[i].facebook || data[i].vk ||
+                                                            data[i].review || data[i].store || data[i].foursquare || data[i].lastFM || data[i].cloudsound ?
+                                                    ("<p style='margin: 0; padding: 0 0 10px;'> " +
                                                                     (data[i].url ? "<a href='" + data[i].url + "' target='_blank' class='ico-button ico-home title_hint' title=\"&{'url'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].twitter ? "<a href='" + data[i].twitter + "' target='_blank' class='ico-button ico-twitter title_hint' title=\"&{'twitter'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].facebook ? "<a href='" + data[i].facebook + "' target='_blank' class='ico-button ico-facebook title_hint' title=\"&{'facebook'}\" onclick='event.stopPropagation();'></a> " : "") +
@@ -85,13 +86,22 @@
                                                                     (data[i].store ? "<a href='" + data[i].store + "' target='_blank' class='ico-button ico-store title_hint' title=\"&{'store'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].foursquare ? "<a href='" + data[i].foursquare + "' target='_blank' class='ico-button ico-foursquare title_hint' title=\"&{'foursquare'}\" onclick='event.stopPropagation();'></a> " : "") +
                                                                     (data[i].lastFM ? "<a href='" + data[i].lastFM + "' target='_blank' class='ico-button ico-lastfm title_hint' title=\"&{'lastFM'}\" onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].cloudsound ? "<a id='SoundPlayer_" + data[i].id + "' href='" + data[i].cloudsound + "' target='_blank' class='SoundPlayer ico-button ico-cloudsound title_hint' title=\"&{'cloudsound'}\" onclick='event.stopPropagation();'></a> " : "") +
-                                                                    (data[i].youTube ? "<a id='YTPlayer_" + data[i].id + "' href='" + data[i].youTube + "' target='_blank' class='YTPlayer ico-button ico-youtube title_hint' title=\"&{'youTube'}\" onclick='event.stopPropagation();'></a> " : "") +
-                                                                    "</p>" + (data[i].address ?
+                                                                    "</p>") : "") +
+                                                        (data[i].youTube ? ("<div style='margin-bottom: 5px; padding: 5px 0;'>" +
+                                                                "<a id='YTPlayer_" + data[i].id + "' " +
+                                                                "href='" + data[i].youTube + "' target='_blank' " +
+                                                                "class='YTPlayer ico-button ico-youtube title_hint' " +
+                                                                "title=\"&{'youTube'}\" onclick='event.stopPropagation();'></a> </div>") : "") +
+                                                        (data[i].cloudsound ? ("<div style='margin-bottom: 5px; padding: 5px 0; width: 480px'>" +
+                                                                "<a id='SoundPlayer_" + data[i].id + "' " +
+                                                                    "href='" + data[i].cloudsound + "' target='_blank' " +
+                                                                    "class='SoundPlayer ico-button ico-cloudsound title_hint' title=\"&{'cloudsound'}\" onclick='event.stopPropagation();'></a>" +
+                                                                "</div>") : "") +
+                                                        (data[i].address ?
                                                                     ("<div style='margin-bottom: 5px; padding: 5px 0;'>" +
                                                                             "<div id='map_canvas_" + data[i].id + "' onclick='event.stopPropagation();' data='" + data[i].address + "' style='width: 480px; height: 360px;' class='map_canvas'></div>" +
                                                                             "</div>") : "") +
-                                                                    "</div>" : "") + (data[i].startDate && data[i].endDate ?
+                                                                    "</div>" + (data[i].startDate && data[i].endDate ?
                                                     ( "<small class='muted'>" + data[i].startDate + " &mdash; " + data[i].endDate + "</small>" ) :
                                                     data[i].startDate ? ("<small class='muted'>" + data[i].startDate + "</small>") :
                                                             ("<small class='muted'>" + data[i].date + "</small>")) +

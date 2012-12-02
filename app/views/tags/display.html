@@ -15,8 +15,7 @@
     <td style="padding: 14px; border-top:1px solid rgb(232, 232, 232); width: 65px; vertical-align: top;">
         <img src="@{productPhoto(_product.id)}" class="img-rounded" style="width:65px">
     </td>
-    <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);"
-        >
+    <td valign="top" style="padding: 10px 10px 10px 0; border-top:1px solid rgb(232, 232, 232);">
 
         <a href="@{index(null, _product.id)}" style="color: black;" onclick="event.stopPropagation();"><strong>${_product.title}</strong></a>
 
@@ -28,35 +27,45 @@
             <a href="@{index(null, _product.parent.id)}" class="muted" onclick="event.stopPropagation();"><small>${_product.parent}</small></a>
         #{/if}
         <p>
-        ${_product.description.nl2br()}
+            ${_product.description.nl2br()}
         </p>
-        #{if _product.url || _product.twitter || _product.facebook || _product.vk || _product.youTube || _product.review || _product.store || _product.lastFM || _product.cloudsound || _product.foursquare}
         <div id="product_buttons_${_product.id}" style="display: none;">
-            <p style="margin: 0; padding: 5px 0;">
-                #{if _product.url} <a href="${_product.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
-                #{if _product.twitter} <a href="${_product.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
-                #{if _product.facebook} <a href="${_product.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
-                #{if _product.vk} <a href="${_product.vk}" target="_blank" class="ico-button ico-vk title_hint" title="&{'vk'}" onclick="event.stopPropagation();"></a> #{/if}
-                #{if _product.lastFM} <a href="${_product.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
-                #{if _product.review}<a href="${_product.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a>#{/if}
-                #{if _product.store} <a href="${_product.store}" target="_blank" class="ico-button ico-store title_hint" title="&{'store'}" onclick="event.stopPropagation();"></a> #{/if}
-                #{if _product.foursquare} <a href="${_product.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
+            #{if _product.text}
+                <div style="margin: 0; padding: 5px 0 10px; text-align: justify; width: 480px">
+                ${_product.text.nl2br()}
+                </div>
+            #{/if}
+            #{if _product.url || _product.twitter || _product.facebook || _product.vk || _product.review || _product.store || _product.lastFM || _product.foursquare}
+                <p style="margin: 0; padding: 0 0 10px;">
+                    #{if _product.url} <a href="${_product.url}" target="_blank" class="ico-button ico-home title_hint" title="&{'url'}" onclick="event.stopPropagation();"></a> #{/if}
+                    #{if _product.twitter} <a href="${_product.twitter}" target="_blank" class="ico-button ico-twitter title_hint" title="&{'twitter'}" onclick="event.stopPropagation();"></a> #{/if}
+                    #{if _product.facebook} <a href="${_product.facebook}" target="_blank" class="ico-button ico-facebook title_hint" title="&{'facebook'}" onclick="event.stopPropagation();"></a> #{/if}
+                    #{if _product.vk} <a href="${_product.vk}" target="_blank" class="ico-button ico-vk title_hint" title="&{'vk'}" onclick="event.stopPropagation();"></a> #{/if}
+                    #{if _product.lastFM} <a href="${_product.lastFM}" target="_blank" class="ico-button ico-lastfm title_hint" title="&{'lastFM'}" onclick="event.stopPropagation();"></a> #{/if}
+                    #{if _product.review}<a href="${_product.review}" target="_blank" class="ico-button ico-review title_hint" title="&{'review'}" onclick="event.stopPropagation();"></a>#{/if}
+                    #{if _product.store} <a href="${_product.store}" target="_blank" class="ico-button ico-store title_hint" title="&{'store'}" onclick="event.stopPropagation();"></a> #{/if}
+                    #{if _product.foursquare} <a href="${_product.foursquare}" target="_blank" class="ico-button ico-foursquare title_hint" title="&{'foursquare'}" onclick="event.stopPropagation();"></a> #{/if}
+                </p>
+            #{/if}
 
-                #{if _product.cloudsound}
-                    <a id="SoundPlayer_${_product.id}" href="${_product.cloudsound}" target="_blank" class="SoundPlayer ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a>
-                #{/if}
-
-                #{if _product.youTube}
+            #{if _product.youTube}
+                <div style="margin: 0; padding: 5px 0 10px">
                     <a id="YTPlayer_${_product.id}" href="${_product.youTube}" target="_blank" class="YTPlayer ico-button ico-youtube title_hint" title="&{'youTube'}" onclick="event.stopPropagation();"></a>
-                #{/if}
-            </p>
+                </div>
+            #{/if}
+
+            #{if _product.cloudsound}
+                <div style="margin: 0; padding: 5px 0 10px; width: 480px">
+                    <a id="SoundPlayer_${_product.id}" href="${_product.cloudsound}" target="_blank" class="SoundPlayer ico-button ico-cloudsound title_hint" title="&{'cloudsound'}" onclick="event.stopPropagation();"></a>
+                </div>
+            #{/if}
+
             #{if _product.address}
                 <div style="margin: 0; padding: 5px 0 10px;">
                     <div id="map_canvas_${_product.id}" onclick="event.stopPropagation();" data="${_product.address}" style="width: 480px; height: 360px;" class="map_canvas"></div>
                 </div>
             #{/if}
         </div>
-        #{/if}
         #{if _product.startDate != null && _product.endDate != null}
             <small class="muted">${_product.startDate.format('d, MMMM yyyy')} &mdash; ${_product.endDate.format('d, MMMM yyyy')}</small>
         #{/if}

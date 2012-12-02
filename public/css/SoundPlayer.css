@@ -1,7 +1,7 @@
 .player {
     min-width: 300px;
     max-width: 515px;
-    width: 100%;
+    /*width: 100%;*/
     min-height: 55px;
 
     -moz-user-select: none;
@@ -9,7 +9,12 @@
     -webkit-user-select: none;
     -o-user-select: none;
 
-    margin-top: 20px;
+    border:1px solid #e8ecf3; -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px 20px 10px;
 }
 
 .player .artwork {
@@ -204,14 +209,14 @@
     height: 12px;
     width: 12px;
     top: 4px;
-    left: -24px;
+    left: -16px;
 
     display: inline-block;
 }
 
 .player .tracks li.active {
     /*background-color: #e6ebf3;*/
-    /*color: #0084B4;*/
+    color: #0084B4;
 }
 
 .player .tracks li.active.paused s,
@@ -220,10 +225,10 @@
     background-size: 10px auto;
     background-color: #0084B4;
 
-    height: 8px;
-    width: 8px;
-    top: 6px;
-    left: -22px;
+    height: 6px;
+    width: 6px;
+    top: 8px;
+    left: -13px;
 
     display: inline-block;
 }
