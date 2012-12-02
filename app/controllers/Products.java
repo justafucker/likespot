@@ -129,11 +129,19 @@ public class Products extends CRUD {
                 graphics.drawImage(thumbnailImage, 0, 0, new Color(0, 0, 0), null);
                 graphics.dispose();
 
-                if (remove && product.hasPhoto() && product.getPhoto().exists()) {
-                    product.getPhoto().delete();
+                try {
+                    if (remove && product.hasPhoto() && product.getPhoto().exists()) {
+                        product.getPhoto().delete();
+                    }
+                } catch (AmazonS3Exception e) {
+                    // Skip
                 }
-                if (remove && product.hasThumbnail() && product.getThumbnail().exists()) {
-                    product.getThumbnail().delete();
+                try {
+                    if (remove && product.hasThumbnail() && product.getThumbnail().exists()) {
+                        product.getThumbnail().delete();
+                    }
+                } catch (AmazonS3Exception e) {
+                    // Skip
                 }
                 if (product.getPhoto() == null) {
                     product.setPhoto(new S3Blob());
